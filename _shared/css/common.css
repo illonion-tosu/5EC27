@@ -1,0 +1,20 @@
+:root {
+    --overlay-width: 1920px;
+    --overlay-height: 1080px;
+    --delicate-gold: #F9E4B0;
+    --black-rose: #240008;
+    --dark-claret: #610826;
+    --trendy-clue: #56589F;
+    --spanish-lilac: #C8C9F6;
+    --ana: #E1E2FF;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--overlay-width);
+    height: var(--overlay-height);
+    background: center / cover;
+}
