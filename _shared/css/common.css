@@ -15,8 +15,8 @@
  * Behind the background image, there is always some sort of background.
  * This could be a background-color OR a linear gradient, which uses background-image.
  * Because of this, having the "overlay" / "background-image" setup means that we can layer the linear-gradient behind the actual background image.
- * <div class="root">
- *     <div class="overlay"></div> 
+ * <div class="overlay">
+ *     <div class="background-image"></div> 
  * </div>
  */
 .overlay {
