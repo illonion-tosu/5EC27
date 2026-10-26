@@ -1,9 +1,9 @@
-/* Root */
-.root {
+/* Overlay */
+.overlay {
     background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
 }
 
-/* Overlay */
-.overlay {
+/* Background Image */
+.background-image {
     background: url("static/background.png") center / cover no-repeat;
 }
