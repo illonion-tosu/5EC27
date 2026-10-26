@@ -1,3 +1,8 @@
+:root {
+    --team-section-x: 35px;
+    --team-section-top-height: 80px;
+}
+
 /* Overlay */
 .overlay {
     background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
@@ -6,4 +11,71 @@
 /* Background Image */
 .background-image {
     background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Section */
+.team-section {
+    position: absolute;
+    top: 12px;
+    display: flex;
+    gap: 27px;
+}
+
+.left-team-section {
+    left: var(--team-section-x);
+}
+
+.right-team-section {
+    right: var(--team-section-x);
+    flex-direction: row-reverse;
+}
+
+/* Team Seed */
+.team-seed {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #E99A94;
+    line-height: var(--team-section-top-height);
+}
+
+/* Team Section Inner */
+.team-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Team Name Flag */
+.team-name-flag {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.right-team-name-flag {
+    flex-direction: row-reverse;
+}
+
+/* Flag */
+.team-flag {
+    height: var(--team-section-top-height);
+}
+
+/* Name */
+.team-name {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--delicate-gold);
+}
+
+/* Team Star Container */
+.team-star-container {
+    display: flex;
+    gap: 4px;
+}
+
+.right-team-star-container {
+    align-self: flex-end;
+    flex-direction: row-reverse;
 }
