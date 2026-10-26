@@ -10,11 +10,19 @@
 }
 
 /* Overlay */
-.overlay {
+.root {
     position: absolute;
     top: 0;
     left: 0;
     width: var(--overlay-width);
     height: var(--overlay-height);
     background: center / cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
