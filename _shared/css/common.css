@@ -1,0 +1,37 @@
+:root {
+    --overlay-width: 1920px;
+    --overlay-height: 1080px;
+    --delicate-gold: #F9E4B0;
+    --black-rose: #240008;
+    --dark-claret: #610826;
+    --trendy-clue: #56589F;
+    --spanish-lilac: #C8C9F6;
+    --ana: #E1E2FF;
+}
+
+/**
+ * Overlay
+ *
+ * Behind the background image, there is always some sort of background.
+ * This could be a background-color OR a linear gradient, which uses background-image.
+ * Because of this, having the "overlay" / "background-image" setup means that we can layer the linear-gradient behind the actual background image.
+ * <div class="overlay">
+ *     <div class="background-image"></div> 
+ * </div>
+ */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--overlay-width);
+    height: var(--overlay-height);
+    background: center / cover;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
