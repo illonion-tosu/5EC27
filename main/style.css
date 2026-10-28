@@ -2,6 +2,7 @@
     --team-section-x: 35px;
     --team-section-top-height: 80px;
     --score-bar-x: 50%;
+    --score-x: calc(var(--score-bar-x) + 8px);
     --team-left-colour: #F0AB2B;
     --team-right-colour: #C7104E;
 }
@@ -112,4 +113,29 @@
 .score-bar-right {
     background-color: var(--team-right-colour);
     left: var(--score-bar-x);
+}
+
+/* Score */
+.score {
+    position: absolute;
+    top: 902px;
+    height: 70px;
+    line-height: 70px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.score-left {
+    color: var(--team-left-colour);
+    right: var(--score-x);
+}
+
+.score-right {
+    color: var(--team-right-colour);
+    left: var(--score-x);
+}
+
+.score-lead {
+    font-size: 3.625rem;
 }
