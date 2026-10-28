@@ -7,7 +7,7 @@ function registerSocketEventLoggers(socket) {
 
 // Create Tosu Web Socket
 export function createTosuWsSocket(path = "/websocket/v2") {
-    let socket = new ReconnectingWebSocket("ws://" + location.host + path);
+    const socket = new ReconnectingWebSocket("ws://" + location.host + path);
     registerSocketEventLoggers(socket);
     return socket;
 }
