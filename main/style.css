@@ -1,6 +1,9 @@
 :root {
     --team-section-x: 35px;
     --team-section-top-height: 80px;
+    --score-bar-x: 50%;
+    --team-left-colour: #F0AB2B;
+    --team-right-colour: #C7104E;
 }
 
 /* Overlay */
@@ -90,4 +93,23 @@
     font-weight: 700;
     font-size: 4.125rem;
     color: var(--delicate-gold);
+}
+
+/* Score Bar */
+.score-bar {
+    position: absolute;
+    top: 884px;
+    width: 600px;
+    height: 11px;
+    transition: 200ms ease-in-out;
+}
+
+.score-bar-left { 
+    background-color: var(--team-left-colour);
+    right: var(--score-bar-x);
+}
+
+.score-bar-right {
+    background-color: var(--team-right-colour);
+    left: var(--score-bar-x);
 }
