@@ -79,3 +79,15 @@
     align-self: flex-end;
     flex-direction: row-reverse;
 }
+
+/* Round Name */
+.round-name {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 4.125rem;
+    color: var(--delicate-gold);
+}
