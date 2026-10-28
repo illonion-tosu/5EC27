@@ -139,3 +139,22 @@
 .score-lead {
     font-size: 3.625rem;
 }
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 182px;
+}
+
+.sponsors > * {
+    max-height: 70px;
+}
