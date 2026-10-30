@@ -4,13 +4,6 @@ import { createTosuWsSocket } from "../_shared/core/websocket.js"
 // Load Teams
 let allTeams = []
 loadTeams().then(teams => { allTeams = teams })
-
-const teamSeedLeftEl = document.getElementById("team-seed-left")
-const teamFlagLeftEl = document.getElementById("team-flag-left")
-const teamNameLeftEl = document.getElementById("team-name-left")
-const teamSeedRightEl = document.getElementById("team-seed-right")
-const teamFlagRightEl = document.getElementById("team-flag-right")
-const teamNameRightEl = document.getElementById("team-name-right")
 let currentTeamNameLeft, currentTeamNameRight
 
 // Set up team info
