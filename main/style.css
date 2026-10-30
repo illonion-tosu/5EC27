@@ -18,6 +18,15 @@
     background: url("static/background.png") center / cover no-repeat;
 }
 
+/* Greenscreen */
+.greenscreen {
+    position: absolute;
+    top: 164px;
+    width: 1920px;
+    height: 720px;
+    background-color: #0F0;
+}
+
 /* Team Section */
 .team-section {
     position: absolute;
