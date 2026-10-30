@@ -1,7 +1,7 @@
 // Load showcase beatmaps
 let teams = []
 export async function loadTeams() {
-    const response = await axios.get("../../_data/teams.json")
+    const response = await axios.get("../_data/teams.json")
     teams = response.data
     return teams
 }

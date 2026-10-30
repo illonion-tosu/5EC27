@@ -1,4 +1,9 @@
+import { loadTeams, findTeam } from "../_shared/core/teams.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
+
+// Load Teams
+let allTeams = []
+loadTeams().then(teams => { allTeams = teams })
 
 const teamSeedLeftEl = document.getElementById("team-seed-left")
 const teamFlagLeftEl = document.getElementById("team-flag-left")
@@ -13,6 +18,13 @@ function setTeamDetails(teamName, side) {
     const teamSeedEl = document.getElementById(`team-seed-${side}`)
     const teamFlagEl = document.getElementById(`team-flag-${side}`)
     const teamNameEl = document.getElementById(`team-name-${side}`)
+
+    const currentTeam = findTeam(teamName)
+    if (!currentTeam) return
+
+    teamSeedEl.textContent = `#${currentTeam.seed}`
+    teamFlagEl.setAttribute("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
+    teamNameEl.textContent = teamName
     return teamName
 }
 
@@ -23,10 +35,10 @@ socket.onmessage = event => {
 
     // Team Info
     const teamNames = data.tourney.team
-    if (currentTeamNameLeft !== teamNames.left) {
+    if (currentTeamNameLeft !== teamNames.left && allTeams) {
         currentTeamNameLeft = setTeamDetails(teamNames.left, "left")
     }
-    if (currentTeamNameRight !== teamNames.right) {
-        currentTeamNameRight = setUpTeamInfo(teamNames.right, "left")
+    if (currentTeamNameRight !== teamNames.right && allTeams) {
+        currentTeamNameRight = setTeamDetails(teamNames.right, "right")
     }
 }
