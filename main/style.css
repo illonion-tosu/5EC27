@@ -1,9 +1,160 @@
-/* Root */
-.root {
-    background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
+:root {
+    --team-section-x: 35px;
+    --team-section-top-height: 80px;
+    --score-bar-x: 50%;
+    --score-x: calc(var(--score-bar-x) + 8px);
+    --team-left-colour: #F0AB2B;
+    --team-right-colour: #C7104E;
 }
 
 /* Overlay */
 .overlay {
+    background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
+}
+
+/* Background Image */
+.background-image {
     background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Section */
+.team-section {
+    position: absolute;
+    top: 12px;
+    display: flex;
+    gap: 27px;
+}
+
+.left-team-section {
+    left: var(--team-section-x);
+}
+
+.right-team-section {
+    right: var(--team-section-x);
+    flex-direction: row-reverse;
+}
+
+/* Team Seed */
+.team-seed {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #E99A94;
+    line-height: var(--team-section-top-height);
+}
+
+/* Team Section Inner */
+.team-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Team Name Flag */
+.team-name-flag {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.right-team-name-flag {
+    flex-direction: row-reverse;
+}
+
+/* Flag */
+.team-flag {
+    height: var(--team-section-top-height);
+}
+
+/* Name */
+.team-name {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--delicate-gold);
+}
+
+/* Team Star Container */
+.team-star-container {
+    display: flex;
+    gap: 4px;
+}
+
+.right-team-star-container {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+/* Round Name */
+.round-name {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 4.125rem;
+    color: var(--delicate-gold);
+}
+
+/* Score Bar */
+.score-bar {
+    position: absolute;
+    top: 884px;
+    width: 600px;
+    height: 11px;
+    transition: 200ms ease-in-out;
+}
+
+.score-bar-left { 
+    background-color: var(--team-left-colour);
+    right: var(--score-bar-x);
+}
+
+.score-bar-right {
+    background-color: var(--team-right-colour);
+    left: var(--score-bar-x);
+}
+
+/* Score */
+.score {
+    position: absolute;
+    top: 902px;
+    height: 70px;
+    line-height: 70px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.score-left {
+    color: var(--team-left-colour);
+    right: var(--score-x);
+}
+
+.score-right {
+    color: var(--team-right-colour);
+    left: var(--score-x);
+}
+
+.score-lead {
+    font-size: 3.625rem;
+}
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 182px;
+}
+
+.sponsors > * {
+    max-height: 70px;
 }

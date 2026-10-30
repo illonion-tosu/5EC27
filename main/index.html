@@ -7,11 +7,79 @@
 
     <link rel="stylesheet" href="../_shared/css/common.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
 </head>
 <body>
-    <div class="root">
-        <div class="overlay"></div>
+    <div class="overlay">
+        <div class="background-image"></div>
+
+        <!-- Team Sections -->
+        <div class="team-section left-team-section">
+            <div class="team-seed">#3</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag">
+                    <img class="team-flag" src="https://osuflags.omkserver.nl/ES-1000.png">
+                    <div class="team-name">Spain</div>
+                </div>
+                <div class="team-star-container">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                </div>
+            </div>
+        </div>
+        <div class="team-section right-team-section">
+            <div class="team-seed">#12</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag right-team-name-flag">
+                    <img class="team-flag" src="https://osuflags.omkserver.nl/PL-1000.png">
+                    <div class="team-name">Poland</div>
+                </div>
+                <div class="team-star-container right-team-star-container">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- Round Name -->
+        <div class="round-name">Round of 32</div>
+
+        <!-- Score Bar -->
+        <div class="score-bar score-bar-left"></div>
+        <div class="score-bar score-bar-right"></div>
+
+        <!-- Scores -->
+        <div class="score score-left score-lead">345,432</div>
+        <div class="score score-right">345,432</div>
+
+        <!-- Sponsors -->
+        <div class="sponsors">
+            <img class="acrid-sponsor" src="../_shared/assets/sponsors/Acrid Covers Logo Beige.png">
+            <img class="kagami-sponsor" src="../_shared/assets/sponsors/Kagami Studio Logo Beige.png">
+            <img class="sliderpals-sponsor" src="../_shared/assets/sponsors/SliderPals Logo Beige.png">
+        </div>
     </div>
+
+    <script type="module" src="../_shared/core/sponsors.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 </html>
