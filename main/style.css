@@ -278,3 +278,20 @@
     top: 895px;
     right: 0;
 }
+
+/* Now Playing Stats Line */
+.now-playing-stats-line {
+    position: absolute;
+    bottom: 9px;
+    right: 19px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 1.875em;
+    display: flex;
+    gap: 34px;
+    color: var(--light-red)
+}
+
+.now-playing-stats-line-number {
+    color: var(--delicate-gold);
+}
