@@ -5,6 +5,7 @@
     --score-x: calc(var(--score-bar-x) + 8px);
     --team-left-colour: #F0AB2B;
     --team-right-colour: #C7104E;
+    --light-red: #E99A94;
 }
 
 /* Overlay */
@@ -39,7 +40,7 @@
     font-family: "Cormorant Infant", serif;
     font-weight: 700;
     font-size: 3rem;
-    color: #E99A94;
+    color: var(--light-red);
     line-height: var(--team-section-top-height);
 }
 
@@ -159,7 +160,64 @@
     max-height: 70px;
 }
 
-/* Vector */
+/* Now Playing Section */
+.now-playing-section {
+    position: absolute;
+    top: 923px;
+    left: 1177px;
+    /* background-color: #610826; */
+    width: 723px;
+    height: 100px;
+}
+
+/* Now Playing Background */
+.now-playing-background {
+    position: absolute;
+    background: url("https://assets.ppy.sh/beatmaps/1002554/covers/cover.jpg") center / cover;
+    width: 176px;
+    height: 100%;
+}
+
+/* Now Playing Metadata */
+.now-playing-metadata {
+    position: absolute;
+    left: 188px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+}
+
+.now-playing-artist {
+    height: 24px;
+    top: 6px;
+    font-size: 1.25rem;
+    color: var(--delicate-gold);
+}
+
+.now-playing-title {
+    height: 39px;
+    top: 24px;
+    font-size: 2rem;
+    color: var(--light-red);
+}
+
+.now-playing-difficulty-mapper {
+    top: 68px;
+    font-size: 1.25rem;
+    color: var(--delicate-gold);
+}
+
+/* Now Playing Mod */
+.now-playing-mod {
+    position: absolute;
+    left: 1165px;
+    top: 1010px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2C010C
+}
+
+/* Vectors */
 .now-playing-bottom-left-vector {
     position: absolute;
     top: 988.85px;
