@@ -206,6 +206,55 @@
     color: var(--delicate-gold);
 }
 
+/* Now Playing Stats Icon */
+.now-playing-stats-icon-container {
+    position: absolute;
+    top: 15px;
+    right: 3px;
+    display: flex;
+    gap: 21px;
+}
+
+.now-playing-stats-icon-container > * {
+    --dimension: 32px;
+
+    width: var(--dimention);
+    height: var(--dimention);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.now-playing-stat-icon {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    object-fit: none;
+}
+
+/* Now Playing Stats Text */
+.now-playing-stats-text-container {
+    position: absolute;
+    top: 51px;
+    right: 0px;
+    display: flex;
+    gap: 18px;
+}
+
+.now-playing-stats-text-container > * {
+    --dimention: 32px;
+
+    width: var(--dimention);
+    height: var(--dimention);
+    text-align: center;
+    line-height: var(--dimension);
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--delicate-gold);
+}
+
 /* Now Playing Mod */
 .now-playing-mod {
     position: absolute;
