@@ -35,11 +35,11 @@
     gap: 27px;
 }
 
-.left-team-section {
+.team-section-left {
     left: var(--team-section-x);
 }
 
-.right-team-section {
+.team-section-right {
     right: var(--team-section-x);
     flex-direction: row-reverse;
 }
@@ -66,7 +66,7 @@
     gap: 1.5rem;
 }
 
-.right-team-name-flag {
+.team-name-flag-right {
     flex-direction: row-reverse;
 }
 
@@ -89,7 +89,7 @@
     gap: 4px;
 }
 
-.right-team-star-container {
+.team-star-container-right {
     align-self: flex-end;
     flex-direction: row-reverse;
 }
