@@ -10,14 +10,14 @@ This file will describe the structure of the _data/ files that are being used fo
 beatmaps-base.json will be used to make the beatmaps.json file, to be used in various scenes.
 This may include the mappool scene and the gameplay scene.
 
-`
+```json
 {
     "roundName": "Grand Finals",
     "beatmaps": [
         {"beatmap_id": 3625243, "mod": "NM", "order": 1},
     ]
 }
-`
+```
 
 | Attribute | Description | Data Type | Example |
 | --------- | ----------- | --------- | ------- |
@@ -34,7 +34,7 @@ This may include the mappool scene and the gameplay scene.
 teams.json will have all of the team information inside, to be used for various scenes.
 This will include the mappool and gameplay scene, as well as a number of others
 
-`
+```json
 [
     {
         "teamName": "Finland",
@@ -50,7 +50,7 @@ This will include the mappool and gameplay scene, as well as a number of others
         "player8Name" : "Player 8 Name"
     }
 ]
-`
+```
 
 | Attribute | Description | Data Type | Example |
 | --------- | ----------- | --------- | ------- |
