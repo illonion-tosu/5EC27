@@ -55,6 +55,6 @@ This will include the mappool and gameplay scene, as well as a number of others
 | Attribute | Description | Data Type | Example |
 | --------- | ----------- | --------- | ------- |
 | teamName | Name of team | string | "Finland" |
-| ISO3166Alpha2 | 2 | Letter Country Code | string | "FI" |
+| ISO3166Alpha2 | 2 Letter Country Code | string | "FI" |
 | seed | Team seed | number | 1 |
 | playerXName | Name of player | string | "Fairy Bread" |
