@@ -10,18 +10,26 @@ async function submit() {
 
         const textAreaElValueSplitSplit = textAreaElValueSplit[i].split("\t").map(cell => cell.trim())
         const cell = index => textAreaElValueSplitSplit[index] ?? ""
+        const player = index => {
+            if (!cell(index)) return
+
+            return {
+                "id": Number(cell(index)),
+                "name": cell(index + 1)
+            }
+        }
         const teamDetails = {
             "teamName": cell(0),
             "ISO3166Alpha2": cell(1).toUpperCase(),
             "seed": Number(cell(2)),
-            "player1Name": cell(3),
-            "player2Name": cell(4),
-            "player3Name": cell(5),
-            "player4Name": cell(6),
-            "player5Name": cell(7),
-            "player6Name": cell(8),
-            "player7Name": cell(9),
-            "player8Name": cell(10),
+            "player1": player(3),
+            "player2": player(5),
+            "player3": player(7),
+            "player4": player(9),
+            "player5": player(11),
+            "player6": player(13),
+            "player7": player(15),
+            "player8": player(17),
         }
         teams.push(teamDetails)
     }
