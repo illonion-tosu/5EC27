@@ -246,7 +246,7 @@
 .now-playing-stats-text-container {
     position: absolute;
     top: 51px;
-    right: 0px;
+    right: 0;
     display: flex;
     gap: 18px;
 }
