@@ -4,14 +4,14 @@ import { delay } from "../_shared/core/utils.js"
 let osuApi
 async function getApi() {
     const apiResponse = await fetch("../_data/osu-api.json")
-    const apiResponseJson = await response.json()
+    const apiResponseJson = await apiResponse.json()
     osuApi = apiResponseJson.api
 }
 
 async function getBeatmaps() {
     const allBeatmapsJson = []
     const beatmapsBaseResponse = await fetch("../_data/beatmaps-base.json")
-    const beatmapsBaseResponseJson = await response.json()
+    const beatmapsBaseResponseJson = await beatmapsBaseResponse.json()
     const allBeatmaps = beatmapsBaseResponseJson.beatmaps
     const roundName = beatmapsBaseResponseJson.roundName
 
@@ -25,7 +25,7 @@ async function getBeatmaps() {
         // Get API response
         const osuMapResponse = await fetch(`https://osu.ppy.sh/api/get_beatmaps?k=${osuApi}&b=${allBeatmaps[i].beatmap_id}&mods=${modNumber}`)
         await delay(1000)
-        const osuMapResponseJson = await response.json()
+        const osuMapResponseJson = await osuMapResponse.json()
         if (!responseJson[0]) {
             console.warn(`No beatmap found for ${allBeatmaps[i].label} (${allBeatmaps[i].beatmap_id}), skipping`)
             continue
