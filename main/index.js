@@ -15,7 +15,7 @@ loadBeatmaps().then(beatmaps => {
 })
 
 // Load Teams
-let allTeams = []
+let allTeams
 loadTeams().then(teams => { allTeams = teams })
 let currentTeamNameLeft, currentTeamNameRight
 
@@ -41,13 +41,15 @@ const nowPlayingArtistEl = $("#now-playing-artist")
 const nowPlayingTitleEl = $("#now-playing-title")
 const nowPlayingDifficultyEl = $("#now-playing-difficulty")
 const nowPlayingMapperEl = $("#now-playing-mapper")
-let currentNowPlayingId, currentNowPlayingChecksum
+const nowPlayingBottomLeftVectorEl = $("#now-playing-bottom-left-vector")
+const nowPlayingModEl = $("#now-playing-mod")
+let currentNowPlayingId, currentNowPlayingChecksum, currentMappoolBeatmap
 
 // Scores
-const scoreBarLeftEl = $("score-bar-left")
-const scoreBarRightEl = $("score-bar-right")
-const scoreLeftEl = $("score-left")
-const scoreRightEl = $("score-right")
+const scoreBarLeftEl = $("#score-bar-left")
+const scoreBarRightEl = $("#score-bar-right")
+const scoreLeftEl = $("#score-left")
+const scoreRightEl = $("#score-right")
 
 // Socket
 const socket = createTosuWsSocket()
@@ -79,5 +81,14 @@ $socketHub.on("message", event => {
         nowPlayingTitleEl.text(beatmapData.title)
         nowPlayingDifficultyEl.text(beatmapData.version)
         nowPlayingMapperEl.text(beatmapData.mapper)
+
+        currentMappoolBeatmap = findBeatmap(currentNowPlayingId)
+        if (currentMappoolBeatmap) {
+            nowPlayingBottomLeftVectorEl.attr("src", `static/vectors/${currentMappoolBeatmap.mod}-vector.png`)
+            nowPlayingModEl.text(`${currentMappoolBeatmap.mod}${currentMappoolBeatmap.order}`)
+        } else {
+            nowPlayingBottomLeftVectorEl.attr("src", "static/vectors/NO-vector.png")
+            nowPlayingModEl.text(``)
+        }
     }
 })
