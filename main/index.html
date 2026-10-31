@@ -15,18 +15,22 @@
 
     <!-- JQuery -->
     <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
+    <script src="../_shared/deps/countUp.js"></script>
+    <script src="../_shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="https://unpkg.com/axios@1.21.0/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="overlay">
         <div class="background-image"></div>
+        <div class="greenscreen"></div>
 
         <!-- Team Sections -->
-        <div class="team-section left-team-section">
-            <div class="team-seed">#3</div>
+        <div class="team-section team-section-left">
+            <div class="team-seed" id="team-seed-left">#3</div>
             <div class="team-section-inner">
                 <div class="team-name-flag">
-                    <img class="team-flag" src="https://osuflags.omkserver.nl/ES-1000.png">
-                    <div class="team-name">Spain</div>
+                    <img class="team-flag" id="team-flag-left" src="https://osuflags.omkserver.nl/ES-1000.png">
+                    <div class="team-name" id="team-name-left">Spain</div>
                 </div>
                 <div class="team-star-container">
                     <img src="../_shared/assets/star/star-fill.png">
@@ -40,14 +44,14 @@
                 </div>
             </div>
         </div>
-        <div class="team-section right-team-section">
-            <div class="team-seed">#12</div>
+        <div class="team-section team-section-right">
+            <div class="team-seed" id="team-seed-right">#12</div>
             <div class="team-section-inner">
-                <div class="team-name-flag right-team-name-flag">
-                    <img class="team-flag" src="https://osuflags.omkserver.nl/PL-1000.png">
-                    <div class="team-name">Poland</div>
+                <div class="team-name-flag team-name-flag-right">
+                    <img class="team-flag" id="team-flag-right" src="https://osuflags.omkserver.nl/PL-1000.png">
+                    <div class="team-name" id="team-name-right">Poland</div>
                 </div>
-                <div class="team-star-container right-team-star-container">
+                <div class="team-star-container team-star-container-right">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
@@ -61,21 +65,49 @@
         </div>
 
         <!-- Round Name -->
-        <div class="round-name">Round of 32</div>
+        <div class="round-name" id="round-name">Round of 32</div>
 
         <!-- Score Bar -->
-        <div class="score-bar score-bar-left"></div>
-        <div class="score-bar score-bar-right"></div>
+        <div class="score-bar score-bar-left" id="score-bar-left"></div>
+        <div class="score-bar score-bar-right" id="score-bar-right"></div>
 
         <!-- Scores -->
-        <div class="score score-left score-lead">345,432</div>
-        <div class="score score-right">345,432</div>
+        <div class="score score-left score-lead" id="score-left">345,432</div>
+        <div class="score score-right" id="score-right">345,432</div>
 
         <!-- Sponsors -->
         <div class="sponsors">
             <img class="acrid-sponsor" src="../_shared/assets/sponsors/Acrid Covers Logo Beige.png">
             <img class="kagami-sponsor" src="../_shared/assets/sponsors/Kagami Studio Logo Beige.png">
             <img class="sliderpals-sponsor" src="../_shared/assets/sponsors/SliderPals Logo Beige.png">
+        </div>
+
+        <!-- Now Playing -->
+        <div class="now-playing-section">
+            <div class="now-playing-background" id="now-playing-background"></div>
+            <div class="now-playing-metadata now-playing-artist" id="now-playing-artist">FELT</div>
+            <div class="now-playing-metadata now-playing-title" id="now-playing-title">Lost My Way</div>
+            <div class="now-playing-metadata now-playing-difficulty-mapper"><span id="now-playing-difficulty">Absolution</span> mapped by <span id="now-playing-mapper">RLC</span></div>
+            <div class="now-playing-stats-icon-container">
+                <div><img class="now-playing-stat-icon" src="static/now-playing-icons/CS.png"></div>
+                <div><img class="now-playing-stat-icon" src="static/now-playing-icons/AR.png"></div>
+                <div><img class="now-playing-stat-icon" src="static/now-playing-icons/HP.png"></div>
+                <div><img class="now-playing-stat-icon" src="static/now-playing-icons/OD.png"></div>
+            </div>
+            <div class="now-playing-stats-text-container">
+                <div id="now-playing-stats-text-cs">4</div>
+                <div id="now-playing-stats-text-ar">9.5</div>
+                <div id="now-playing-stats-text-hp">6</div>
+                <div id="now-playing-stats-text-od">8.8</div>
+            </div>
+        </div>
+        <img class="now-playing-bottom-left-vector" id="now-playing-bottom-left-vector" src="static/vectors/FM-vector.png">
+        <img class="now-playing-top-right-vector" src="static/vectors/top-right-vector.png">
+        <div class="now-playing-mod" id="now-playing-mod">FM1</div>
+        <div class="now-playing-stats-line">
+            <div>SR <span class="now-playing-stats-line-number" id="now-playing-stats-line-sr">6.57</span></div>
+            <div>BPM <span class="now-playing-stats-line-number" id="now-playing-stats-line-bpm">240</span></div>
+            <div>Duration <span class="now-playing-stats-line-number" id="now-playing-stats-line-len">6:09</span></div>
         </div>
     </div>
 
