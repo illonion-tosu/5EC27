@@ -193,6 +193,10 @@
     left: 188px;
     font-family: "Cormorant Infant", serif;
     font-weight: 700;
+    width: 340px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .now-playing-artist {

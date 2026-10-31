@@ -35,6 +35,20 @@ function setTeamDetails(teamName, side) {
     return teamName
 }
 
+// Now Playing
+const nowPlayingBackgroundEl = $("#now-playing-background")
+const nowPlayingArtistEl = $("#now-playing-artist")
+const nowPlayingTitleEl = $("#now-playing-title")
+const nowPlayingDifficultyEl = $("#now-playing-difficulty")
+const nowPlayingMapperEl = $("#now-playing-mapper")
+let currentNowPlayingId, currentNowPlayingChecksum
+
+// Scores
+const scoreBarLeftEl = $("score-bar-left")
+const scoreBarRightEl = $("score-bar-right")
+const scoreLeftEl = $("score-left")
+const scoreRightEl = $("score-right")
+
 // Socket
 const socket = createTosuWsSocket()
 const $socketHub = $(socket)
@@ -50,5 +64,20 @@ $socketHub.on("message", event => {
     }
     if (currentTeamNameRight !== teamNames.right && allTeams) {
         currentTeamNameRight = setTeamDetails(teamNames.right, "right")
+    }
+
+    // Now Playing Data
+    const beatmapData = data.beatmap
+    if (currentNowPlayingId !== beatmapData.id || currentNowPlayingChecksum !== beatmapData.checksum) {
+        currentNowPlayingId = beatmapData.id
+        currentNowPlayingChecksum = beatmapData.checksum
+
+        const background = data.directPath?.beatmapBackground
+        const url = `${window.location.origin}/Songs/${background}`
+        nowPlayingBackgroundEl.css("background-image", `url("${encodeURI(url.replaceAll("\\", "/"))}")`)
+        nowPlayingArtistEl.text(beatmapData.artist)
+        nowPlayingTitleEl.text(beatmapData.title)
+        nowPlayingDifficultyEl.text(beatmapData.version)
+        nowPlayingMapperEl.text(beatmapData.mapper)
     }
 })
