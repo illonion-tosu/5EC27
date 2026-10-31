@@ -60,6 +60,11 @@ const scoreBarLeftEl = $("#score-bar-left")
 const scoreBarRightEl = $("#score-bar-right")
 const scoreLeftEl = $("#score-left")
 const scoreRightEl = $("#score-right")
+const animations = {
+    scoreLeft: new CountUp(scoreLeftEl[0], 0, 0, 0, 0.2, { useEasing: true, useGrouping: true, separator: ",", decimal: ".", suffix: ""}),
+    scoreRight: new CountUp(scoreRightEl[0], 0, 0, 0, 0.2, { useEasing: true, useGrouping: true, separator: ",", decimal: ".", suffix: ""}),
+}
+let currentScoreLeft, currentScoreRight
 
 // Socket
 const socket = createTosuWsSocket()
@@ -70,11 +75,11 @@ $socketHub.on("message", async event => {
     console.log(data)
 
     const teamNames = data.tourney.team
-    if (currentTeamNameLeft !== teamNames.left || !allTeams) {
+    if (currentTeamNameLeft !== teamNames.left && allTeams) {
         setTeamDetails(teamNames.left, "left")
         currentTeamNameLeft = teamNames.left
     }
-    if (currentTeamNameRight !== teamNames.right || !allTeams) {
+    if (currentTeamNameRight !== teamNames.right && allTeams) {
         setTeamDetails(teamNames.right, "right")
         currentTeamNameRight = teamNames.right
     }
@@ -135,5 +140,38 @@ $socketHub.on("message", async event => {
         nowPlayingStatsLineSrEl.text(statsData.stars.total.toFixed(2))
         nowPlayingStatsLineBpmEl.text(statsData.bpm.common.toFixed(0))
         nowPlayingStatsLineLenEl.text(setLengthDisplay(Math.round((beatmapData.time.lastObject - beatmapData.time.firstObject) / 1000)))
+    }
+
+    // Scores
+    currentScoreLeft = 0
+    currentScoreRight = 0
+
+    const clients = data.tourney.clients
+    for (let i = 0; i < clients.length; i++) {
+        const client = clients[i]
+        let score = client.play.score
+        if (currentMappoolBeatmap &&
+            currentMappoolBeatmap.mod === "FM" &&
+            client.mods.name.includes("EZ") &&
+            currentMappoolBeatmap.EZMultiplier
+        ) {
+            score *= currentMappoolBeatmap.EZMultiplier
+        }
+        if (client.team === "left") currentScoreLeft += score
+        else currentScoreRight += score
+    }
+
+    animations.scoreLeft.update(currentScoreLeft)
+    animations.scoreRight.update(currentScoreRight)
+
+    if (currentScoreLeft > currentScoreRight) {
+        scoreLeftEl.addClass("score-lead")
+        scoreRightEl.removeClass("score-lead")
+    } else if (currentScoreLeft === currentScoreRight) {
+        scoreLeftEl.removeClass("score-lead")
+        scoreRightEl.removeClass("score-lead")
+    } else if (currentScoreLeft < currentScoreRight) {
+        scoreLeftEl.removeClass("score-lead")
+        scoreRightEl.addClass("score-lead")  
     }
 })
