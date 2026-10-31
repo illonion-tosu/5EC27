@@ -20,8 +20,8 @@ function setTeamDetails(teamName, side) {
 const socket = createTosuWsSocket()
 const $socketHub = $(socket)
 
-$socketHub.on("message" = event => {
-    const data = $.parseJSON(event.originalEvent.data)
+$socketHub.on("message", event => {
+    const data = JSON.parse(event.originalEvent.data)
     console.log(data)
 
     // Team Info
