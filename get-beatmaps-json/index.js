@@ -26,15 +26,15 @@ async function getBeatmaps() {
         const osuMapResponse = await fetch(`https://osu.ppy.sh/api/get_beatmaps?k=${osuApi}&b=${allBeatmaps[i].beatmap_id}&mods=${modNumber}`)
         await delay(1000)
         const osuMapResponseJson = await osuMapResponse.json()
-        if (!responseJson[0]) {
+        if (!osuMapResponseJson[0]) {
             console.warn(`No beatmap found for ${allBeatmaps[i].label} (${allBeatmaps[i].beatmap_id}), skipping`)
             continue
         }
         osuMapResponseJson[0].order = allBeatmaps[i].order
         osuMapResponseJson[0].mod = allBeatmaps[i].mod
-        if (allBeatmaps[i].EZMultiplier) responseJson[0].EZMultiplier = allBeatmaps[i].EZMultiplier
+        if (allBeatmaps[i].EZMultiplier) osuMapResponseJson[0].EZMultiplier = allBeatmaps[i].EZMultiplier
         
-        allBeatmapsJson.push(responseJson[0])
+        allBeatmapsJson.push(osuMapResponseJson[0])
     }
 
     const fullJson = {
