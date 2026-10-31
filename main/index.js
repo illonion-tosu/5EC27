@@ -1,5 +1,6 @@
 import { loadBeatmaps, findBeatmap } from "../_shared/core/beatmaps.js"
 import { loadTeams, findTeam } from "../_shared/core/teams.js"
+import { delay, getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Round Name
@@ -23,16 +24,15 @@ let currentTeamNameLeft, currentTeamNameRight
  * Updates the team display elements on the page.
  * @param {string} teamName - The name of the team.
  * @param {string} side - Either "left" or "right".
- * @returns {string} The updated team name.
+ * @returns {string|null} The updated team name or null if team not found.
  */
 function setTeamDetails(teamName, side) {
     const currentTeam = findTeam(teamName)
-    if (!currentTeam) return
+    if (!currentTeam) return null
 
     $(`#team-seed-${side}`).text(`#${currentTeam.seed}`)
     $(`#team-flag-${side}`).attr("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
     $(`#team-name-${side}`).text(teamName)
-    return teamName
 }
 
 // Now Playing
@@ -45,6 +45,16 @@ const nowPlayingBottomLeftVectorEl = $("#now-playing-bottom-left-vector")
 const nowPlayingModEl = $("#now-playing-mod")
 let currentNowPlayingId, currentNowPlayingChecksum, currentMappoolBeatmap
 
+// Now Playing Stats — FIXED: Added missing '#' characters
+const nowPlayingStatsTextCsEl = $("#now-playing-stats-text-cs")
+const nowPlayingStatsTextArEl = $("#now-playing-stats-text-ar")
+const nowPlayingStatsTextHpEl = $("#now-playing-stats-text-hp")
+const nowPlayingStatsTextOdEl = $("#now-playing-stats-text-od")
+const nowPlayingStatsLineSrEl = $("#now-playing-stats-line-sr")
+const nowPlayingStatsLineBpmEl = $("#now-playing-stats-line-bpm")
+const nowPlayingStatsLineLenEl = $("#now-playing-stats-line-len")
+let updateStats, currentTime
+
 // Scores
 const scoreBarLeftEl = $("#score-bar-left")
 const scoreBarRightEl = $("#score-bar-right")
@@ -55,17 +65,18 @@ const scoreRightEl = $("#score-right")
 const socket = createTosuWsSocket()
 const $socketHub = $(socket)
 
-$socketHub.on("message", event => {
+$socketHub.on("message", async event => {
     const data = JSON.parse(event.originalEvent.data)
     console.log(data)
 
-    // Team Info
     const teamNames = data.tourney.team
-    if (currentTeamNameLeft !== teamNames.left && allTeams) {
-        currentTeamNameLeft = setTeamDetails(teamNames.left, "left")
+    if (currentTeamNameLeft !== teamNames.left || !allTeams) {
+        setTeamDetails(teamNames.left, "left")
+        currentTeamNameLeft = teamNames.left
     }
-    if (currentTeamNameRight !== teamNames.right && allTeams) {
-        currentTeamNameRight = setTeamDetails(teamNames.right, "right")
+    if (currentTeamNameRight !== teamNames.right || !allTeams) {
+        setTeamDetails(teamNames.right, "right")
+        currentTeamNameRight = teamNames.right
     }
 
     // Now Playing Data
@@ -73,6 +84,7 @@ $socketHub.on("message", event => {
     if (currentNowPlayingId !== beatmapData.id || currentNowPlayingChecksum !== beatmapData.checksum) {
         currentNowPlayingId = beatmapData.id
         currentNowPlayingChecksum = beatmapData.checksum
+        updateStats = false
 
         const background = data.directPath?.beatmapBackground
         const url = `${window.location.origin}/Songs/${background}`
@@ -86,9 +98,42 @@ $socketHub.on("message", event => {
         if (currentMappoolBeatmap) {
             nowPlayingBottomLeftVectorEl.attr("src", `static/vectors/${currentMappoolBeatmap.mod}-vector.png`)
             nowPlayingModEl.text(`${currentMappoolBeatmap.mod}${currentMappoolBeatmap.order}`)
+
+            const stats = getModDetails(
+                Number(currentMappoolBeatmap.diff_size),
+                Number(currentMappoolBeatmap.diff_approach),
+                Number(currentMappoolBeatmap.diff_overall),
+                Number(currentMappoolBeatmap.diff_drain),
+                Number(currentMappoolBeatmap.bpm),
+                Number(currentMappoolBeatmap.total_length),
+                currentMappoolBeatmap.mod
+            )
+
+            nowPlayingStatsTextCsEl.text(stats.cs.toFixed(1))
+            nowPlayingStatsTextArEl.text(stats.ar.toFixed(1))
+            nowPlayingStatsTextHpEl.text(stats.hp.toFixed(1))
+            nowPlayingStatsTextOdEl.text(stats.od.toFixed(1))
+            nowPlayingStatsLineSrEl.text(Number(currentMappoolBeatmap.difficultyrating).toFixed(2))
+            nowPlayingStatsLineBpmEl.text(stats.bpm.toFixed(0))
+            nowPlayingStatsLineLenEl.text(setLengthDisplay(stats.len))
         } else {
             nowPlayingBottomLeftVectorEl.attr("src", "static/vectors/NO-vector.png")
             nowPlayingModEl.text(``)
+
+            currentTime = Date.now()
+            updateStats = true
         }
+    }
+
+    const statsData = beatmapData.stats
+    if (updateStats && Date.now() > 250 + currentTime) {
+        updateStats = false
+        nowPlayingStatsTextCsEl.text(statsData.cs.converted.toFixed(1))
+        nowPlayingStatsTextArEl.text(statsData.ar.converted.toFixed(1))
+        nowPlayingStatsTextHpEl.text(statsData.hp.converted.toFixed(1))
+        nowPlayingStatsTextOdEl.text(statsData.od.converted.toFixed(1))
+        nowPlayingStatsLineSrEl.text(statsData.stars.total.toFixed(2))
+        nowPlayingStatsLineBpmEl.text(statsData.bpm.common.toFixed(0))
+        nowPlayingStatsLineLenEl.text(setLengthDisplay(Math.round((beatmapData.time.lastObject - beatmapData.time.firstObject) / 1000)))
     }
 })
