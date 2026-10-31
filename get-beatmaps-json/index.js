@@ -3,17 +3,17 @@ import { delay } from "../_shared/core/utils.js"
 // Load osu! api
 let osuApi
 async function getApi() {
-    const response = await fetch("../_data/osu-api.json")
-    const responseJson = await response.json()
-    osuApi = responseJson.api
+    const apiResponse = await fetch("../_data/osu-api.json")
+    const apiResponseJson = await response.json()
+    osuApi = apiResponseJson.api
 }
 
 async function getBeatmaps() {
     const allBeatmapsJson = []
-    const response = await fetch("../_data/beatmaps-base.json")
-    const responseJson = await response.json()
-    const allBeatmaps = responseJson.beatmaps
-    const roundName = responseJson.roundName
+    const beatmapsBaseResponse = await fetch("../_data/beatmaps-base.json")
+    const beatmapsBaseResponseJson = await response.json()
+    const allBeatmaps = beatmapsBaseResponseJson.beatmaps
+    const roundName = beatmapsBaseResponseJson.roundName
 
     for (let i = 0; i < allBeatmaps.length; i++) {
         // Set mod number
@@ -23,17 +23,16 @@ async function getBeatmaps() {
         if (allBeatmaps[i].mod.includes("DT")) modNumber += 64
         
         // Get API response
-        const response = await fetch(`https://osu.ppy.sh/api/get_beatmaps?k=${osuApi}&b=${allBeatmaps[i].beatmap_id}&mods=${modNumber}`)
+        const osuMapResponse = await fetch(`https://osu.ppy.sh/api/get_beatmaps?k=${osuApi}&b=${allBeatmaps[i].beatmap_id}&mods=${modNumber}`)
         await delay(1000)
-        const responseJson = await response.json()
+        const osuMapResponseJson = await response.json()
         if (!responseJson[0]) {
             console.warn(`No beatmap found for ${allBeatmaps[i].label} (${allBeatmaps[i].beatmap_id}), skipping`)
             continue
         }
-        responseJson[0].label = allBeatmaps[i].label
-        responseJson[0].mod = allBeatmaps[i].mod
-        responseJson[0].isTiebreaker = Boolean(allBeatmaps[i].isTiebreaker)
-        if (["FM", "FCM", "TB", "FLX"].includes(allBeatmaps[i].mod)) responseJson[0].EZMultiplier = allBeatmaps[i].EZMultiplier
+        osuMapResponseJson[0].order = allBeatmaps[i].order
+        osuMapResponseJson[0].mod = allBeatmaps[i].mod
+        if (allBeatmaps[i].EZMultiplier) responseJson[0].EZMultiplier = allBeatmaps[i].EZMultiplier
         
         allBeatmapsJson.push(responseJson[0])
     }
