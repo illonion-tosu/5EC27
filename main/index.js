@@ -3,6 +3,11 @@ import { loadTeams, findTeam } from "../_shared/core/teams.js"
 import { delay, getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
+// Constants
+const SCORE_BAR_MAX_WIDTH = 960
+const SCORE_BAR_MAX_DIFFERENCE = 1000000
+const SCORE_BAR_EXPONENT = 1.4
+
 // Round Name
 const roundNameEl = $("#round-name")
 
@@ -21,10 +26,10 @@ loadTeams().then(teams => { allTeams = teams })
 let currentTeamNameLeft, currentTeamNameRight
 
 /**
- * Updates the team display elements on the page.
- * @param {string} teamName - The name of the team.
- * @param {string} side - Either "left" or "right".
- * @returns {string|null} The updated team name or null if team not found.
+ * Updates the team display elements (seed, flag, name) for one side.
+ * @param {string} teamName - The team name as reported by the tourney client.
+ * @param {"left"|"right"} side - Which side of the overlay to update.
+ * @returns {void}
  */
 function setTeamDetails(teamName, side) {
     const currentTeam = findTeam(teamName)
@@ -164,13 +169,27 @@ $socketHub.on("message", async event => {
     animations.scoreLeft.update(currentScoreLeft)
     animations.scoreRight.update(currentScoreRight)
 
+    // Score bar
+    const scoreDelta = Math.abs(currentScoreLeft - currentScoreRight)
+    const scoreBarDifferencePercent = Math.min(scoreDelta / SCORE_BAR_MAX_DIFFERENCE, 1)
+    const scoreBarRectangleWidth = Math.min(Math.pow(scoreBarDifferencePercent, SCORE_BAR_EXPONENT) * SCORE_BAR_MAX_WIDTH, SCORE_BAR_MAX_WIDTH)
+
     if (currentScoreLeft > currentScoreRight) {
+        scoreBarLeftEl.css("width", `${scoreBarRectangleWidth}px`)
+        scoreBarRightEl.css("width", `0px`)
+
         scoreLeftEl.addClass("score-lead")
         scoreRightEl.removeClass("score-lead")
     } else if (currentScoreLeft === currentScoreRight) {
+        scoreBarLeftEl.css("width", `0px`)
+        scoreBarRightEl.css("width", `0px`)
+
         scoreLeftEl.removeClass("score-lead")
         scoreRightEl.removeClass("score-lead")
     } else if (currentScoreLeft < currentScoreRight) {
+        scoreBarLeftEl.css("width", `0px`)
+        scoreBarRightEl.css("width", `${scoreBarRectangleWidth}px`)
+
         scoreLeftEl.removeClass("score-lead")
         scoreRightEl.addClass("score-lead")  
     }
