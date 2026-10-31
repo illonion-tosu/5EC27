@@ -82,16 +82,12 @@ This will include the mappool and gameplay scene, as well as a number of others
 [
     {
         "teamName": "Finland",
-        "ISO3166Alpha2" : "FI"
-        "seed" : 1
-        "player1Name" : "Player 1 Name"
-        "player2Name" : "Player 2 Name"
-        "player3Name" : "Player 3 Name"
-        "player4Name" : "Player 4 Name"
-        "player5Name" : "Player 5 Name"
-        "player6Name" : "Player 6 Name"
-        "player7Name" : "Player 7 Name"
-        "player8Name" : "Player 8 Name"
+        "ISO3166Alpha2" : "FI",
+        "seed" : 1,
+        "playerX" : {
+            "id": 12345678,
+            "name": "Fairy Bread
+        },
     }
 ]
 ```
@@ -101,4 +97,5 @@ This will include the mappool and gameplay scene, as well as a number of others
 | teamName | Name of team | string | "Finland" |
 | ISO3166Alpha2 | 2 Letter Country Code | string | "FI" |
 | seed | Team seed | number | 1 |
-| playerXName | Name of player | string | "Fairy Bread" |
+| playerX.id | Id of player | number | 12345678 |
+| playerX.name | Name of player | string | "Fairy Bread" |
