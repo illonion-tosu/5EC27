@@ -50,3 +50,24 @@
     font-size: 6rem;
     color: var(--light-red);
 }
+
+/* Last Year Information */
+.last-year-information-container {
+    position: absolute;
+    top: 308px;
+    left: 684px;
+    text-align: right;
+    display: flex;
+    gap: 49px;
+}
+
+.last-year-information-text {
+    color: var(--light-red);
+    font-size: 2.25rem;
+}
+
+.last-year-information-number {
+    color: var(--delicate-gold);
+    font-size: 3rem;
+    margin-top: -15px;
+}
