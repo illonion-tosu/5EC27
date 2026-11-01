@@ -1,5 +1,12 @@
 :root {
     --team-metadata-top: 157px;
+    --seed-left: 210px;
+}
+
+/* Overlay */
+.overlay {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
 }
 
 /* Background Image */
@@ -18,12 +25,28 @@
     height: var(--dimension);
 }
 
+/* Team Name */
 .team-name {
     position: absolute;
     top: var(--team-metadata-top);
     left: 323.5px;
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 4rem;
     color: var(--delicate-gold);
+}
+
+/* Seed Text */
+.seed-text {
+    position: absolute;
+    top: 249px;
+    left: var(--seed-left);
+    font-size: 3rem;
+    color: var(--light-red);
+}
+
+.seed-number {
+    position: absolute;
+    top: 292px;
+    left: var(--seed-left);
+    font-size: 6rem;
+    color: var(--light-red);
 }
