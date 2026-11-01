@@ -1,4 +1,29 @@
+:root {
+    --team-metadata-top: 157px;
+}
+
 /* Background Image */
 .background-image {
     background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Flag */
+.team-flag {
+    --dimension: 83.05px;
+
+    position: absolute;
+    top: var(--team-metadata-top);
+    left: 214px;
+    width: var(--dimension);
+    height: var(--dimension);
+}
+
+.team-name {
+    position: absolute;
+    top: var(--team-metadata-top);
+    left: 323.5px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--delicate-gold);
 }
