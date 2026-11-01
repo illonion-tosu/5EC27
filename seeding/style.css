@@ -1,0 +1,4 @@
+/* Background Image */
+.background-image {
+    background: url("static/background.png") center / cover no-repeat;
+}
