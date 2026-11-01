@@ -128,3 +128,34 @@
     gap: 11px;
     flex-direction: column;
 }
+
+.scores-container {
+    position: absolute;
+    top: 493px;
+    font-weight: 500;
+    font-size: 1.375rem;
+    width: 103.58px;
+    text-align: center;
+    color: var(--delicate-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 1.3px;
+}
+
+.nm1-scores-container { left: 453.61px; }
+.nm2-scores-container { left: 575.4px; }
+.nm3-scores-container { left: 697.19px; }
+.nm4-scores-container { left: 818.98px; }
+.nm5-scores-container { left: 940.76px; }
+.hd1-scores-container { left: 1062.55px; }
+.hd2-scores-container { left: 1184.34px; }
+.hr1-scores-container { left: 1306.13px; }
+.hr2-scores-container { left: 1427.92px; }
+.dt1-scores-container { left: 1549.71px; }
+.dt2-scores-container { left: 1671.5px; }
+.dt3-scores-container { left: 1793.28px; }
+
+.scores-container > * {
+    height: 43px;
+    line-height: 43px;
+}
