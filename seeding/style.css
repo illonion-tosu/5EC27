@@ -99,3 +99,32 @@
 .hd-mod { color: var(--hd-colour); }
 .hr-mod { color: var(--hr-colour); }
 .dt-mod { color: var(--dt-colour); }
+
+/* Player Rank Container */
+.player-rank-container {
+    position: absolute;
+    top: 497px;
+    left: 22px;
+    width: 402.29px;
+}
+
+.player-container {
+    color: var(--delicate-gold);
+    font-size: 1.7075rem;
+    display: flex;
+    gap: 11px;
+    flex-direction: column;
+}
+
+.rank-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    text-align: right;
+    color: var(--delicate-gold);
+    font-size: 1.7075rem;
+    display: flex;
+    gap: 11px;
+    flex-direction: column;
+}
