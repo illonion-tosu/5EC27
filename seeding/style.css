@@ -103,7 +103,7 @@
 /* Player Rank Container */
 .player-rank-container {
     position: absolute;
-    top: 497px;
+    top: 493px;
     left: 22px;
     width: 402.29px;
 }
@@ -112,7 +112,7 @@
     color: var(--delicate-gold);
     font-size: 1.7075rem;
     display: flex;
-    gap: 11px;
+    gap: 1.3px;
     flex-direction: column;
 }
 
@@ -125,8 +125,14 @@
     color: var(--delicate-gold);
     font-size: 1.7075rem;
     display: flex;
-    gap: 11px;
+    gap: 1.3px;
     flex-direction: column;
+}
+
+.player-container > *,
+.rank-container > * {
+    height: 43px;
+    line-height: 43px;
 }
 
 .scores-container {
