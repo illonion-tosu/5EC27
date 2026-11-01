@@ -1,0 +1,19 @@
+/* Overlay */
+.overlay {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+}
+
+/* Background Image */
+.background-image {
+    background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Section */
+.team-section {
+    top: 38px;
+}
+
+.round-name {
+    top: 43px;
+}

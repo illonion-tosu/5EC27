@@ -6,6 +6,7 @@
     <title>Mappool</title>
 
     <link rel="stylesheet" href="../_shared/css/common.css">
+    <link rel="stylesheet" href="../_shared/css/gameplay-mappool.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- Fonts -->
@@ -19,6 +20,51 @@
     <script src="https://unpkg.com/axios@1.21.0/dist/axios.min.js"></script>
 </head>
 <body>
+    <div class="overlay">
+        <div class="background-image"></div>
 
+        <!-- Team Sections -->
+        <div class="team-section team-section-left">
+            <div class="team-seed" id="team-seed-left">#3</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag">
+                    <img class="team-flag" id="team-flag-left" src="https://osuflags.omkserver.nl/ES-1000.png">
+                    <div class="team-name" id="team-name-left">Spain</div>
+                </div>
+                <div class="team-star-container">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                </div>
+            </div>
+        </div>
+        <div class="team-section team-section-right">
+            <div class="team-seed" id="team-seed-right">#12</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag team-name-flag-right">
+                    <img class="team-flag" id="team-flag-right" src="https://osuflags.omkserver.nl/PL-1000.png">
+                    <div class="team-name" id="team-name-right">Poland</div>
+                </div>
+                <div class="team-star-container team-star-container-right">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-fill.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                    <img src="../_shared/assets/star/star-empty.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- Round Name -->
+        <div class="round-name" id="round-name">Round of 32</div>
+    </div>
 </body>
 </html>
