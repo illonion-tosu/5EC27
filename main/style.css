@@ -11,6 +11,8 @@
 /* Overlay */
 .overlay {
     background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
 }
 
 /* Background Image */
@@ -37,8 +39,6 @@
 
 /* Team Seed */
 .team-seed {
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 3rem;
     color: var(--light-red);
     line-height: var(--team-section-top-height);
@@ -68,8 +68,6 @@
 
 /* Name */
 .team-name {
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 4rem;
     color: var(--delicate-gold);
 }
@@ -91,8 +89,6 @@
     top: 13px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 4.125rem;
     color: var(--delicate-gold);
 }
@@ -122,8 +118,6 @@
     top: 902px;
     height: 70px;
     line-height: 70px;
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 2.25rem;
 }
 
@@ -182,8 +176,6 @@
 .now-playing-metadata {
     position: absolute;
     left: 188px;
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     width: 340px;
     white-space: nowrap;
     overflow: hidden;
@@ -253,8 +245,6 @@
     height: var(--dimention);
     text-align: center;
     line-height: var(--dimension);
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 1.75rem;
     color: var(--delicate-gold);
 }
@@ -264,8 +254,6 @@
     position: absolute;
     left: 1165px;
     top: 1010px;
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 1.25rem;
     color: #2C010C
 }
@@ -288,8 +276,6 @@
     position: absolute;
     bottom: 9px;
     right: 19px;
-    font-family: "Cormorant Infant", serif;
-    font-weight: 700;
     font-size: 1.875em;
     display: flex;
     gap: 34px;
