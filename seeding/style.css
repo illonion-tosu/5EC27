@@ -190,3 +190,21 @@
 .scores-summary-first {
     color: #F0AB2B;
 }
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    right: 77px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 145.6px;
+}
+
+.sponsors > * {
+    max-height: 56px;
+}
