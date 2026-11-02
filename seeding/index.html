@@ -15,26 +15,27 @@
 
     <!-- JQuery -->
     <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
+    <script src="https://unpkg.com/axios@1.21.0/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="overlay">
         <div class="background-image"></div>
 
         <!-- Team Info -->
-        <img class="team-flag" src="https://osuflags.omkserver.nl/ES-1000.png">
-        <div class="team-name">Spain</div>
+        <img class="team-flag" id="team-flag" src="https://osuflags.omkserver.nl/ES-1000.png">
+        <div class="team-name" id="team-name">Spain</div>
         <div class="seed-text">Seed</div>
-        <div class="seed-number">#12</div>
+        <div class="seed-number" id="seed-number">#12</div>
 
         <!-- Last Year Info -->
         <div class="last-year-information-container">
             <div>
                 <div class="last-year-information-text">Last Year Placement</div>
-                <div class="last-year-information-number">#3</div>
+                <div class="last-year-information-number" id="last-year-placement">#3</div>
             </div>
             <div>
                 <div class="last-year-information-text">Last Year Seed</div>
-                <div class="last-year-information-number">#12</div>
+                <div class="last-year-information-number" id="last-year-seed">#12</div>
             </div>
         </div>
 
@@ -279,5 +280,6 @@
     </div>
 
     <script src="../_shared/core/sponsors.js"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>
