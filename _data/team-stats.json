@@ -1,0 +1,2834 @@
+[
+    {
+        "teamName": "Australia",
+        "ISO3166Alpha2": "AU",
+        "seed": 1,
+        "lastYearSeed": 16,
+        "lastYearPlacement": 1,
+        "player1": {
+            "name": "Shiviel",
+            "nm1Score": 991559,
+            "nm2Score": 645642,
+            "nm3Score": 0,
+            "nm4Score": 647595,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 624180,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 1034796,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "11iq pleer",
+            "nm1Score": 996549,
+            "nm2Score": 984178,
+            "nm3Score": 0,
+            "nm4Score": 924895,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 880796,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 1004530,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "Breast",
+            "nm1Score": 0,
+            "nm2Score": 675072,
+            "nm3Score": 0,
+            "nm4Score": 719413,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 694331,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 1080429,
+            "dt3Score": 1077975
+        },
+        "player4": {
+            "name": "origin_",
+            "nm1Score": 810669,
+            "nm2Score": 976414,
+            "nm3Score": 0,
+            "nm4Score": 696918,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 647829,
+            "dt2Score": 721486,
+            "dt3Score": 692620
+        },
+        "player5": {
+            "name": "EulaFootEnjoyer",
+            "nm1Score": 994377,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 1087743,
+            "dt3Score": 687383
+        },
+        "player6": {
+            "name": "RMEfan",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "KC Aqua",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 699266,
+            "dt2Score": 727275,
+            "dt3Score": 1097923
+        },
+        "player8": {
+            "name": "netraena",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 438426,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3793154",
+                "rank": 2
+            },
+            "nm2": {
+                "score": "3281306",
+                "rank": 3
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2988821",
+                "rank": 2
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "0",
+                "rank": 13
+            },
+            "hd2": {
+                "score": "2637733",
+                "rank": 4
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "0",
+                "rank": 15
+            },
+            "dt1": {
+                "score": "3386421",
+                "rank": 6
+            },
+            "dt2": {
+                "score": "3616933",
+                "rank": 3
+            },
+            "dt3": {
+                "score": "3555901",
+                "rank": 2
+            }
+        }
+    },
+    {
+        "teamName": "Belgium",
+        "ISO3166Alpha2": "BE",
+        "seed": 2,
+        "lastYearSeed": 15,
+        "lastYearPlacement": 2,
+        "player1": {
+            "name": "SMASHCAE",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 554875,
+            "nm5Score": 0,
+            "hd1Score": 785091,
+            "hd2Score": 665841,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 1134204,
+            "dt3Score": 1081229
+        },
+        "player2": {
+            "name": "Taldux",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 507554,
+            "hd2Score": 531192,
+            "hr1Score": 0,
+            "hr2Score": 548318,
+            "dt1Score": 0,
+            "dt2Score": 688867,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "BlankTap",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 623999,
+            "nm5Score": 0,
+            "hd1Score": 495833,
+            "hd2Score": 546268,
+            "hr1Score": 0,
+            "hr2Score": 896337,
+            "dt1Score": 1035163,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Amuro",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 962498,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 946003,
+            "dt1Score": 764024,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Merucy",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 610313
+        },
+        "player6": {
+            "name": "micro",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 998057,
+            "dt1Score": 1024957,
+            "dt2Score": 444133,
+            "dt3Score": 1095525
+        },
+        "player7": {
+            "name": "Tutka",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 895760,
+            "nm5Score": 0,
+            "hd1Score": 499196,
+            "hd2Score": 557411,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "cnuy",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 647920,
+            "dt2Score": 1078146,
+            "dt3Score": 589322
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "3037132",
+                "rank": 1
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2287674",
+                "rank": 10
+            },
+            "hd2": {
+                "score": "2300712",
+                "rank": 9
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "3388715",
+                "rank": 3
+            },
+            "dt1": {
+                "score": "3472064",
+                "rank": 4
+            },
+            "dt2": {
+                "score": "3345350",
+                "rank": 4
+            },
+            "dt3": {
+                "score": "3376389",
+                "rank": 3
+            }
+        }
+    },
+    {
+        "teamName": "Brazil",
+        "ISO3166Alpha2": "BR",
+        "seed": 3,
+        "lastYearSeed": 14,
+        "lastYearPlacement": 3,
+        "player1": {
+            "name": "Read Horimiya",
+            "nm1Score": 0,
+            "nm2Score": 652872,
+            "nm3Score": 387597,
+            "nm4Score": 438664,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 1146686,
+            "dt2Score": 1163680,
+            "dt3Score": 1022133
+        },
+        "player2": {
+            "name": "Nyura",
+            "nm1Score": 994155,
+            "nm2Score": 0,
+            "nm3Score": 741027,
+            "nm4Score": 452695,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 946073,
+            "dt1Score": 1168297,
+            "dt2Score": 1163335,
+            "dt3Score": 678963
+        },
+        "player3": {
+            "name": "lonq noir",
+            "nm1Score": 978979,
+            "nm2Score": 640408,
+            "nm3Score": 0,
+            "nm4Score": 476063,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 640715,
+            "dt1Score": 1106141,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "beabadobee",
+            "nm1Score": 646956,
+            "nm2Score": 664487,
+            "nm3Score": 741640,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 997117,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 424205,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Stage my mommy",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 677643,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 945842
+        },
+        "player6": {
+            "name": "Walfrid",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 586974,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 602365,
+            "dt2Score": 748965,
+            "dt3Score": 1022223
+        },
+        "player7": {
+            "name": "AHotDawg",
+            "nm1Score": 733174,
+            "nm2Score": 608234,
+            "nm3Score": 0,
+            "nm4Score": 407993,
+            "nm5Score": 0,
+            "hd1Score": 669859,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 992352,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "HDDTHR",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 516548,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 686587,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3353264",
+                "rank": 5
+            },
+            "nm2": {
+                "score": "2566001",
+                "rank": 9
+            },
+            "nm3": {
+                "score": "2386812",
+                "rank": 1
+            },
+            "nm4": {
+                "score": "1775415",
+                "rank": 11
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2940537",
+                "rank": 2
+            },
+            "hd2": {
+                "score": "0",
+                "rank": 13
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2688636",
+                "rank": 11
+            },
+            "dt1": {
+                "score": "4023489",
+                "rank": 1
+            },
+            "dt2": {
+                "score": "4068332",
+                "rank": 2
+            },
+            "dt3": {
+                "score": "3669161",
+                "rank": 1
+            }
+        }
+    },
+    {
+        "teamName": "Canada",
+        "ISO3166Alpha2": "CA",
+        "seed": 4,
+        "lastYearSeed": 13,
+        "lastYearPlacement": 4,
+        "player1": {
+            "name": "-felicia",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 1030332,
+            "hd2Score": 597966,
+            "hr1Score": 0,
+            "hr2Score": 563824,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Nessy",
+            "nm1Score": 0,
+            "nm2Score": 969558,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 562781,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 992276,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 670005
+        },
+        "player3": {
+            "name": "shdewz",
+            "nm1Score": 0,
+            "nm2Score": 976132,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 684871,
+            "hd1Score": 0,
+            "hd2Score": 524623,
+            "hr1Score": 0,
+            "hr2Score": 1023399,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Scheinii",
+            "nm1Score": 0,
+            "nm2Score": 523005,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 971724,
+            "hd1Score": 952518,
+            "hd2Score": 629011,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Diaostrophism",
+            "nm1Score": 0,
+            "nm2Score": 755350,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 532384,
+            "hd1Score": 740428,
+            "hd2Score": 723592,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 1067700
+        },
+        "player6": {
+            "name": "Osage-chan",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 624188,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 682112,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 652339
+        },
+        "player7": {
+            "name": "JoshuaGC",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 561704
+        },
+        "player8": {
+            "name": "____________",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "3224045",
+                "rank": 4
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "0",
+                "rank": 13
+            },
+            "nm5": {
+                "score": "2813167",
+                "rank": 3
+            },
+            "hd1": {
+                "score": "3286059",
+                "rank": 1
+            },
+            "hd2": {
+                "score": "2475192",
+                "rank": 7
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "3261611",
+                "rank": 4
+            },
+            "dt1": {
+                "score": "0",
+                "rank": 15
+            },
+            "dt2": {
+                "score": "0",
+                "rank": 13
+            },
+            "dt3": {
+                "score": "2951748",
+                "rank": 7
+            }
+        }
+    },
+    {
+        "teamName": "Chile",
+        "ISO3166Alpha2": "CL",
+        "seed": 5,
+        "lastYearSeed": 12,
+        "lastYearPlacement": 5,
+        "player1": {
+            "name": "Mommy",
+            "nm1Score": 0,
+            "nm2Score": 474429,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 444641,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 651770,
+            "dt2Score": 0,
+            "dt3Score": 834678
+        },
+        "player2": {
+            "name": "karomi",
+            "nm1Score": 0,
+            "nm2Score": 982569,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 372737,
+            "hr2Score": 798148,
+            "dt1Score": 774221,
+            "dt2Score": 0,
+            "dt3Score": 577061
+        },
+        "player3": {
+            "name": "Juicy",
+            "nm1Score": 0,
+            "nm2Score": 960173,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 714325,
+            "hd1Score": 0,
+            "hd2Score": 501470,
+            "hr1Score": 507031,
+            "hr2Score": 990565,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "mihari",
+            "nm1Score": 0,
+            "nm2Score": 925791,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 594706,
+            "hd1Score": 0,
+            "hd2Score": 454164,
+            "hr1Score": 0,
+            "hr2Score": 832470,
+            "dt1Score": 1022407,
+            "dt2Score": 0,
+            "dt3Score": 665979
+        },
+        "player5": {
+            "name": "ikaenia",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 884464,
+            "hd1Score": 0,
+            "hd2Score": 592863,
+            "hr1Score": 945660,
+            "hr2Score": 992864,
+            "dt1Score": 589606,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "AccNome",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 691173,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 594585
+        },
+        "player7": {
+            "name": "Kamykazi",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 479063,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "owoMaxx",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "3342962",
+                "rank": 2
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "0",
+                "rank": 13
+            },
+            "nm5": {
+                "score": "2884668",
+                "rank": 2
+            },
+            "hd1": {
+                "score": "0",
+                "rank": 13
+            },
+            "hd2": {
+                "score": "1993138",
+                "rank": 12
+            },
+            "hr1": {
+                "score": "2304491",
+                "rank": 2
+            },
+            "hr2": {
+                "score": "3614047",
+                "rank": 1
+            },
+            "dt1": {
+                "score": "3038004",
+                "rank": 8
+            },
+            "dt2": {
+                "score": "0",
+                "rank": 13
+            },
+            "dt3": {
+                "score": "2672303",
+                "rank": 9
+            }
+        }
+    },
+    {
+        "teamName": "China",
+        "ISO3166Alpha2": "CN",
+        "seed": 6,
+        "lastYearSeed": 11,
+        "lastYearPlacement": 6,
+        "player1": {
+            "name": "_wonderer",
+            "nm1Score": 0,
+            "nm2Score": 504789,
+            "nm3Score": 437382,
+            "nm4Score": 430905,
+            "nm5Score": 0,
+            "hd1Score": 605130,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 653182,
+            "dt1Score": 997907,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "melwem",
+            "nm1Score": 1000000,
+            "nm2Score": 966455,
+            "nm3Score": 0,
+            "nm4Score": 601527,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 926009,
+            "dt1Score": 703424,
+            "dt2Score": 1122673,
+            "dt3Score": 977528
+        },
+        "player3": {
+            "name": "kendrekk lamar",
+            "nm1Score": 0,
+            "nm2Score": 604208,
+            "nm3Score": 530908,
+            "nm4Score": 945442,
+            "nm5Score": 0,
+            "hd1Score": 673540,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 618709,
+            "dt1Score": 821840,
+            "dt2Score": 881399,
+            "dt3Score": 974207
+        },
+        "player4": {
+            "name": "Bazingasdead",
+            "nm1Score": 972547,
+            "nm2Score": 0,
+            "nm3Score": 571960,
+            "nm4Score": 916721,
+            "nm5Score": 0,
+            "hd1Score": 559427,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Tuco",
+            "nm1Score": 652592,
+            "nm2Score": 949201,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 421374,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 625538,
+            "dt1Score": 0,
+            "dt2Score": 1045310,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "flowers",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 422648,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 490480
+        },
+        "player7": {
+            "name": "vinicius",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "mjmroh",
+            "nm1Score": 742575,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 504602,
+            "dt2Score": 1050241,
+            "dt3Score": 577712
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3367714",
+                "rank": 4
+            },
+            "nm2": {
+                "score": "3024653",
+                "rank": 7
+            },
+            "nm3": {
+                "score": "1962898",
+                "rank": 2
+            },
+            "nm4": {
+                "score": "2894595",
+                "rank": 3
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2259471",
+                "rank": 11
+            },
+            "hd2": {
+                "score": "0",
+                "rank": 13
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2823438",
+                "rank": 8
+            },
+            "dt1": {
+                "score": "3027773",
+                "rank": 9
+            },
+            "dt2": {
+                "score": "4099623",
+                "rank": 1
+            },
+            "dt3": {
+                "score": "3019927",
+                "rank": 6
+            }
+        }
+    },
+    {
+        "teamName": "Finland",
+        "ISO3166Alpha2": "FI",
+        "seed": 7,
+        "lastYearSeed": 10,
+        "lastYearPlacement": 7,
+        "player1": {
+            "name": "stanol",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 557245,
+            "nm5Score": 0,
+            "hd1Score": 622068,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 672805,
+            "dt1Score": 1141688,
+            "dt2Score": 735756,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Wanderio",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 766339,
+            "nm5Score": 0,
+            "hd1Score": 1026152,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 965426,
+            "dt1Score": 1097252,
+            "dt2Score": 453917,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "Tile",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 432318,
+            "nm5Score": 0,
+            "hd1Score": 428141,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 987425,
+            "dt1Score": 787856,
+            "dt2Score": 1145352,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "miss yo",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "kt09-",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 850021,
+            "nm5Score": 0,
+            "hd1Score": 625032,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Rinko Shirokane",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 702569,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "Redzy",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 683862,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "Lysitea",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 561144,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2605923",
+                "rank": 5
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2701393",
+                "rank": 5
+            },
+            "hd2": {
+                "score": "0",
+                "rank": 13
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "3186800",
+                "rank": 6
+            },
+            "dt1": {
+                "score": "3729365",
+                "rank": 3
+            },
+            "dt2": {
+                "score": "3018887",
+                "rank": 6
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    },
+    {
+        "teamName": "France",
+        "ISO3166Alpha2": "FR",
+        "seed": 8,
+        "lastYearSeed": 9,
+        "lastYearPlacement": 8,
+        "player1": {
+            "name": "KirbyTwister",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 950474,
+            "dt1Score": 1120316,
+            "dt2Score": 807008,
+            "dt3Score": 1107733
+        },
+        "player2": {
+            "name": "-Atour-",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 637344,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 599082,
+            "hr1Score": 0,
+            "hr2Score": 938908,
+            "dt1Score": 1116061,
+            "dt2Score": 636856,
+            "dt3Score": 1011085
+        },
+        "player3": {
+            "name": "P r a h",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 668140,
+            "nm5Score": 0,
+            "hd1Score": 656066,
+            "hd2Score": 393820,
+            "hr1Score": 0,
+            "hr2Score": 890604,
+            "dt1Score": 0,
+            "dt2Score": 497715,
+            "dt3Score": 385062
+        },
+        "player4": {
+            "name": "Garalulu",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Chloe Wing Kiu",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 626392,
+            "dt1Score": 973731,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Ievi-",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 373699,
+            "nm5Score": 0,
+            "hd1Score": 928455,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 787611,
+            "dt2Score": 841581,
+            "dt3Score": 713374
+        },
+        "player7": {
+            "name": "hubbawubba",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 688871,
+            "hd2Score": 394225,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "moosepi",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 405324,
+            "nm5Score": 0,
+            "hd1Score": 531627,
+            "hd2Score": 801584,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2084507",
+                "rank": 10
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2805019",
+                "rank": 4
+            },
+            "hd2": {
+                "score": "2188711",
+                "rank": 11
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "3406378",
+                "rank": 2
+            },
+            "dt1": {
+                "score": "3997719",
+                "rank": 2
+            },
+            "dt2": {
+                "score": "2783160",
+                "rank": 8
+            },
+            "dt3": {
+                "score": "3217254",
+                "rank": 4
+            }
+        }
+    },
+    {
+        "teamName": "Germany",
+        "ISO3166Alpha2": "DE",
+        "seed": 9,
+        "lastYearSeed": 8,
+        "lastYearPlacement": 9,
+        "player1": {
+            "name": "iFakeRz",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 447672,
+            "dt1Score": 525429,
+            "dt2Score": 454601,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Frodo",
+            "nm1Score": 984745,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 684684,
+            "nm5Score": 0,
+            "hd1Score": 697642,
+            "hd2Score": 544030,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 711512,
+            "dt2Score": 572270,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "shadevr",
+            "nm1Score": 987656,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 509568,
+            "hd2Score": 691408,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 1110780,
+            "dt2Score": 990562,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "DeathHydra",
+            "nm1Score": 979695,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 408023,
+            "nm5Score": 0,
+            "hd1Score": 614026,
+            "hd2Score": 904822,
+            "hr1Score": 0,
+            "hr2Score": 946806,
+            "dt1Score": 566513,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Kvik Bestun",
+            "nm1Score": 871862,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 699841,
+            "nm5Score": 0,
+            "hd1Score": 750679,
+            "hd2Score": 443379,
+            "hr1Score": 0,
+            "hr2Score": 467671,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "SilenceSuzuka",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 384591,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 848693,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "Hixia",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "day drinking",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 1072662,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3823958",
+                "rank": 1
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2177139",
+                "rank": 9
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2571915",
+                "rank": 8
+            },
+            "hd2": {
+                "score": "2583639",
+                "rank": 5
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2710842",
+                "rank": 10
+            },
+            "dt1": {
+                "score": "2914234",
+                "rank": 11
+            },
+            "dt2": {
+                "score": "3090095",
+                "rank": 5
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    },
+    {
+        "teamName": "Hong Kong",
+        "ISO3166Alpha2": "HK",
+        "seed": 10,
+        "lastYearSeed": 7,
+        "lastYearPlacement": 10,
+        "player1": {
+            "name": "zfr",
+            "nm1Score": 998144,
+            "nm2Score": 627804,
+            "nm3Score": 0,
+            "nm4Score": 504117,
+            "nm5Score": 445246,
+            "hd1Score": 1012439,
+            "hd2Score": 1021398,
+            "hr1Score": 0,
+            "hr2Score": 946155,
+            "dt1Score": 750938,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Cohue",
+            "nm1Score": 994900,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 842558,
+            "nm5Score": 742733,
+            "hd1Score": 530682,
+            "hd2Score": 646760,
+            "hr1Score": 0,
+            "hr2Score": 517881,
+            "dt1Score": 1119658,
+            "dt2Score": 516898,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "Hydrole",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Chheng",
+            "nm1Score": 620844,
+            "nm2Score": 526549,
+            "nm3Score": 0,
+            "nm4Score": 564707,
+            "nm5Score": 963928,
+            "hd1Score": 650963,
+            "hd2Score": 927875,
+            "hr1Score": 0,
+            "hr2Score": 323013,
+            "dt1Score": 0,
+            "dt2Score": 521819,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "wessel_osu2",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Sympli",
+            "nm1Score": 0,
+            "nm2Score": 666128,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 637830,
+            "dt1Score": 535575,
+            "dt2Score": 557068,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "Vertarix",
+            "nm1Score": 984962,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 522169,
+            "hd1Score": 495740,
+            "hd2Score": 862812,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "rety",
+            "nm1Score": 0,
+            "nm2Score": 848829,
+            "nm3Score": 0,
+            "nm4Score": 912795,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 1060791,
+            "dt2Score": 1034206,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3598850",
+                "rank": 3
+            },
+            "nm2": {
+                "score": "2669310",
+                "rank": 8
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2824177",
+                "rank": 4
+            },
+            "nm5": {
+                "score": "2674076",
+                "rank": 5
+            },
+            "hd1": {
+                "score": "2689824",
+                "rank": 6
+            },
+            "hd2": {
+                "score": "3458845",
+                "rank": 1
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2424879",
+                "rank": 14
+            },
+            "dt1": {
+                "score": "3466962",
+                "rank": 5
+            },
+            "dt2": {
+                "score": "2629991",
+                "rank": 10
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    },
+    {
+        "teamName": "Indonesia",
+        "ISO3166Alpha2": "ID",
+        "seed": 11,
+        "lastYearSeed": 6,
+        "lastYearPlacement": 11,
+        "player1": {
+            "name": "212",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Sandron",
+            "nm1Score": 0,
+            "nm2Score": 996629,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 445028,
+            "hr1Score": 809657,
+            "hr2Score": 617687,
+            "dt1Score": 1082707,
+            "dt2Score": 0,
+            "dt3Score": 478999
+        },
+        "player3": {
+            "name": "WooperFan1",
+            "nm1Score": 0,
+            "nm2Score": 1000000,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 474791,
+            "hr2Score": 609251,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Barbone",
+            "nm1Score": 0,
+            "nm2Score": 660082,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 822498,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 508739,
+            "hr2Score": 0,
+            "dt1Score": 777204,
+            "dt2Score": 0,
+            "dt3Score": 745527
+        },
+        "player5": {
+            "name": "soft bunny",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 493555,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Konetto",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "so far so good",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 635854,
+            "hd1Score": 0,
+            "hd2Score": 469381,
+            "hr1Score": 0,
+            "hr2Score": 957167,
+            "dt1Score": 587112,
+            "dt2Score": 0,
+            "dt3Score": 623731
+        },
+        "player8": {
+            "name": "Jontea",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 593697,
+            "hd1Score": 0,
+            "hd2Score": 988652,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "3167754",
+                "rank": 5
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "0",
+                "rank": 13
+            },
+            "nm5": {
+                "score": "2678113",
+                "rank": 4
+            },
+            "hd1": {
+                "score": "0",
+                "rank": 13
+            },
+            "hd2": {
+                "score": "2396616",
+                "rank": 8
+            },
+            "hr1": {
+                "score": "2330252",
+                "rank": 1
+            },
+            "hr2": {
+                "score": "3211644",
+                "rank": 5
+            },
+            "dt1": {
+                "score": "3026869",
+                "rank": 10
+            },
+            "dt2": {
+                "score": "0",
+                "rank": 13
+            },
+            "dt3": {
+                "score": "2917040",
+                "rank": 8
+            }
+        }
+    },
+    {
+        "teamName": "Italy",
+        "ISO3166Alpha2": "IT",
+        "seed": 12,
+        "lastYearSeed": 5,
+        "lastYearPlacement": 12,
+        "player1": {
+            "name": "EPEMA",
+            "nm1Score": 0,
+            "nm2Score": 938198,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 987516,
+            "hd1Score": 1026334,
+            "hd2Score": 1036524,
+            "hr1Score": 0,
+            "hr2Score": 583427,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "El Condor Pasa",
+            "nm1Score": 0,
+            "nm2Score": 787472,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 457717,
+            "hd1Score": 556219,
+            "hd2Score": 428055,
+            "hr1Score": 0,
+            "hr2Score": 735007,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 596707
+        },
+        "player3": {
+            "name": "Lukiii",
+            "nm1Score": 0,
+            "nm2Score": 768404,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 749388,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 757383,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 1106399
+        },
+        "player4": {
+            "name": "DarkScrap",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 344132,
+            "hd2Score": 431615,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 606693
+        },
+        "player5": {
+            "name": "Herazu",
+            "nm1Score": 0,
+            "nm2Score": 645453,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 719618,
+            "hd2Score": 391243,
+            "hr1Score": 0,
+            "hr2Score": 494574,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Miisted",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "TobseN",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 402452,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 868328
+        },
+        "player8": {
+            "name": "Kwichi",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "3139527",
+                "rank": 6
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "0",
+                "rank": 13
+            },
+            "nm5": {
+                "score": "2597073",
+                "rank": 6
+            },
+            "hd1": {
+                "score": "2646303",
+                "rank": 7
+            },
+            "hd2": {
+                "score": "2287437",
+                "rank": 10
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2570391",
+                "rank": 13
+            },
+            "dt1": {
+                "score": "0",
+                "rank": 15
+            },
+            "dt2": {
+                "score": "0",
+                "rank": 13
+            },
+            "dt3": {
+                "score": "3178127",
+                "rank": 5
+            }
+        }
+    },
+    {
+        "teamName": "Netherlands",
+        "ISO3166Alpha2": "NL",
+        "seed": 13,
+        "lastYearSeed": 4,
+        "lastYearPlacement": 13,
+        "player1": {
+            "name": "gecseboti",
+            "nm1Score": 633843,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 646133,
+            "nm5Score": 0,
+            "hd1Score": 586437,
+            "hd2Score": 472696,
+            "hr1Score": 0,
+            "hr2Score": 718096,
+            "dt1Score": 0,
+            "dt2Score": 858108,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Hellbeak",
+            "nm1Score": 612681,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 330697,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 630426,
+            "dt1Score": 1162809,
+            "dt2Score": 579021,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "Raoul",
+            "nm1Score": 921311,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 668254,
+            "dt1Score": 599796,
+            "dt2Score": 587985,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Poke714",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 642314,
+            "nm5Score": 0,
+            "hd1Score": 577167,
+            "hd2Score": 552239,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 905529,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Mejiro McQueen",
+            "nm1Score": 901476,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 723424,
+            "nm5Score": 0,
+            "hd1Score": 1007728,
+            "hd2Score": 920131,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Nicolaa",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "-Tynamo",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 669665,
+            "hd2Score": 597104,
+            "hr1Score": 0,
+            "hr2Score": 722169,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "baliiii",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 487813,
+            "dt2Score": 386552,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3069311",
+                "rank": 7
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2342568",
+                "rank": 6
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2840997",
+                "rank": 3
+            },
+            "hd2": {
+                "score": "2542170",
+                "rank": 6
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2738945",
+                "rank": 9
+            },
+            "dt1": {
+                "score": "3155947",
+                "rank": 7
+            },
+            "dt2": {
+                "score": "2411666",
+                "rank": 12
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    },
+    {
+        "teamName": "New Zealand",
+        "ISO3166Alpha2": "NZ",
+        "seed": 14,
+        "lastYearSeed": 3,
+        "lastYearPlacement": 14,
+        "player1": {
+            "name": "-ktrihc",
+            "nm1Score": 555865,
+            "nm2Score": 938804,
+            "nm3Score": 0,
+            "nm4Score": 448365,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 976964,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 633416,
+            "dt2Score": 427627,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "vljoy209",
+            "nm1Score": 998338,
+            "nm2Score": 994611,
+            "nm3Score": 0,
+            "nm4Score": 843420,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 767964,
+            "dt2Score": 1160758,
+            "dt3Score": 712253
+        },
+        "player3": {
+            "name": "Menoji",
+            "nm1Score": 655338,
+            "nm2Score": 746273,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 768109,
+            "dt2Score": 715948,
+            "dt3Score": 525070
+        },
+        "player4": {
+            "name": "Christiaaan",
+            "nm1Score": 0,
+            "nm2Score": 737574,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 514595,
+            "dt3Score": 725853
+        },
+        "player5": {
+            "name": "RAiMEi_BOTTliUM",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 970353,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Jotmo",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 565921,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 593112,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "maTT4132",
+            "nm1Score": 696204,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 343129,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 571641,
+            "dt2Score": 0,
+            "dt3Score": 301845
+        },
+        "player8": {
+            "name": "-Yuyuko-",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 378336,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "2905745",
+                "rank": 8
+            },
+            "nm2": {
+                "score": "3417262",
+                "rank": 1
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2200835",
+                "rank": 7
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "0",
+                "rank": 13
+            },
+            "hd2": {
+                "score": "2918765",
+                "rank": 2
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "0",
+                "rank": 15
+            },
+            "dt1": {
+                "score": "2741130",
+                "rank": 12
+            },
+            "dt2": {
+                "score": "2818928",
+                "rank": 7
+            },
+            "dt3": {
+                "score": "2265021",
+                "rank": 10
+            }
+        }
+    },
+    {
+        "teamName": "Norway",
+        "ISO3166Alpha2": "NO",
+        "seed": 15,
+        "lastYearSeed": 2,
+        "lastYearPlacement": 15,
+        "player1": {
+            "name": "Fwuffy",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 480514,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 895640,
+            "dt1Score": 463062,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "Altrax",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 401533,
+            "nm5Score": 0,
+            "hd1Score": 602456,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 624415,
+            "dt1Score": 599688,
+            "dt2Score": 587145,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "M A N O L O",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 722333,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 622817,
+            "dt1Score": 975566,
+            "dt2Score": 715047,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Neinja",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "Lightningfox",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 941111,
+            "nm5Score": 0,
+            "hd1Score": 525019,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "RiseOfKingdoms",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 561384,
+            "dt2Score": 469873,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "swankitydankity",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 558295,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "Stormur",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 366501,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 536826,
+            "dt1Score": 0,
+            "dt2Score": 715075,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "0",
+                "rank": 9
+            },
+            "nm2": {
+                "score": "0",
+                "rank": 11
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "2189659",
+                "rank": 8
+            },
+            "nm5": {
+                "score": "0",
+                "rank": 7
+            },
+            "hd1": {
+                "score": "2408103",
+                "rank": 9
+            },
+            "hd2": {
+                "score": "0",
+                "rank": 13
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "2679698",
+                "rank": 12
+            },
+            "dt1": {
+                "score": "2599700",
+                "rank": 14
+            },
+            "dt2": {
+                "score": "2487140",
+                "rank": 11
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    },
+    {
+        "teamName": "Poland",
+        "ISO3166Alpha2": "PL",
+        "seed": 16,
+        "lastYearSeed": 1,
+        "lastYearPlacement": 16,
+        "player1": {
+            "name": "pedeko",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player2": {
+            "name": "nanawo",
+            "nm1Score": 993441,
+            "nm2Score": 443043,
+            "nm3Score": 0,
+            "nm4Score": 396980,
+            "nm5Score": 894353,
+            "hd1Score": 453620,
+            "hd2Score": 492522,
+            "hr1Score": 0,
+            "hr2Score": 663022,
+            "dt1Score": 755341,
+            "dt2Score": 473895,
+            "dt3Score": 0
+        },
+        "player3": {
+            "name": "nemq",
+            "nm1Score": 0,
+            "nm2Score": 417046,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 560292,
+            "hd1Score": 567995,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 771565,
+            "dt1Score": 707252,
+            "dt2Score": 664219,
+            "dt3Score": 0
+        },
+        "player4": {
+            "name": "Ezius",
+            "nm1Score": 693812,
+            "nm2Score": 977656,
+            "nm3Score": 0,
+            "nm4Score": 401513,
+            "nm5Score": 962266,
+            "hd1Score": 387742,
+            "hd2Score": 445371,
+            "hr1Score": 0,
+            "hr2Score": 927209,
+            "dt1Score": 0,
+            "dt2Score": 838023,
+            "dt3Score": 0
+        },
+        "player5": {
+            "name": "miyuo",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 433231,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 613683,
+            "dt2Score": 698835,
+            "dt3Score": 0
+        },
+        "player6": {
+            "name": "Sepid",
+            "nm1Score": 680928,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 0,
+            "hd1Score": 539337,
+            "hd2Score": 883592,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player7": {
+            "name": "uragirarete",
+            "nm1Score": 0,
+            "nm2Score": 0,
+            "nm3Score": 0,
+            "nm4Score": 462037,
+            "nm5Score": 0,
+            "hd1Score": 0,
+            "hd2Score": 935748,
+            "hr1Score": 0,
+            "hr2Score": 0,
+            "dt1Score": 0,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "player8": {
+            "name": "Belladonna",
+            "nm1Score": 702974,
+            "nm2Score": 458999,
+            "nm3Score": 0,
+            "nm4Score": 0,
+            "nm5Score": 678032,
+            "hd1Score": 0,
+            "hd2Score": 0,
+            "hr1Score": 0,
+            "hr2Score": 658656,
+            "dt1Score": 626491,
+            "dt2Score": 0,
+            "dt3Score": 0
+        },
+        "teamData": {
+            "nm1": {
+                "score": "3071155",
+                "rank": 6
+            },
+            "nm2": {
+                "score": "2296744",
+                "rank": 10
+            },
+            "nm3": {
+                "score": "0",
+                "rank": 3
+            },
+            "nm4": {
+                "score": "1693761",
+                "rank": 12
+            },
+            "nm5": {
+                "score": "3094943",
+                "rank": 1
+            },
+            "hd1": {
+                "score": "1948694",
+                "rank": 12
+            },
+            "hd2": {
+                "score": "2757233",
+                "rank": 3
+            },
+            "hr1": {
+                "score": "0",
+                "rank": 3
+            },
+            "hr2": {
+                "score": "3020452",
+                "rank": 7
+            },
+            "dt1": {
+                "score": "2702767",
+                "rank": 13
+            },
+            "dt2": {
+                "score": "2674972",
+                "rank": 9
+            },
+            "dt3": {
+                "score": "0",
+                "rank": 11
+            }
+        }
+    }
+]
