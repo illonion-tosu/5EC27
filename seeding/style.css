@@ -214,3 +214,44 @@
 .sponsors > * {
     max-height: 56px;
 }
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 1920px;
+    width: 250px;
+    height: 1080px;
+    background-color: #3B0d1A;
+}
+
+.button-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    color: var(--delicate-gold);
+    background: transparent;
+    font-size: 1.25rem;
+    border-radius: 15px;
+    border: 2px solid var(--delicate-gold);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7e1c37;
+}
+
+button:active {
+    background-color: var(--delicate-gold);
+    color: #3B0d1A;
+}

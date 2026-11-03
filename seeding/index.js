@@ -104,3 +104,29 @@ function displayData() {
         }
     }
 }
+
+// Buttons
+const nextTeamEl = $("#next-team")
+const previousTeamEl = $("#previous-team")
+
+// When DOM is ready
+$(function(){
+    nextTeamEl.on("click", () => { clickEvent("plus") })
+    previousTeamEl.on("click", () => { clickEvent("minus") })
+})
+
+/**
+ * Adds or minuses 1 to the current index
+ * If outside of allTeamStats length
+ * Calls displayData
+ * @param {*} action 
+ */
+function clickEvent(action) {
+    if (action === "plus") currentIndex++
+    else if (action === "minus") currentIndex--
+
+    if (currentIndex < 0) currentIndex = allTeamStats.length - 1
+    if (currentIndex === allTeamStats.length) currentIndex = 0
+
+    displayData()
+}
