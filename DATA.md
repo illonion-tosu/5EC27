@@ -14,7 +14,7 @@ This may include the mappool scene and the gameplay scene.
 {
     "roundName": "Grand Finals",
     "beatmaps": [
-        {"beatmap_id": 3625243, "mod": "NM", "order": 1},
+        {"beatmap_id": 3625243, "mod": "NM", "order": 1, "isCustom": true, "isOriginal": true},
     ]
 }
 ```
@@ -45,7 +45,8 @@ This may include the mappool scene and the gameplay scene.
     "beatmap_id": 3625243,
     "mod": "NM",
     "order": 1,
-    "MWSCustom": false
+    "isCustom": true,
+    "isOriginal": true
   }
 ]</code></pre>
       </td>
@@ -67,6 +68,18 @@ This may include the mappool scene and the gameplay scene.
       <td>The number of the map, in relation to the mod. Will be combined with beatmaps[].mod for labels.</td>
       <td>number</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <td>beatmaps[].isCustom</td>
+      <td>Marked true if the map is a custom map. Marked false if not.</td>
+      <td>boolean</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>beatmaps[].isOriginal</td>
+      <td>Marked true if the map is an original song. Marked false if not.</td>
+      <td>boolean</td>
+      <td>true</td>
     </tr>
   </tbody>
 </table>
