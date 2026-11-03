@@ -255,3 +255,41 @@
     color: black;
     background-color: var(--ban-grey);
 }
+
+/* Chat Display */
+.chat-display {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--delicate-gold);
+    font-size: 1.25rem;
+    overflow: hidden;
+}
+
+/* Chat Colours */
+
+.left {
+    color: var(--team-left-colour);
+}
+
+.right {
+    color: var(--team-right-colour);
+}
+
+.bot {
+    color: lightgreen;
+}
+
+.unknown {
+    color: lightpink;
+}
+
+.chat-name {
+    font-size: 1.25rem;
+    padding-right: 5px;
+}

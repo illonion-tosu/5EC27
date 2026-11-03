@@ -1,8 +1,6 @@
 :root {
     --score-bar-x: 50%;
     --score-x: calc(var(--score-bar-x) + 8px);
-    --team-left-colour: #F0AB2B;
-    --team-right-colour: #C7104E;
 }
 
 /* Overlay */
