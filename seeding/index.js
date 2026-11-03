@@ -1,4 +1,4 @@
-import { loadTeamStats, findTeamStats } from "../_shared/core/data.js";
+import { loadTeamStats } from "../_shared/core/data.js";
 
 // Load team stats
 let allTeamStats

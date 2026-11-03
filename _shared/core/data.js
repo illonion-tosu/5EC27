@@ -31,7 +31,3 @@ export async function loadTeamStats() {
     teamStats = response.data
     return teamStats
 }
-
-export function findTeamStats(teamName) {
-    return teamStats.find(team => team.teamName === teamName)
-}
