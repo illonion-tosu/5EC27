@@ -192,13 +192,22 @@
     line-height: 14px;
 }
 
+/* Banned Information */
+.map-tile-banned .map-tile-metadata-top {
+    color: white;
+}
+
+.map-tile-banned .map-tile-metadata-bottom {
+    color: #C3C3C3;
+
+}
 /* Map Tile Mapper */
 .map-tile-mapper {
     width: 100px;
     text-align: right;
 }
 
-/* Map Tile Custom Text */
+/* Map Tile Custom / Original Text */
 .map-tile-custom-original-text {
     position: absolute;
     top: 33px;
@@ -219,7 +228,8 @@
     background-color: var(--nm-colour);
 }
 
-.map-tile-custom-original-banned-text {
+/* Banned Tile Custom / Original text */
+.map-tile-banned .map-tile-custom-original-text {
     color: black;
     background-color: var(--ban-grey);
 }
@@ -252,7 +262,7 @@
     background-color: var(--delicate-gold); 
 }
 
-.map-pick-tile-ban-text {
+.map-tile-ban-text {
     color: black;
     background-color: var(--ban-grey);
 }
