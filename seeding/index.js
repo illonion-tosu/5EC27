@@ -36,6 +36,8 @@ const hr2ScoresContainerEl = $("#hr2-scores-container")
 const dt1ScoresContainerEl = $("#dt1-scores-container")
 const dt2ScoresContainerEl = $("#dt2-scores-container")
 const dt3ScoresContainerEl = $("#dt3-scores-container")
+const scoresSummary = $(".scores-summary")
+const ALL_MOD_IDS = [ "nm1", "nm2", "nm3", "nm4", "nm5", "hd1", "hd2", "hr1", "hr2", "dt1", "dt2", "dt3" ]
 
 /**
  * Displays all of the data shown on the overlay
@@ -69,5 +71,36 @@ function displayData() {
         dt1ScoresContainerEl.children().eq(i).text(currentPlayer.dt1Score.toLocaleString())
         dt2ScoresContainerEl.children().eq(i).text(currentPlayer.dt2Score.toLocaleString())
         dt3ScoresContainerEl.children().eq(i).text(currentPlayer.dt3Score.toLocaleString())
+    }
+
+    // Scores Summary
+    for (let i = 0; i < scoresSummary.length; i++) {
+        const scoresSumamryEl = scoresSummary.eq(i)
+        const scoreSummaryChildren = scoresSumamryEl.children()
+        const rankEl = scoreSummaryChildren.eq(0)
+        const scoreEl = scoreSummaryChildren.eq(1)
+
+        const teamRank = currentTeam.teamData[`${ALL_MOD_IDS[i]}`].rank
+
+        // Set text
+        rankEl.text(`#${teamRank}`)
+        scoreEl.text(currentTeam.teamData[`${ALL_MOD_IDS[i]}`].score.toLocaleString())
+
+        // Set class
+        scoresSumamryEl.removeClass('scores-summary-third')
+        scoresSumamryEl.removeClass('scores-summary-second')
+        scoresSumamryEl.removeClass('scores-summary-first')
+
+        switch(teamRank) {
+            case 3:
+                scoresSumamryEl.addClass('scores-summary-third')
+                break
+            case 2: 
+                scoresSumamryEl.addClass('scores-summary-second')
+                break
+            case 1:
+                scoresSumamryEl.addClass('scores-summary-first')
+                break
+        }
     }
 }
