@@ -1,5 +1,6 @@
 :root {
     --picks-and-bans-x: 82px;
+    --ban-grey: #8E8E8E;
 }
 
 /* Overlay */
@@ -109,7 +110,26 @@
     position: relative;
     width: 400px;
     height: 54px;
-    background-color: rgb(255 0 0 / 0.5)
+    background: center / cover;
+    background-color: rgb(255 0 0 / 0.5);
+    background-image: url("https://assets.ppy.sh/beatmaps/1002554/covers/cover.jpg");
+}
+
+/* Map Tile Overlay */
+.map-tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.map-tile-first-overlay {
+    background-image: linear-gradient(to right, rgb(0 0 0 / 0.66) 0%, rgb(0 0 0 / 0) 100%);
+}
+
+.map-tile-second-overlay {
+    background-color: rgb(0 0 0 / 0.6);
 }
 
 /* Map Tile Bat */
@@ -176,4 +196,40 @@
 .map-tile-mapper {
     width: 100px;
     text-align: right;
+}
+
+/* Map Tile Stroke */
+.map-tile-stroke {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    outline-offset: -1.5px;
+}
+
+.map-tile-pick-stroke {
+    outline: 3px solid var(--delicate-gold);
+}
+
+.map-tile-ban-stroke {
+    outline: 3px solid var(--ban-grey);
+}
+
+.map-tile-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.25rem;
+    padding: 4px 4px 0 4px;
+}
+
+.map-tile-pick-text {
+    color: var(--extreme-maroon);
+    background-color: var(--delicate-gold); 
+}
+
+.map-pick-tile-ban-text {
+    color: black;
+    background-color: var(--ban-grey);
 }
