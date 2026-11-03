@@ -234,6 +234,7 @@
 }
 
 .map-tile-ban-stroke {
+    background-color: rgb( 0 0 0 / 0.5 );
     outline: 3px solid var(--ban-grey);
 }
 
@@ -256,6 +257,25 @@
     background-color: var(--ban-grey);
 }
 
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 182px;
+}
+
+.sponsors > * {
+    max-height: 70px;
+}
+
 /* Chat Display */
 .chat-display {
     position: absolute;
@@ -272,7 +292,6 @@
 }
 
 /* Chat Colours */
-
 .left {
     color: var(--team-left-colour);
 }
@@ -289,6 +308,7 @@
     color: lightpink;
 }
 
+/* Chat Name */
 .chat-name {
     font-size: 1.25rem;
     padding-right: 5px;
