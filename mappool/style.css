@@ -81,3 +81,99 @@
     font-size: 1.3913rem;
     color: var(--extreme-maroon);
 }
+
+/* Mappool */
+.mappool-section {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 816px;
+    height: 786px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Mod Section */
+.mod-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Map Tile */
+.map-tile {
+    position: relative;
+    width: 400px;
+    height: 54px;
+    background-color: rgb(255 0 0 / 0.5)
+}
+
+/* Map Tile Bat */
+.map-tile-bat {
+    position: absolute;
+    top: 3px;
+    height: 50px;
+}
+
+/* Map Tile Mod ID */
+.map-tile-mod-id {
+    --height: 42.06px;
+
+    position: absolute;
+    top: 3.34px;
+    left: 15.58px;
+    height: var(--height);
+    line-height: var(--height);
+    font-size: 1.0868rem;
+    color: #0D0D0D;
+}
+
+/* Map Tile Helper Classes */
+.map-tile-text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.map-tile-metadata {
+    position: absolute;
+}
+
+.map-tile-metadata-top {
+    top: 7px;
+    color: var(--delicate-gold);
+}
+
+.map-tile-metadata-bottom {
+    top: 33px;
+    color: var(--nm-colour);
+}
+
+.map-tile-metadata-left {
+    left: 91px;
+    width: 185px;
+}
+
+.map-tile-metadata-right {
+    right: 12px;
+}
+
+.map-tile-text-large {
+    font-size: 1.625rem;
+    line-height: 16px;
+}
+
+.map-tile-text-small {
+    font-size: 1.375rem;
+    line-height: 14px;
+}
+
+/* Map Tile Mapper */
+.map-tile-mapper {
+    width: 100px;
+    text-align: right;
+}
