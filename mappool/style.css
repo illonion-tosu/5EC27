@@ -17,3 +17,53 @@
 .round-name {
     top: 43px;
 }
+
+/* Picks and Bans */
+.picks-and-bans {
+    position: absolute;
+    top: 203px;
+    left: 82px;
+    width: 332.52px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    flex-direction: column;
+}
+
+.ban-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ban-text {
+    color: var(--light-red);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.pick-ban-map-container {
+    display: flex;
+    gap: 15px;
+}
+
+.pick-ban-map-wrapper {
+    position: relative;
+    width: 101px;
+    height: 63px;
+}
+
+.pick-ban-map-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pick-ban-map-text {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3913rem;
+    color: var(--extreme-maroon);
+}

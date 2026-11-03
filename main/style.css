@@ -179,7 +179,7 @@
     left: 1165px;
     top: 1010px;
     font-size: 1.25rem;
-    color: #2C010C
+    color: var(--extreme-maroon);
 }
 
 /* Vectors */
