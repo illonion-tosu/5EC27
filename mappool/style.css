@@ -198,13 +198,34 @@
     text-align: right;
 }
 
+/* Map Tile Custom Text */
+.map-tile-custom-original-text {
+    position: absolute;
+    top: 33px;
+    font-size: 1.25rem;
+    padding: 4px;
+    transform: rotate(-6.32deg); 
+}
+
+.map-tile-custom-text {
+    left: -10px;
+    color: var(--extreme-maroon);
+    background-color: #E99A93;
+}
+
+.map-tile-original-text {
+    left: -23px;
+    color: var(--extreme-maroon);
+    background-color: var(--nm-colour);
+}
+
+.map-tile-custom-original-banned-text {
+    color: black;
+    background-color: var(--ban-grey);
+}
+
 /* Map Tile Stroke */
 .map-tile-stroke {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
     outline-offset: -1.5px;
 }
 
@@ -216,6 +237,7 @@
     outline: 3px solid var(--ban-grey);
 }
 
+/* Map Tile Text */
 .map-tile-text {
     position: absolute;
     top: 0;
