@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeding</title>
+
+    <link rel="stylesheet" href="../_shared/css/common.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
+    <script src="https://unpkg.com/axios@1.21.0/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="background-image"></div>
+
+        <!-- Team Info -->
+        <img class="team-flag" id="team-flag" src="https://osuflags.omkserver.nl/ES-1000.png">
+        <div class="team-name" id="team-name">Spain</div>
+        <div class="seed-text">Seed</div>
+        <div class="seed-number" id="seed-number">#12</div>
+
+        <!-- Last Year Info -->
+        <div class="last-year-information-container">
+            <div>
+                <div class="last-year-information-text">Last Year Placement</div>
+                <div class="last-year-information-number" id="last-year-placement">#3</div>
+            </div>
+            <div>
+                <div class="last-year-information-text">Last Year Seed</div>
+                <div class="last-year-information-number" id="last-year-seed">#12</div>
+            </div>
+        </div>
+
+        <!-- Mods -->
+        <div class="mods-container">
+            <div class="mod-container">
+                <div class="nm-mod">NM1</div>
+                <div class="nm-mod">NM2</div>
+                <div class="nm-mod">NM3</div>
+                <div class="nm-mod">NM4</div>
+                <div class="nm-mod">NM5</div>
+            </div>
+            <div class="mod-container non-nm-mod-container">
+                <div class="hd-mod">HD1</div>
+                <div class="hd-mod">HD2</div>
+            </div>
+            <div class="mod-container non-nm-mod-container">
+                <div class="hr-mod">HR1</div>
+                <div class="hr-mod">HR2</div>
+            </div>
+            <div class="mod-container dt-mod-container">
+                <div class="dt-mod">DT1</div>
+                <div class="dt-mod">DT2</div>
+                <div class="dt-mod">DT3</div>
+            </div>
+        </div>
+
+        <!-- Players -->
+        <div class="player-rank-container">
+            <div class="player-container" id="player-container">
+                <div>Player1</div>
+                <div>Player2</div>
+                <div>Player3</div>
+                <div>Player4</div>
+                <div>Player5</div>
+                <div>Player6</div>
+                <div>Player7</div>
+                <div>Player8</div>
+            </div>
+            <div class="rank-container" id="rank-container">
+                <div>#128</div>
+                <div>#218</div>
+                <div>#242</div>
+                <div>#265</div>
+                <div>-</div>
+                <div>#5</div>
+                <div>#51</div>
+                <div>#160</div>
+            </div>
+        </div>
+
+        <!-- NM Scores -->
+        <div class="scores-container nm1-scores-container" id="nm1-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container nm2-scores-container" id="nm2-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#11</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container nm3-scores-container" id="nm3-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#6</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container nm4-scores-container" id="nm4-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary scores-summary-third">
+                <div class="map-rank">#3</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container nm5-scores-container" id="nm5-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <!-- HD Scores -->
+        <div class="scores-container hd1-scores-container" id="hd1-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container hd2-scores-container" id="hd2-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <!-- HR Scores -->
+        <div class="scores-container hr1-scores-container" id="hr1-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container hr2-scores-container" id="hr2-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <!-- DT Scores-->
+        <div class="scores-container dt1-scores-container" id="dt1-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container dt2-scores-container" id="dt2-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <div class="scores-container dt3-scores-container" id="dt3-scores-container">
+            <div class="score">-</div>
+            <div class="score">838,293</div>
+            <div class="score">1,000,000</div>
+            <div class="score">394,204</div>
+            <div class="score">722,399</div>
+            <div class="score">92,002</div>
+            <div class="score">200,833</div>
+            <div class="score">-</div>
+            <div class="scores-summary">
+                <div class="map-rank">#9</div>
+                <div class="total-score">2,747,837</div>
+            </div>
+        </div>
+
+        <!-- Sponsors -->
+        <div class="sponsors">
+            <img src="../_shared/assets/sponsors/Acrid Covers Logo Beige.png">
+            <img src="../_shared/assets/sponsors/Kagami Studio Logo Beige.png">
+            <img src="../_shared/assets/sponsors/SliderPals Logo Beige.png">
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="button-container">
+            <button id="next-team">Next Team</button>
+            <button id="previous-team">Previous Team</button>
+        </div>
+    </div>
+
+    <script src="../_shared/core/sponsors.js"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
