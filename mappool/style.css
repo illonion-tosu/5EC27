@@ -1,3 +1,7 @@
+:root {
+    --picks-and-bans-x: 82px;
+}
+
 /* Overlay */
 .overlay {
     font-family: "Cormorant Infant", serif;
@@ -22,43 +26,53 @@
 .picks-and-bans {
     position: absolute;
     top: 203px;
-    left: 82px;
-    width: 332.52px;
+    width: 333px;
     display: flex;
     align-items: center;
     gap: 64px;
     flex-direction: column;
 }
 
-.ban-section {
+.picks-and-bans-left { left: var(--picks-and-bans-x); }
+.picks-and-bans-right { right: var(--picks-and-bans-x); }
+
+/* Pick Ban Section*/
+.pick-ban-section {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-.ban-text {
+/* Pick Ban Text */
+.pick-ban-text {
     color: var(--light-red);
     font-size: 2rem;
     text-align: center;
 }
 
+/* Pick Ban Map Container */
 .pick-ban-map-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
 }
 
+/* Pick Ban Map Wrapper*/
 .pick-ban-map-wrapper {
     position: relative;
     width: 101px;
     height: 63px;
 }
 
+/* Pick Ban Image */
 .pick-ban-map-image {
     position: absolute;
     top: 0;
     left: 0;
 }
 
+/* Pick Ban Map Text */
 .pick-ban-map-text {
     position: absolute;
     top: 40%;
