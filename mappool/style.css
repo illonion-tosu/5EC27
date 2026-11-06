@@ -214,6 +214,8 @@
     font-size: 1.25rem;
     padding: 4px;
     transform: rotate(-6.32deg); 
+    opacity: 0;
+    transition: 500ms ease-in-out;
 }
 
 .map-tile-custom-text {
@@ -237,6 +239,8 @@
 /* Map Tile Stroke */
 .map-tile-stroke {
     outline-offset: -1.5px;
+    opacity: 0;
+    transition: 500ms ease-in-out;
 }
 
 .map-tile-pick-stroke {
@@ -255,6 +259,8 @@
     right: 0;
     font-size: 1.25rem;
     padding: 4px 4px 0 4px;
+    opacity: 0;
+    transition: 500ms ease-in-out;
 }
 
 .map-tile-pick-text {

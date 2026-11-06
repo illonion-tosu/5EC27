@@ -4,9 +4,47 @@ import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Rounds and beatmaps
 const roundNameEl = $("#round-name")
+let allBeatmaps
 loadBeatmaps().then(beatmaps => {
     roundNameEl.text(beatmaps.roundName)
+    allBeatmaps = beatmaps.beatmaps
+
+    for (let i = 0; i < allBeatmaps.length; i++) {
+        createMapCard(allBeatmaps[i])
+    }
 })
+
+// Map Card
+function createMapCard(currentMap) {
+    const $mapTile = $('<div>', { class: 'map-tile' }).append(
+        $('<div>', { class: 'map-tile-overlay map-tile-first-overlay' }),
+        $('<div>', { class: 'map-tile-overlay map-tile-second-overlay' }),
+        $('<img>', { class: 'map-tile-bat', src: `static/bats/${currentMap.mod}-bat.png` }),
+        $('<div>', { class: 'map-tile-mod-id', text: `${currentMap.mod}${currentMap.order}` }),
+        $('<div>', {
+            class: 'map-tile-metadata map-tile-text-large map-tile-metadata-left map-tile-metadata-top map-tile-text-overflow',
+            text: currentMap.title
+        }),
+        $('<div>', {
+            class: 'map-tile-metadata map-tile-text-small map-tile-metadata-left map-tile-metadata-bottom map-tile-text-overflow',
+            text: currentMap.version
+        }),
+        $('<div>', {
+            class: 'map-tile-metadata map-tile-text-small map-tile-metadata-right map-tile-metadata-top',
+            text: 'Mapped By'
+        }),
+        $('<div>', {
+            class: 'map-tile-metadata map-tile-text-small map-tile-metadata-right map-tile-metadata-bottom map-tile-text-overflow map-tile-mapper',
+            text: currentMap.creator
+        }),
+        $('<div>', { class: 'map-tile-overlay map-tile-stroke map-tile-pick-stroke' }),
+        $('<div>', { class: 'map-tile-text map-tile-pick-text', text: 'Picked by Poland' }),
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }),
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' })
+    ).css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+
+    $(`#${currentMap.mod.toLowerCase()}-mod-section`).append($mapTile)
+}
 
 // Teams
 let allTeams
