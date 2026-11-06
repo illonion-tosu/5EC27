@@ -3,9 +3,10 @@ import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 
 // Rounds and beatmaps
+const mappoolManagementMapsEl = $("#mappool-management-maps")
 const roundNameEl = $("#round-name")
 let allBeatmaps
-let totalPicks, totalBans = 2
+let totalPicks
 loadBeatmaps().then(beatmaps => {
     roundNameEl.text(beatmaps.roundName)
     allBeatmaps = beatmaps.beatmaps
@@ -13,6 +14,7 @@ loadBeatmaps().then(beatmaps => {
     // Create map cards
     for (let i = 0; i < allBeatmaps.length; i++) {
         createMapCard(allBeatmaps[i])
+        mappoolManagementMapsEl.append(createMappoolManagementButton(allBeatmaps[i]))
     }
 
     // Create picks and bans
@@ -34,9 +36,24 @@ loadBeatmaps().then(beatmaps => {
     }
 })
 
-// Map Card
+/**
+ * Creates mappool management button
+ * @param {object} currentMap - Current map parsed in by beatmaps.json
+ * @returns {$element} - jquery button element 
+ */
+function createMappoolManagementButton(currentMap) {
+    return $("<button>", { id: currentMap.beatmap_id }).
+        data("id", currentMap.beatmap_id).
+        text(`${currentMap.mod}${currentMap.order}`).
+        on("click", mapClickEvent)
+}
+
+/**
+ * Creates map card
+ * @param {object} currentMap - Current map parsed in by beatmaps.json
+ */
 function createMapCard(currentMap) {
-    const $mapTile = $('<div>', { class: 'map-tile', id: currentMap.beatmap_id }).append(
+    const $mapTile = $('<div>', { class: 'map-tile' }).append(
         $('<div>', { class: 'map-tile-overlay map-tile-first-overlay' }),
         $('<div>', { class: 'map-tile-overlay map-tile-second-overlay' }),
         $('<img>', { class: 'map-tile-bat', src: `static/bats/${currentMap.mod}-bat.png` }),
@@ -61,12 +78,15 @@ function createMapCard(currentMap) {
         $('<div>', { class: 'map-tile-text map-tile-pick-text', text: 'Picked by Poland' }),
         $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }),
         $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' })
-    ).css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+    ).css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`).data("id", currentMap.beatmap_id)
 
     $(`#${currentMap.mod.toLowerCase()}-mod-section`).append($mapTile)
 }
 
-// Pick Ban Map Wrapper
+/**
+ * Creates pick ban map wrapper
+ * @returns {$pickBanMapWrapper} - Pick Ban Map Wrapper
+ */
 function createPickBanMapWrapper() {
     const $pickBanMapWrapper = $('<div>', { class: 'pick-ban-map-wrapper' }).append(
         $('<img>', { class: 'pick-ban-map-image' }),
@@ -127,6 +147,10 @@ $(socket).on("message", event => {
 // Next Picker
 const nextPickerEl = $("#next-picker")
 let currentNextPicker = "none"
+
+/**
+ * Set the next picker
+ */
 function setNextPicker(pickerTeam) {
     currentNextPicker = pickerTeam
     nextPickerEl.text(pickerTeam.toUpperCase())
@@ -135,6 +159,10 @@ function setNextPicker(pickerTeam) {
 // Toggle Autopick
 const toggleAutopickEl = $("#toggle-autopick")
 let isAutopickToggled = false
+
+/**
+ * Set the autopicker
+ */
 function toggleAutopick() {
     isAutopickToggled = !isAutopickToggled
     toggleAutopickEl.text(`TOGGLE AUTOPICK: ${isAutopickToggled? "ON": "OFF"}`)
@@ -150,6 +178,11 @@ function toggleAutopick() {
 // Current Picker
 const currentPickerEl = $("#current-picker")
 let currentPicker = "none"
+
+/**
+ * Set the current picker
+ * @param {string} pickerTeam 
+ */
 function setCurrentPicker(pickerTeam) {
     currentPicker = pickerTeam
     currentPickerEl.text(pickerTeam.toUpperCase())
