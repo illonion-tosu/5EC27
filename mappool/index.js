@@ -36,7 +36,7 @@ loadBeatmaps().then(beatmaps => {
 
 // Map Card
 function createMapCard(currentMap) {
-    const $mapTile = $('<div>', { class: 'map-tile' }).append(
+    const $mapTile = $('<div>', { class: 'map-tile', id: currentMap.beatmap_id }).append(
         $('<div>', { class: 'map-tile-overlay map-tile-first-overlay' }),
         $('<div>', { class: 'map-tile-overlay map-tile-second-overlay' }),
         $('<img>', { class: 'map-tile-bat', src: `static/bats/${currentMap.mod}-bat.png` }),
@@ -122,4 +122,56 @@ $(socket).on("message", event => {
 
     // Teams
     updateTeams(data.tourney.team)
+})
+
+// Next Picker
+const nextPickerEl = $("#next-picker")
+let currentNextPicker = "none"
+function setNextPicker(pickerTeam) {
+    currentNextPicker = pickerTeam
+    nextPickerEl.text(pickerTeam.toUpperCase())
+}
+
+// Toggle Autopick
+const toggleAutopickEl = $("#toggle-autopick")
+let isAutopickToggled = false
+function toggleAutopick() {
+    isAutopickToggled = !isAutopickToggled
+    toggleAutopickEl.text(`TOGGLE AUTOPICK: ${isAutopickToggled? "ON": "OFF"}`)
+    if (isAutopickToggled) {
+        toggleAutopickEl.removeClass("toggle-inactive")
+        toggleAutopickEl.addClass("toggle-active")
+    } else {
+        toggleAutopickEl.addClass("toggle-inactive")
+        toggleAutopickEl.removeClass("toggle-active")
+    }
+}
+
+// Current Picker
+const currentPickerEl = $("#current-picker")
+let currentPicker = "none"
+function setCurrentPicker(pickerTeam) {
+    currentPicker = pickerTeam
+    currentPickerEl.text(pickerTeam.toUpperCase())
+    document.cookie = `currentPicker=${pickerTeam}; path=/`
+}
+
+// Set Next Picker Elements
+const setNextPickerLeftEl = $("#set-next-picker-left")
+const setNextPickerRightEl = $("#set-next-picker-right")
+const nextPickerNoneEl = $("#next-picker-none")
+
+// Set Current Picker Elements
+const setCurrentPickerLeftEl = $("#set-current-picker-left")
+const setCurrentPickerRightEl = $("#set-current-picker-right")
+const currentPickerNoneEl = $("#current-picker-none")
+
+$(window).on("load", () => {
+    setNextPickerLeftEl.on("click", () => setNextPicker("left"))
+    setNextPickerRightEl.on("click", () => setNextPicker("right"))
+    nextPickerNoneEl.on("click", () => setNextPicker("none"))
+    toggleAutopickEl.on("click", toggleAutopick)
+    setCurrentPickerLeftEl.on("click", () => setCurrentPicker("left"))
+    setCurrentPickerRightEl.on("click", () => setCurrentPicker("right"))
+    currentPickerNoneEl.on("click", () => setCurrentPicker("none"))
 })
