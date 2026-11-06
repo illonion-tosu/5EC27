@@ -5,12 +5,32 @@ import { createTosuWsSocket } from "../_shared/core/websocket.js"
 // Rounds and beatmaps
 const roundNameEl = $("#round-name")
 let allBeatmaps
+let totalPicks, totalBans = 2
 loadBeatmaps().then(beatmaps => {
     roundNameEl.text(beatmaps.roundName)
     allBeatmaps = beatmaps.beatmaps
 
+    // Create map cards
     for (let i = 0; i < allBeatmaps.length; i++) {
         createMapCard(allBeatmaps[i])
+    }
+
+    // Create picks and bans
+    switch (beatmaps.roundName.toLowerCase()) {
+        case "group stage": case "gs": case "ro16": case "round of 16":
+            totalPicks = 5
+            break
+        case "quarterfinals": case "quarter finals": case "qf": case "semifinals": case "sf": case "semi finals":
+            totalPicks = 6
+            break
+        case "finals": case "f": case "grand finals": case "gf": case "grandfinals":
+            totalPicks = 7
+            break
+    }
+
+    for (let i = 0; i < totalPicks; i++) {
+        $("#pick-ban-map-container-left").append(createPickBanMapWrapper())
+        $("#pick-ban-map-container-right").append(createPickBanMapWrapper())
     }
 })
 
@@ -44,6 +64,16 @@ function createMapCard(currentMap) {
     ).css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
 
     $(`#${currentMap.mod.toLowerCase()}-mod-section`).append($mapTile)
+}
+
+// Pick Ban Map Wrapper
+function createPickBanMapWrapper() {
+    const $pickBanMapWrapper = $('<div>', { class: 'pick-ban-map-wrapper' }).append(
+        $('<img>', { class: 'pick-ban-map-image' }),
+        $('<div>', { class: 'pick-ban-map-text' })
+    )
+
+    return $pickBanMapWrapper
 }
 
 // Teams

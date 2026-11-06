@@ -57,6 +57,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    height: 63px;
 }
 
 /* Pick Ban Map Wrapper*/
