@@ -1,4 +1,4 @@
-import { loadBeatmaps, loadTeams } from "../_shared/core/data.js"
+import { loadBeatmaps, findBeatmap, loadTeams } from "../_shared/core/data.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 
@@ -42,10 +42,11 @@ loadBeatmaps().then(beatmaps => {
  * @returns {$element} - jquery button element 
  */
 function createMappoolManagementButton(currentMap) {
-    return $("<button>", { id: currentMap.beatmap_id }).
-        data("id", currentMap.beatmap_id).
-        text(`${currentMap.mod}${currentMap.order}`).
-        on("click", mapClickEvent)
+    return $("<button>", { id: currentMap.beatmap_id })
+        .attr("data-id", currentMap.beatmap_id)
+        .text(`${currentMap.mod}${currentMap.order}`)
+        .on("mousedown", mapClickEvent)
+        .on("contextmenu", event => event.preventDefault())
 }
 
 /**
@@ -74,11 +75,13 @@ function createMapCard(currentMap) {
             class: 'map-tile-metadata map-tile-text-small map-tile-metadata-right map-tile-metadata-bottom map-tile-text-overflow map-tile-mapper',
             text: currentMap.creator
         }),
-        $('<div>', { class: 'map-tile-overlay map-tile-stroke map-tile-pick-stroke' }),
-        $('<div>', { class: 'map-tile-text map-tile-pick-text', text: 'Picked by Poland' }),
+        $('<div>', { class: 'map-tile-overlay map-tile-stroke' }),
+        $('<div>', { class: 'map-tile-text', text: 'Picked by Poland' }),
         $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }),
         $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' })
-    ).css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`).data("id", currentMap.beatmap_id)
+    )
+    .css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+    .attr("data-id", currentMap.beatmap_id)
 
     $(`#${currentMap.mod.toLowerCase()}-mod-section`).append($mapTile)
 }
@@ -132,6 +135,58 @@ function updateTeams(teamNames) {
     if (currentTeamNameRight !== teamNames.right) {
         setTeamDetails(teamNames.right, "right")
         currentTeamNameRight = teamNames.right
+    }
+}
+
+// Ban Map Containers
+const banMapContainerLeftEl = $("#ban-map-container-left")
+const banMapContainerRightEl = $("#ban-map-container-right")
+
+/**
+ * Map Click Event
+ */
+function mapClickEvent(event) {
+    console.log("do we get here")
+
+    // Figure out whether it is a pick or ban
+    const currentMapId = $(this).attr("data-id")
+    const currentMap = findBeatmap(currentMapId)
+    if (!currentMap) return
+
+    // Team
+    let team
+    if (event.button === 0) team = "left"
+    else if (event.button === 2) team = "right"
+    if (!team) return
+
+    // Action
+    let action = "pick"
+    if (event.ctrlKey) action = "ban"
+
+    console.log("do we get here")
+
+    // Bans
+    if (action === "ban") {
+        const currentContainer = team === "left" ? banMapContainerLeftEl : banMapContainerRightEl
+
+        for (let i = 0; i < currentContainer.children().length; i++) {
+            const child = currentContainer.children().eq(i)
+
+            // Set ban image and text
+            if (child.attr("data-id") !== undefined) continue
+            child.attr("data-id", currentMapId)
+            child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
+
+            const mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
+            mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+            mappoolSectionChild.addClass("map-tile-banned")
+            mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
+            mappoolSectionChild.children().eq(8).css("opacity", "1")
+            mappoolSectionChild.children().eq(9).css("opacity", "1")
+            mappoolSectionChild.children().eq(9).text(`Banned by ${team === "left" ? "LEFT" : "RIGHT"}`)
+            break
+        }
     }
 }
 
