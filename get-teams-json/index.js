@@ -5,7 +5,7 @@ async function submit() {
     // Local, so pressing Submit twice doesn't download every team twice
     const teams = []
     const lines = $textarea.val().split(/\r?\n/)
-    for (let i = 1; i < lines.length; i++) {
+    for (let i = 0; i < lines.length; i++) {
         if (!lines[i].trim()) continue
 
         const cells = lines[i].split("\t").map(cell => cell.trim())
