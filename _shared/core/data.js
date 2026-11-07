@@ -2,8 +2,7 @@
 let beatmaps = []
 let allBeatmaps = []
 export async function loadBeatmaps() {
-    const response = await axios.get("../_data/beatmaps.json")
-    beatmaps = response.data
+    beatmaps = await $.getJSON("../_data/beatmaps.json")
     allBeatmaps = beatmaps.beatmaps
     return beatmaps
 }
@@ -15,8 +14,7 @@ export function findBeatmap(beatmapId) {
 // Load teams
 let teams = []
 export async function loadTeams() {
-    const response = await axios.get("../_data/teams.json")
-    teams = response.data
+    teams = await $.getJSON("../_data/teams.json")
     return teams
 }
 
@@ -27,7 +25,6 @@ export function findTeam(teamName) {
 // Load team stats
 let teamStats = []
 export async function loadTeamStats() {
-    const response = await axios.get("../_data/team-stats.json")
-    teamStats = response.data
+    teamStats = await $.getJSON("../_data/team-stats.json")
     return teamStats
 }

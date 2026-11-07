@@ -1,8 +1,7 @@
 // Load osu! api
 let osuApi
 export async function initialiseOsuApi() {
-    const response = await fetch("../_data/osu-api.json")
-    const responseJson = await response.json()
+    const responseJson = await $.getJSON("../_data/osu-api.json")
     osuApi = responseJson.api
 }
 
