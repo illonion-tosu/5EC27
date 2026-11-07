@@ -152,6 +152,11 @@ function mapClickEvent(event) {
     let action = "pick"
     if (event.ctrlKey) action = "ban"
 
+    // Check for if a map has been picked or banned already
+    if ($banMapContainerLeft.add($banMapContainerRight).add($pickMapContainerLeft).add($pickMapContainerRight).children(`[data-id="${currentMapId}"]`).length > 0) {
+        return
+    }
+
     const $currentContainer = (team === "left" && action === "ban") ? $banMapContainerLeft :
                               (team === "right" && action === "ban") ? $banMapContainerRight :
                               (team === "left" && action === "pick") ? $pickMapContainerLeft :
