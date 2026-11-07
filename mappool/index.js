@@ -577,40 +577,29 @@ function mappoolOverrideSetPick() {
     $mappoolSectionChild.children().eq(9).text(`Picked by ${mappoolOverrideTeam === "left" ? currentTeamNameLeft : currentTeamNameRight}`)
 }
 
-    // for (let i = 0; i < $currentContainer.children().length; i++) {
-    //     const $child = $currentContainer.children().eq(i)
-
-    //     // Set ban image and text
-    //     if ($child.attr("data-id") !== undefined) continue
-    //     $child.attr("data-id", currentMapId)
-    //     $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
-    //     $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
-
-    //     const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-    //     $mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
-    //     $mappoolSectionChild.addClass(action === "pick" ? "map-tile-picked" : "map-tile-banned")
-    //     action === "ban" && $mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
-    //     $mappoolSectionChild.children().eq(8).css("opacity", "1")
-    //     $mappoolSectionChild.children().eq(9).css("opacity", "1")
-    //     $mappoolSectionChild.children().eq(9).text(`${action === "ban" ? "Banned" : "picked"} by ${team === "left" ? "LEFT" : "RIGHT"}`)
-    //     break
-    // }
-
 // Mappool Override Remove Pick
 function mappoolOverrideRemovePick() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
 
     // Set map information
     const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? $pickMapContainerLeft : $pickMapContainerRight)
-    const $currentTile = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
 
-    // Remove map information
-    const currentMap = findBeatmap($currentTile.attr("data-id"))
-    $currentTile.removeAttr("data-id").hide()
+    // Get rid of previous information
+    const $child = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
+    const previousId = $child.attr("data-id")
+    const currentMap = findBeatmap(previousId)
 
-    // Mark as unpicked
-    const $modImage = $(`#${currentMap.mod.toLowerCase()}${currentMap.order}`).children().first()
-    $modImage.attr("src", $modImage.prop("src").replace("/picked/", "/unpicked/"))
+    // For mappool in the middle
+    const $previousMappoolSectionChild = $(`.mod-section > [data-id="${previousId}"]`).first()
+    $previousMappoolSectionChild.removeClass("map-tile-banned")
+    $previousMappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+    $previousMappoolSectionChild.children().eq(8).css("opacity", "0")
+    $previousMappoolSectionChild.children().eq(9).css("opacity", "0")
+
+    // For the actual child
+    $child.attr("data-id", "")
+    $child.children().eq(0).attr("src", "")
+    $child.children().eq(1).text("")
 }
 
 // Create h2 title

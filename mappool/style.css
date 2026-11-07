@@ -224,7 +224,7 @@ body {
 }
 
 /* Banned Information */
-.map-tile-picked .map-tile-metadata-top {
+.map-tile-banned .map-tile-metadata-top {
     color: white;
 }
 
@@ -451,6 +451,10 @@ button {
 #toggle-autopick, #toggle-stars, #next-picker-none, #apply-changes, .full-width-button { width: 220px; }
 #next-picker, #current-picker { color: white; }
 
+#apply-changes {
+    margin-top: 5px;
+}
+
 /* Mappool Override Select */
 .mappool-override-select {
     color: white;
@@ -474,7 +478,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
     margin-bottom: 10px;
     font-size: 1.25rem;
 }
