@@ -581,7 +581,7 @@ function mappoolOverrideSetPick() {
 function mappoolOverrideRemovePick() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
 
-    // Set map information
+    // Set map informationf
     const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? $pickMapContainerLeft : $pickMapContainerRight)
 
     // Get rid of previous information

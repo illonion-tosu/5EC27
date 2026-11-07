@@ -1,6 +1,7 @@
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
+import { renderStars, toggleStarContainers } from "../_shared/core/stars.js"
 
 // Rounds and beatmaps
 const $roundName = $("#round-name")
@@ -247,3 +248,10 @@ $(socket).on("message", event => {
     animations.scoreRight.update(scores.right)
     updateScoreBar(scores.left, scores.right)
 })
+
+const $teamStarContainerLeft = $("#team-star-container-left")
+const $teamStarContainerRight = $("#team-star-container-right")
+setInterval(() => {
+    renderStars($teamStarContainerLeft, $teamStarContainerRight)
+    toggleStarContainers($teamStarContainerLeft, $teamStarContainerRight)
+}, 200)
