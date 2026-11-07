@@ -1,6 +1,9 @@
 import { loadBeatmaps, findBeatmap, loadTeams } from "../_shared/core/data.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
+// Pick Map Containers
+const pickMapContainerLeftEl = $("#pick-map-container-left")
+const pickMapContainerRightEl = $("#pick-map-container-right")
 
 // Rounds and beatmaps
 const mappoolManagementMapsEl = $("#mappool-management-maps")
@@ -31,8 +34,8 @@ loadBeatmaps().then(beatmaps => {
     }
 
     for (let i = 0; i < totalPicks; i++) {
-        $("#pick-ban-map-container-left").append(createPickBanMapWrapper())
-        $("#pick-ban-map-container-right").append(createPickBanMapWrapper())
+        pickMapContainerLeftEl.append(createPickBanMapWrapper())
+        pickMapContainerRightEl.append(createPickBanMapWrapper())
     }
 })
 
@@ -185,6 +188,30 @@ function mapClickEvent(event) {
             mappoolSectionChild.children().eq(8).css("opacity", "1")
             mappoolSectionChild.children().eq(9).css("opacity", "1")
             mappoolSectionChild.children().eq(9).text(`Banned by ${team === "left" ? "LEFT" : "RIGHT"}`)
+            break
+        }
+    }
+
+    // Picks
+    if (action === "pick") {
+        const currentContainer = team === "left" ? pickMapContainerLeftEl : pickMapContainerRightEl
+
+        for (let i = 0; i < currentContainer.children().length; i++) {
+            const child = currentContainer.children().eq(i)
+            
+            // Set pick image and text
+            if (child.attr("data-id") !== undefined) continue
+            child.attr("data-id", currentMapId)
+            child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
+
+            const mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
+            mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+            mappoolSectionChild.addClass("map-tile-picked")
+            mappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            mappoolSectionChild.children().eq(8).css("opacity", "1")
+            mappoolSectionChild.children().eq(9).css("opacity", "1")
+            mappoolSectionChild.children().eq(9).text(`Picked by ${team === "left" ? "LEFT" : "RIGHT"}`)
             break
         }
     }
