@@ -217,6 +217,10 @@ function mapClickEvent(event) {
     }
 }
 
+/* Chat */
+const chatDisplayEl = document.getElementById("chat-display")
+let chatLen
+
 // Socket
 const socket = createTosuWsSocket()
 $(socket).on("message", event => {
@@ -224,6 +228,12 @@ $(socket).on("message", event => {
 
     // Teams
     updateTeams(data.tourney.team)
+
+    // Chat
+    const chatData = data.tourney.chat
+    if (chatLen !== chatData.length) {
+        chatLen = updateChat(chatLen, chatData, chatDisplayContainerEl)
+    }
 })
 
 // Next Picker
