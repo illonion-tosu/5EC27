@@ -1,10 +1,15 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
+import { isStarOn, setDefaultStarCount, toggleStars, updateStarCount } from "../_shared/core/stars.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
 const $pickMapContainerLeft = $("#pick-map-container-left")
 const $pickMapContainerRight = $("#pick-map-container-right")
+
+// Team Star Containers
+const $teamStarContainerLeft = $("#team-star-container-left")
+const $teamStarContainerRight = $("#team-star-container-right")
 
 // Rounds and beatmaps
 const $mappoolManagementMaps = $("#mappool-management-maps")
@@ -34,7 +39,9 @@ loadBeatmaps().then(beatmaps => {
             break
     }
 
-    for (let i = 0; i < totalPicks; i++) {
+    setDefaultStarCount(totalPicks * 2 - 1, $teamStarContainerLeft, $teamStarContainerRight)
+
+    for (let i = 0; i < totalPicks - 1; i++) {
         $pickMapContainerLeft.append(createPickBanMapWrapper())
         $pickMapContainerRight.append(createPickBanMapWrapper())
     }
@@ -294,9 +301,24 @@ const $setNextPickerLeft = $("#set-next-picker-left")
 const $setNextPickerRight = $("#set-next-picker-right")
 const $nextPickerNone = $("#next-picker-none")
 
+// Star Section Elements
+const $starSectionLeftPlus = $("#star-section-left-plus")
+const $starSectionLeftMinus = $("#star-section-left-minus")
+const $starSectionRightPlus = $("#star-section-right-plus")
+const $starSectionRightMinus = $("#star-section-right-minus")
+
+// Toggle Stars
+const $toggleStars = $("#toggle-stars")
+const $toggleStarsText = $("#toggle-stars-text")
+
 $(window).on("load", () => {
     $setNextPickerLeft.on("click", () => setNextPicker("left"))
     $setNextPickerRight.on("click", () => setNextPicker("right"))
     $nextPickerNone.on("click", () => setNextPicker("none"))
     $toggleAutopick.on("click", toggleAutopick)
+    $starSectionLeftPlus.on("click", () => updateStarCount("red", "plus", $teamStarContainerLeft, $teamStarContainerRight))
+    $starSectionLeftMinus.on("click", () => updateStarCount("red", "minus", $teamStarContainerLeft, $teamStarContainerRight))
+    $starSectionRightPlus.on("click", () => updateStarCount("blue", "plus", $teamStarContainerLeft, $teamStarContainerRight))
+    $starSectionRightMinus.on("click", () => updateStarCount("blue", "minus", $teamStarContainerLeft, $teamStarContainerRight))
+    $toggleStars.on("click", () => toggleStars($toggleStarsText, $toggleStars, $teamStarContainerLeft, $teamStarContainerRight))
 })

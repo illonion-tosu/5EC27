@@ -31,7 +31,7 @@
                     <img class="team-flag" id="team-flag-left" src="https://osuflags.omkserver.nl/ES-1000.png">
                     <div class="team-name" id="team-name-left">Spain</div>
                 </div>
-                <div class="team-star-container">
+                <div class="team-star-container" id="team-star-container-left">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
@@ -50,7 +50,7 @@
                     <img class="team-flag" id="team-flag-right" src="https://osuflags.omkserver.nl/PL-1000.png">
                     <div class="team-name" id="team-name-right">Poland</div>
                 </div>
-                <div class="team-star-container team-star-container-right">
+                <div class="team-star-container team-star-container-right" id="team-star-container-right">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
                     <img src="../_shared/assets/star/star-fill.png">
@@ -141,6 +141,16 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="column">
+            <section class="sidebar-section">
+                <h1 class="sidebar-section-text">Star Section</h1>
+                <div class="sidebar-button-container">
+                    <button id="star-section-left-plus">LEFT ++</button>
+                    <button id="star-section-left-minus">LEFT --</button>
+                    <button id="star-section-right-plus">RIGHT ++</button>
+                    <button id="star-section-right-minus">RIGHT --</button>
+                    <button class="full-width-button toggle-active" id="toggle-stars">TOGGLE STARS: <span id="toggle-stars-text">ON</span></button>
+                </div>
+            </section>
             <section class="sidebar-section">
                 <h1 class="sidebar-section-text">Next Picker</h1>
                 <p id="next-picker" style="font-size: 1.2em;"></p>
