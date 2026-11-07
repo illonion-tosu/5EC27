@@ -553,9 +553,28 @@ function mappoolOverrideSetPick() {
 
     // Set map information
     const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? $pickMapContainerLeft : $pickMapContainerRight)
-    const $currentTile = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
 
-    setPick($currentTile[0], mappoolOverrideMap, currentMap, mappoolOverrideTeam)
+    // Get rid of previous information
+    const $child = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
+    const previousId = $child.attr("data-id")
+    const $previousMappoolSectionChild = $(`.mod-section > [data-id="${previousId}"]`).first()
+    $previousMappoolSectionChild.removeClass("map-tile-picked", "map-tile-banned")
+    $previousMappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+    $previousMappoolSectionChild.children().eq(8).css("opacity", "0")
+    $previousMappoolSectionChild.children().eq(9).css("opacity", "0")
+
+    // Set information
+    $child.attr("data-id", mappoolOverrideMap)
+    $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+    $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
+
+    // Set middle mappool information
+    const $mappoolSectionChild = $(`.mod-section > [data-id="${mappoolOverrideMap}"]`).first()
+    $mappoolSectionChild.addClass("map-tile-picked")
+    $mappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+    $mappoolSectionChild.children().eq(8).css("opacity", "1")
+    $mappoolSectionChild.children().eq(9).css("opacity", "1")
+    $mappoolSectionChild.children().eq(9).text(`Picked by ${mappoolOverrideTeam === "left" ? currentTeamNameLeft : currentTeamNameRight}`)
 }
 
     // for (let i = 0; i < $currentContainer.children().length; i++) {
