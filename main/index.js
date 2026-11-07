@@ -1,4 +1,4 @@
-import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/datga.js"
+import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
