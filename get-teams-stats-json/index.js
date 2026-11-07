@@ -1,15 +1,15 @@
-const textareaEl = document.getElementById("textarea")
-const buttonEl = document.getElementById("button")
+const $textarea = $("#textarea")
+const $button = $("#button")
+
 async function submit() {
     // Local, so pressing Submit twice doesn't download every team twice
     const teams = []
-    const textareaElValue = textareaEl.value
-    const textAreaElValueSplit = textareaElValue.split(/\r?\n/)
-    for (let i = 0; i < textAreaElValueSplit.length; i++) {
-        if (!textAreaElValueSplit[i].trim()) continue
+    const lines = $textarea.val().split(/\r?\n/)
+    for (let i = 0; i < lines.length; i++) {
+        if (!lines[i].trim()) continue
 
-        const textAreaElValueSplitSplit = textAreaElValueSplit[i].split("\t").map(cell => cell.trim())
-        const cell = index => textAreaElValueSplitSplit[index] ?? ""
+        const cells = lines[i].split("\t").map(cell => cell.trim())
+        const cell = index => cells[index] ?? ""
         const player = index => {
             if (!cell(index)) return
 
@@ -53,18 +53,18 @@ async function submit() {
             "player7": player(11),
             "player8": player(12),
             "teamData": {
-                "nm1":team(117),
-                "nm2":team(118),
-                "nm3":team(119),
-                "nm4":team(120),
-                "nm5":team(121),
-                "hd1":team(122),
-                "hd2":team(123),
-                "hr1":team(124),
-                "hr2":team(125),
-                "dt1":team(126),
-                "dt2":team(127),
-                "dt3":team(128)
+                "nm1": team(117),
+                "nm2": team(118),
+                "nm3": team(119),
+                "nm4": team(120),
+                "nm5": team(121),
+                "hd1": team(122),
+                "hd2": team(123),
+                "hr1": team(124),
+                "hr2": team(125),
+                "dt1": team(126),
+                "dt2": team(127),
+                "dt3": team(128)
             }
         }
         teams.push(teamDetails)
@@ -72,12 +72,10 @@ async function submit() {
 
     const jsonString = JSON.stringify(teams, null, 4)
     const blob = new Blob([jsonString], { type: "application/json" })
-    const link = document.createElement("a")
-    link.href = URL.createObjectURL(blob)
-    link.download = "team-stats.json"
-    link.click()
+    const $link = $("<a>", { href: URL.createObjectURL(blob), download: "team-stats.json" })
+    $link[0].click()
 }
 
-window.onload = () => {
-    buttonEl.addEventListener("click", submit)
-}
+$(window).on("load", () => {
+    $button.on("click", submit)
+})
