@@ -1,38 +1,28 @@
-export function updateChat(chatLen, chatData, chatContainerEl) {
+export function updateChat(chatLen, chatData, $chatContainer) {    
     // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
     if (chatLen !== chatData.length) {
         if (!chatLen || chatLen > chatData.length) {
-            chatContainerEl.innerHTML = ""
+            $chatContainer.empty()
             chatLen = 0
         }
 
-        const fragment = document.createDocumentFragment()
+        let $messages = $()
 
         for (let i = chatLen; i < chatData.length; i++) {
-            const chatColour = chatData[i].team
+            const { team, name, message } = chatData[i]
 
-            // Chat message container
-            const chatMessageContainer = document.createElement("div")
-            chatMessageContainer.classList.add("chat-message-wrapper")
+            const $wrapper = $("<div>", { class: "chat-message-wrapper" }).append(
+                $("<span>", { class: `chat-name ${team}`, text: `${name}:` }),
+                $("<span>", { class: "message-content", text: message })
+            )
 
-            // Name
-            const chatDisplayName = document.createElement("div")
-            chatDisplayName.classList.add("chat-name")
-            chatDisplayName.classList.add(chatColour)
-            chatDisplayName.innerText = chatData[i].name + ":";
-
-            // Message
-            const chatDisplayMessage = document.createElement("div")
-            chatDisplayMessage.classList.add("message-content")
-            chatDisplayMessage.innerText = chatData[i].message
-
-            chatMessageContainer.append(chatDisplayName, chatDisplayMessage)
-            fragment.append(chatMessageContainer)
+            $messages = $messages.add($wrapper)
         }
 
-        chatContainerEl.append(fragment)
+        $chatContainer.append($messages)
         chatLen = chatData.length
-        chatContainerEl.scrollTop = chatContainerEl.scrollHeight
+        console.log($chatContainer[0])
+        $chatContainer.scrollTop($chatContainer[0].scrollHeight)
     }
 
     return chatLen

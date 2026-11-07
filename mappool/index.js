@@ -1,4 +1,5 @@
-import { loadBeatmaps, findBeatmap, loadTeams } from "../_shared/core/data.js"
+import { updateChat } from "../_shared/core/chat.js"
+import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
@@ -114,6 +115,7 @@ let currentTeamNameLeft, currentTeamNameRight
  * @returns {string|null} The team name if the team was found, otherwise null
  */
 function setTeamDetails(teamName, side) {
+    
     const currentTeam = findTeam(teamName)
     if (!currentTeam) return null
 
@@ -218,7 +220,7 @@ function mapClickEvent(event) {
 }
 
 /* Chat */
-const chatDisplayEl = document.getElementById("chat-display")
+const chatDisplayEl = $("#chat-display")
 let chatLen
 
 // Socket
@@ -232,7 +234,7 @@ $(socket).on("message", event => {
     // Chat
     const chatData = data.tourney.chat
     if (chatLen !== chatData.length) {
-        chatLen = updateChat(chatLen, chatData, chatDisplayContainerEl)
+        chatLen = updateChat(chatLen, chatData, chatDisplayEl)
     }
 })
 
