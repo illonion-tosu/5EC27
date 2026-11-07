@@ -178,7 +178,30 @@ body {
 
 .map-tile-metadata-bottom {
     top: 33px;
+}
+
+.nm-mod-section .map-tile .map-tile-metadata-bottom  { 
     color: var(--nm-colour);
+}
+
+.hd-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--hd-colour);
+}
+
+.hr-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--hr-colour);
+}
+
+.dt-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--dt-colour);
+}
+
+.fm-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--fm-colour);
+}
+
+.tb-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--tb-colour);
 }
 
 .map-tile-metadata-left {
@@ -205,7 +228,12 @@ body {
     color: white;
 }
 
-.map-tile-banned .map-tile-metadata-bottom {
+.nm-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.hd-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.hr-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.dt-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.fm-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.tb-mod-section .map-tile-banned .map-tile-metadata-bottom {
     color: #C3C3C3;
 }
 
