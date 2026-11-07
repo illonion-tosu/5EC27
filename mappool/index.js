@@ -3,22 +3,22 @@ import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
-const pickMapContainerLeftEl = $("#pick-map-container-left")
-const pickMapContainerRightEl = $("#pick-map-container-right")
+const $pickMapContainerLeft = $("#pick-map-container-left")
+const $pickMapContainerRight = $("#pick-map-container-right")
 
 // Rounds and beatmaps
-const mappoolManagementMapsEl = $("#mappool-management-maps")
-const roundNameEl = $("#round-name")
+const $mappoolManagementMaps = $("#mappool-management-maps")
+const $roundName = $("#round-name")
 let allBeatmaps
 let totalPicks
 loadBeatmaps().then(beatmaps => {
-    roundNameEl.text(beatmaps.roundName)
+    $roundName.text(beatmaps.roundName)
     allBeatmaps = beatmaps.beatmaps
 
     // Create map cards
     for (let i = 0; i < allBeatmaps.length; i++) {
         createMapCard(allBeatmaps[i])
-        mappoolManagementMapsEl.append(createMappoolManagementButton(allBeatmaps[i]))
+        $mappoolManagementMaps.append(createMappoolManagementButton(allBeatmaps[i]))
     }
 
     // Create picks and bans
@@ -35,8 +35,8 @@ loadBeatmaps().then(beatmaps => {
     }
 
     for (let i = 0; i < totalPicks; i++) {
-        pickMapContainerLeftEl.append(createPickBanMapWrapper())
-        pickMapContainerRightEl.append(createPickBanMapWrapper())
+        $pickMapContainerLeft.append(createPickBanMapWrapper())
+        $pickMapContainerRight.append(createPickBanMapWrapper())
     }
 })
 
@@ -144,8 +144,8 @@ function updateTeams(teamNames) {
 }
 
 // Ban Map Containers
-const banMapContainerLeftEl = $("#ban-map-container-left")
-const banMapContainerRightEl = $("#ban-map-container-right")
+const $banMapContainerLeft = $("#ban-map-container-left")
+const $banMapContainerRight = $("#ban-map-container-right")
 
 /**
  * Map Click Event
@@ -172,55 +172,55 @@ function mapClickEvent(event) {
 
     // Bans
     if (action === "ban") {
-        const currentContainer = team === "left" ? banMapContainerLeftEl : banMapContainerRightEl
+        const $currentContainer = team === "left" ? $banMapContainerLeft : $banMapContainerRight
 
-        for (let i = 0; i < currentContainer.children().length; i++) {
-            const child = currentContainer.children().eq(i)
+        for (let i = 0; i < $currentContainer.children().length; i++) {
+            const $child = $currentContainer.children().eq(i)
 
             // Set ban image and text
-            if (child.attr("data-id") !== undefined) continue
-            child.attr("data-id", currentMapId)
-            child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
-            child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
+            if ($child.attr("data-id") !== undefined) continue
+            $child.attr("data-id", currentMapId)
+            $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
-            const mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-            mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
-            mappoolSectionChild.addClass("map-tile-banned")
-            mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
-            mappoolSectionChild.children().eq(8).css("opacity", "1")
-            mappoolSectionChild.children().eq(9).css("opacity", "1")
-            mappoolSectionChild.children().eq(9).text(`Banned by ${team === "left" ? "LEFT" : "RIGHT"}`)
+            const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
+            $mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+            $mappoolSectionChild.addClass("map-tile-banned")
+            $mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
+            $mappoolSectionChild.children().eq(8).css("opacity", "1")
+            $mappoolSectionChild.children().eq(9).css("opacity", "1")
+            $mappoolSectionChild.children().eq(9).text(`Banned by ${team === "left" ? "LEFT" : "RIGHT"}`)
             break
         }
     }
 
     // Picks
     if (action === "pick") {
-        const currentContainer = team === "left" ? pickMapContainerLeftEl : pickMapContainerRightEl
+        const $currentContainer = team === "left" ? $pickMapContainerLeft : $pickMapContainerRight
 
-        for (let i = 0; i < currentContainer.children().length; i++) {
-            const child = currentContainer.children().eq(i)
+        for (let i = 0; i < $currentContainer.children().length; i++) {
+            const $child = $currentContainer.children().eq(i)
             
             // Set pick image and text
-            if (child.attr("data-id") !== undefined) continue
-            child.attr("data-id", currentMapId)
-            child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
-            child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
+            if ($child.attr("data-id") !== undefined) continue
+            $child.attr("data-id", currentMapId)
+            $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
-            const mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-            mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
-            mappoolSectionChild.addClass("map-tile-picked")
-            mappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
-            mappoolSectionChild.children().eq(8).css("opacity", "1")
-            mappoolSectionChild.children().eq(9).css("opacity", "1")
-            mappoolSectionChild.children().eq(9).text(`Picked by ${team === "left" ? "LEFT" : "RIGHT"}`)
+            const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
+            $mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+            $mappoolSectionChild.addClass("map-tile-picked")
+            $mappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+            $mappoolSectionChild.children().eq(8).css("opacity", "1")
+            $mappoolSectionChild.children().eq(9).css("opacity", "1")
+            $mappoolSectionChild.children().eq(9).text(`Picked by ${team === "left" ? "LEFT" : "RIGHT"}`)
             break
         }
     }
 }
 
 /* Chat */
-const chatDisplayEl = $("#chat-display")
+const $chatDisplay = $("#chat-display")
 let chatLen
 
 // Socket
@@ -234,12 +234,12 @@ $(socket).on("message", event => {
     // Chat
     const chatData = data.tourney.chat
     if (chatLen !== chatData.length) {
-        chatLen = updateChat(chatLen, chatData, chatDisplayEl)
+        chatLen = updateChat(chatLen, chatData, $chatDisplay)
     }
 })
 
 // Next Picker
-const nextPickerEl = $("#next-picker")
+const $nextPicker = $("#next-picker")
 let currentNextPicker = "none"
 
 /**
@@ -247,11 +247,11 @@ let currentNextPicker = "none"
  */
 function setNextPicker(pickerTeam) {
     currentNextPicker = pickerTeam
-    nextPickerEl.text(pickerTeam.toUpperCase())
+    $nextPicker.text(pickerTeam.toUpperCase())
 }
 
 // Toggle Autopick
-const toggleAutopickEl = $("#toggle-autopick")
+const $toggleAutopick = $("#toggle-autopick")
 let isAutopickToggled = false
 
 /**
@@ -259,18 +259,18 @@ let isAutopickToggled = false
  */
 function toggleAutopick() {
     isAutopickToggled = !isAutopickToggled
-    toggleAutopickEl.text(`TOGGLE AUTOPICK: ${isAutopickToggled? "ON": "OFF"}`)
+    $toggleAutopick.text(`TOGGLE AUTOPICK: ${isAutopickToggled? "ON": "OFF"}`)
     if (isAutopickToggled) {
-        toggleAutopickEl.removeClass("toggle-inactive")
-        toggleAutopickEl.addClass("toggle-active")
+        $toggleAutopick.removeClass("toggle-inactive")
+        $toggleAutopick.addClass("toggle-active")
     } else {
-        toggleAutopickEl.addClass("toggle-inactive")
-        toggleAutopickEl.removeClass("toggle-active")
+        $toggleAutopick.addClass("toggle-inactive")
+        $toggleAutopick.removeClass("toggle-active")
     }
 }
 
 // Current Picker
-const currentPickerEl = $("#current-picker")
+const $currentPicker = $("#current-picker")
 let currentPicker = "none"
 
 /**
@@ -279,26 +279,26 @@ let currentPicker = "none"
  */
 function setCurrentPicker(pickerTeam) {
     currentPicker = pickerTeam
-    currentPickerEl.text(pickerTeam.toUpperCase())
+    $currentPicker.text(pickerTeam.toUpperCase())
     document.cookie = `currentPicker=${pickerTeam}; path=/`
 }
 
 // Set Next Picker Elements
-const setNextPickerLeftEl = $("#set-next-picker-left")
-const setNextPickerRightEl = $("#set-next-picker-right")
-const nextPickerNoneEl = $("#next-picker-none")
+const $setNextPickerLeft = $("#set-next-picker-left")
+const $setNextPickerRight = $("#set-next-picker-right")
+const $nextPickerNone = $("#next-picker-none")
 
 // Set Current Picker Elements
-const setCurrentPickerLeftEl = $("#set-current-picker-left")
-const setCurrentPickerRightEl = $("#set-current-picker-right")
-const currentPickerNoneEl = $("#current-picker-none")
+const $setCurrentPickerLeft = $("#set-current-picker-left")
+const $setCurrentPickerRight = $("#set-current-picker-right")
+const $currentPickerNone = $("#current-picker-none")
 
 $(window).on("load", () => {
-    setNextPickerLeftEl.on("click", () => setNextPicker("left"))
-    setNextPickerRightEl.on("click", () => setNextPicker("right"))
-    nextPickerNoneEl.on("click", () => setNextPicker("none"))
-    toggleAutopickEl.on("click", toggleAutopick)
-    setCurrentPickerLeftEl.on("click", () => setCurrentPicker("left"))
-    setCurrentPickerRightEl.on("click", () => setCurrentPicker("right"))
-    currentPickerNoneEl.on("click", () => setCurrentPicker("none"))
+    $setNextPickerLeft.on("click", () => setNextPicker("left"))
+    $setNextPickerRight.on("click", () => setNextPicker("right"))
+    $nextPickerNone.on("click", () => setNextPicker("none"))
+    $toggleAutopick.on("click", toggleAutopick)
+    $setCurrentPickerLeft.on("click", () => setCurrentPicker("left"))
+    $setCurrentPickerRight.on("click", () => setCurrentPicker("right"))
+    $currentPickerNone.on("click", () => setCurrentPicker("none"))
 })
