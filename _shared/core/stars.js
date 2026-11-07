@@ -5,7 +5,6 @@ let blueStarCount = 0
 let totalBestOf = 0
 let firstTo = 0
 
-// Toggle stars
 export function toggleStars(buttonText, button, redTeamStarContainer, blueTeamStarContainer) {
     const $buttonText = $(buttonText)
     const $button = $(button)

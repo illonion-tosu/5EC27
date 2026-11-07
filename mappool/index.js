@@ -239,6 +239,68 @@ function updateNowPlaying(beatmapData) {
     }
 }
 
+/**
+ * Sums each team's scores
+ * On FM maps, EZ scores are multiplied by the map's EZMultiplier (a tournament rule, not a bug)
+ * @param {Array<Object>} clients - data.tourney.clients
+ * @param {Object|undefined} mappoolBeatmap - The current mappool entry, if any
+ * @returns {{left: number, right: number}}
+ */
+function calculateTeamScores(clients, mappoolBeatmap) {
+    const scores = { left: 0, right: 0 }
+    const applyEZMultiplier = mappoolBeatmap?.mod === "FM" && mappoolBeatmap.EZMultiplier
+
+    for (const client of clients) {
+        let score = client.play.score
+        if (applyEZMultiplier && client.mods.name.includes("EZ")) {
+            score *= mappoolBeatmap.EZMultiplier
+        }
+
+        if (client.team === "left") scores.left += score
+        else scores.right += score
+    }
+
+    return scores
+}
+
+/**
+ * If the IPC State is the same as before, do nothing
+ * If the IPC State is not 4, turn checkedWinner to false and then do nothing
+ * If the IPC State is 4, but checkdWinner is false, do nothing
+ * If stars are not turned on, do nothing
+ * If the current map is not a mappool beatmap, do nothing
+ * If all guards are paseed, set the winner
+ * 
+ * @param {object} scores 
+ * @param {number} currentIpcState 
+ * @returns 
+ */
+function setWinner(scores, currentIpcState) {
+    // Check IPC State
+    if (ipcState === currentIpcState) return
+    ipcState = currentIpcState
+
+    // Checked winner
+    if (ipcState !== 4) {
+        checkedWinner = false
+        return
+    }
+    if (checkedWinner) return
+    
+    checkedWinner = true
+    if (!isStarOn()) return
+    if (!currentMappoolBeatmap) return
+
+    let winner = ""
+    if (scores.left > scores.right) {
+        winner = "red"
+    } else if (scores.left < scores.right) {
+        winner = "blue"
+    }
+
+    updateStarCount(winner, "plus", $teamStarContainerLeft, $teamStarContainerRight)
+}
+
 // Ban Map Containers
 const $banMapContainerLeft = $("#ban-map-container-left")
 const $banMapContainerRight = $("#ban-map-container-right")
@@ -246,6 +308,10 @@ const $banMapContainerRight = $("#ban-map-container-right")
 /* Chat */
 const $chatDisplay = $("#chat-display")
 let chatLen
+
+// IPC State
+let ipcState
+let checkedWinner
 
 // Socket
 const socket = createTosuWsSocket()
@@ -263,6 +329,12 @@ $(socket).on("message", event => {
 
     // Now Playing + Stats
     updateNowPlaying(data.beatmap)
+
+    // Score
+    const scores = calculateTeamScores(data.tourney.clients, currentMappoolBeatmap)
+
+    // Set winner
+    setWinner(scores, data.tourney.ipcState)
 })
 
 // Next Picker
