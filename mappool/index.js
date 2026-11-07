@@ -42,7 +42,7 @@ loadBeatmaps().then(beatmaps => {
 
     setDefaultStarCount(totalPicks * 2 - 1, $teamStarContainerLeft, $teamStarContainerRight)
 
-    for (let i = 0; i < totalPicks - 1; i++) {
+    for (let i = 0; i < totalPicks; i++) {
         $pickMapContainerLeft.append(createPickBanMapWrapper())
         $pickMapContainerRight.append(createPickBanMapWrapper())
     }
@@ -316,7 +316,7 @@ let checkedWinner
 
 // Socket
 const socket = createTosuWsSocket()
-$(socket).on("message", event => {
+$(socket).on("message", event => {  
     const data = JSON.parse(event.originalEvent.data)
 
     // Teams
@@ -413,7 +413,7 @@ function mappoolOverrideChangeAction() {
     $mappoolOverrideColumn.append(createH2Title(`Which ${action}?`))
 
     // Create select
-    const actionsPerTeam = action === "Ban" ? TOTAL_BANS : $(teamHistoryLeftAreaEl).children().length
+    const actionsPerTeam = action === "Ban" ? TOTAL_BANS : $pickMapContainerLeft.children().length
     const $whichActionSelect = $("<select>", {
         class: "mappool-override-select",
         id: "which-action-select",
@@ -518,6 +518,46 @@ function mappoolOverrideSetBan() {
     $mappoolSectionChild.children().eq(9).text(`Banned by ${mappoolOverrideTeam === "left" ? currentTeamNameLeft : currentTeamNameRight}`)
 }
 
+// Mappool Override Remove Ban
+function mappoolOverrideRemoveBan() {
+    if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
+
+    // Get Containers
+    const $currentBanContainer = $(mappoolOverrideTeam === "left" ? $banMapContainerLeft : $banMapContainerRight)
+
+    // Get rid of previous information
+    const $child = $currentBanContainer.children().eq(Number(mappoolOverrideTileNumber))
+    const previousId = $child.attr("data-id")
+    const currentMap = findBeatmap(previousId)
+
+    // For mappool in the middle
+    const $previousMappoolSectionChild = $(`.mod-section > [data-id="${previousId}"]`).first()
+    $previousMappoolSectionChild.removeClass("map-tile-banned")
+    $previousMappoolSectionChild.children().eq(2).attr("src", `static/bats/${currentMap.mod}-bat.png`)
+    $previousMappoolSectionChild.children().eq(8).css("opacity", "0")
+    $previousMappoolSectionChild.children().eq(9).css("opacity", "0")
+
+    // For the actual child
+    $child.attr("data-id", "")
+    $child.children().eq(0).attr("src", "")
+    $child.children().eq(1).text("")
+}
+
+// Mappool Override Set Pick
+function mappoolOverrideSetPick() {
+    if (!mappoolOverrideTeam || !mappoolOverrideTileNumber || !mappoolOverrideMap) return
+
+    // Get current map
+    const currentMap = findBeatmap(mappoolOverrideMap)
+    if (!currentMap) return
+
+    // Set map information
+    const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? $pickMapContainerLeft : $pickMapContainerRight)
+    const $currentTile = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
+
+    setPick($currentTile[0], mappoolOverrideMap, currentMap, mappoolOverrideTeam)
+}
+
     // for (let i = 0; i < $currentContainer.children().length; i++) {
     //     const $child = $currentContainer.children().eq(i)
 
@@ -537,45 +577,12 @@ function mappoolOverrideSetBan() {
     //     break
     // }
 
-// Mappool Override Remove Ban
-function mappoolOverrideRemoveBan() {
-    if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
-
-    // Get Containers
-    const $currentBanContainer = $(mappoolOverrideTeam === "left" ? bannedLeftMapsEl : bannedRightMapsEl)
-
-    // Remove information
-    const $image = $currentBanContainer.children().eq(Number(mappoolOverrideTileNumber))
-    const currentMap = findBeatmap($image.attr("data-id"))
-    if (!currentMap) return
-    $image.removeAttr("src").removeAttr("data-id")
-
-    // Mark as unpicked
-    const $modImage = $(`#${currentMap.mod.toLowerCase()}${currentMap.order}`).children().first()
-    $modImage.attr("src", $modImage.prop("src").replace("/picked/", "/unpicked/"))
-}
-
-// Mappool Override Set Pick
-function mappoolOverrideSetPick() {
-    if (!mappoolOverrideTeam || !mappoolOverrideTileNumber || !mappoolOverrideMap) return
-
-    // Get current map
-    const currentMap = findBeatmap(mappoolOverrideMap)
-    if (!currentMap) return
-
-    // Set map information
-    const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? teamHistoryLeftAreaEl : teamHistoryRightAreaEl)
-    const $currentTile = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
-
-    setPick($currentTile[0], mappoolOverrideMap, currentMap, mappoolOverrideTeam)
-}
-
 // Mappool Override Remove Pick
 function mappoolOverrideRemovePick() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
 
     // Set map information
-    const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? teamHistoryLeftAreaEl : teamHistoryRightAreaEl)
+    const $currentMappoolContainer = $(mappoolOverrideTeam === "left" ? $pickMapContainerLeft : $pickMapContainerRight)
     const $currentTile = $currentMappoolContainer.children().eq(Number(mappoolOverrideTileNumber))
 
     // Remove map information
