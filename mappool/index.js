@@ -292,6 +292,12 @@ function calculateTeamScores(clients, mappoolBeatmap) {
 let ipcState
 let checkedWinner
 
+// Auto Advanced Button
+const $autoAdvanceButton = $('#auto-advance-button')
+
+/**
+ * Toggle Auto Advance
+ */
 let enableAutoAdvance = false
 function switchAutoAdvance() {
     enableAutoAdvance = !enableAutoAdvance
@@ -413,10 +419,6 @@ const $toggleStarsText = $("#toggle-stars-text")
 // Mappool override section
 const $mappoolOverrideColumn = $("#mappool-override-column")
 const $mappoolOverrideActionSelect = $("#mappool-override-action-select")
-
-// Auto Advanced Button
-const $autoAdvanceButton = $('#auto-advance-button')
-
 
 $(window).on("load", () => {
     $setNextPickerLeft.on("click", () => setNextPicker("left"))
