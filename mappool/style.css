@@ -425,7 +425,7 @@ body {
 
 /* Sidebar Buttons */
 .sidebar-button-container,
-#sceneCollection {
+#scene-collection {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -495,7 +495,7 @@ button, .scene-button {
 .toggle-active, .active-scene { background-color: rgb(32 121 44); }
 .toggle-inactive { background-color: rgb(121 32 32); }
 
-.sceneCollection {
+.scene-collection {
     display: flex;
     justify-content: center;
 }
