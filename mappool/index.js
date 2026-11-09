@@ -133,6 +133,16 @@ function setTeamDetails(teamName, side) {
     return teamName
 }
 
+// Ban Map Containers
+const $banMapContainerLeft = $("#ban-map-container-left")
+const $banMapContainerRight = $("#ban-map-container-right")
+
+// OBS Scene Names
+const PICK_TO_TRANSITION_DELAY_MS = 10000
+const GAMEPLAY_SCENE_NAME = "Gameplay"
+const MAPPOOL_SCENE_NAME = "Mappool"
+const WINNER_SCENE_NAME = "Winner"
+
 /**
  * Map Click Event
  */
@@ -206,6 +216,14 @@ function updateTeams(teamNames) {
 
 let currentNowPlayingId, currentNowPlayingChecksum, currentMappoolBeatmap
 
+// Toggle Autopick
+const $toggleAutopick = $("#toggle-autopick")
+let isAutopickToggled = false
+
+// Next Picker
+const $nextPicker = $("#next-picker")
+let currentNextPicker = "none"
+
 /**
  * Updates the now-playing panel when the beatmap ID or checksum changes
  * Mappool maps use stats from the mappool (with mods applied)
@@ -270,6 +288,16 @@ function calculateTeamScores(clients, mappoolBeatmap) {
     return scores
 }
 
+// IPC State
+let ipcState
+let checkedWinner
+
+let enableAutoAdvance = false
+function switchAutoAdvance() {
+    enableAutoAdvance = !enableAutoAdvance
+    $autoAdvanceButton.text(`AUTO ADVANCE: ${enableAutoAdvance ? "ON" : "OFF"}`)
+}
+
 /**
  * If the IPC State is the same as before, do nothing
  * If the IPC State is not 4, turn checkedWinner to false and then do nothing
@@ -309,24 +337,16 @@ function setWinner(scores, currentIpcState) {
     const currentStarCount = getStarCount()
     if (ipcState === 4 && isStarOn() && currentStarCount.redStarCount < totalPicks && currentStarCount.blueStarCount < totalPicks) {
         scheduleSceneTransition(MAPPOOL_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
-    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (currentStarCount.redStarCount === firstTo || currentStarCount.blueStarCount == firstTo)) {
+    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (currentStarCount.redStarCount === totalPicks || currentStarCount.blueStarCount === totalPicks)) {
         scheduleSceneTransition(WINNER_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     } else if ((ipcState === 2 || ipcState === 3) && enableAutoAdvance) {
         scheduleSceneTransition(GAMEPLAY_SCENE_NAME, 0)
     }
 }
 
-// Ban Map Containers
-const $banMapContainerLeft = $("#ban-map-container-left")
-const $banMapContainerRight = $("#ban-map-container-right")
-
 /* Chat */
 const $chatDisplay = $("#chat-display")
 let chatLen
-
-// IPC State
-let ipcState
-let checkedWinner
 
 // Socket
 const socket = createTosuWsSocket()
@@ -352,10 +372,6 @@ $(socket).on("message", event => {
     setWinner(scores, data.tourney.ipcState)
 })
 
-// Next Picker
-const $nextPicker = $("#next-picker")
-let currentNextPicker = "none"
-
 /**
  * Set the next picker
  */
@@ -363,10 +379,6 @@ function setNextPicker(pickerTeam) {
     currentNextPicker = pickerTeam
     $nextPicker.text(pickerTeam.toUpperCase())
 }
-
-// Toggle Autopick
-const $toggleAutopick = $("#toggle-autopick")
-let isAutopickToggled = false
 
 /**
  * Set the autopicker
@@ -398,6 +410,14 @@ const $starSectionRightMinus = $("#star-section-right-minus")
 const $toggleStars = $("#toggle-stars")
 const $toggleStarsText = $("#toggle-stars-text")
 
+// Mappool override section
+const $mappoolOverrideColumn = $("#mappool-override-column")
+const $mappoolOverrideActionSelect = $("#mappool-override-action-select")
+
+// Auto Advanced Button
+const $autoAdvanceButton = $('#auto-advance-button')
+
+
 $(window).on("load", () => {
     $setNextPickerLeft.on("click", () => setNextPicker("left"))
     $setNextPickerRight.on("click", () => setNextPicker("right"))
@@ -411,10 +431,6 @@ $(window).on("load", () => {
     $mappoolOverrideActionSelect.on("click", () => mappoolOverrideChangeAction())
     $autoAdvanceButton.on("click", () => switchAutoAdvance())
 })
-
-// Mappool override section
-const $mappoolOverrideColumn = $("#mappool-override-column")
-const $mappoolOverrideActionSelect = $("#mappool-override-action-select")
 
 function mappoolOverrideChangeAction() {
     const mappoolOverrideAction = $mappoolOverrideActionSelect.val()
@@ -622,23 +638,12 @@ function createH2Title(text) {
 
 // OBS Information
 const $sceneCollection = $('#sceneCollection')
-const $autoAdvanceButton = $('#auto-advance-button')
 const $autoAdvanceTimerContainer = $('#autoAdvanceTimer')
 const $autoAdvanceTimerLabel = $('#autoAdvanceTimerLabel')
 
-const PICK_TO_TRANSITION_DELAY_MS = 10000
-const GAMEPLAY_SCENE_NAME = "Gameplay"
-const MAPPOOL_SCENE_NAME = "Mappool"
-const WINNER_SCENE_NAME = "Winner"
 let sceneTransitionTimeoutID
 
 $autoAdvanceTimerContainer.css('opacity', '0')
-
-let enableAutoAdvance = false
-function switchAutoAdvance() {
-    enableAutoAdvance = !enableAutoAdvance
-    $autoAdvanceButton.text(`AUTO ADVANCE: ${enableAutoAdvance ? "ON" : "OFF"}`)
-}
 
 const obsGetCurrentScene = window.obsstudio?.getCurrentScene ?? (() => {})
 const obsGetScenes = window.obsstudio?.getScenes ?? (() => {})

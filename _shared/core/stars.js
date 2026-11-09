@@ -136,7 +136,7 @@ export function renderStars(redTeamStarContainer, blueTeamStarContainer) {
  * @param {$element} $starContainer Either the container for red or blue stars
  * @param {number} firstTo Match First To 
  */
-function iterateStarImages(starCount, $starContainer, firstTo) {
+function iterateStarImages(starCount, $starContainer) {
     for (let i = 0; i < firstTo; i++) {
         $starContainer.append(createStarImage(i < starCount ? "fill" : "empty"))
     }
