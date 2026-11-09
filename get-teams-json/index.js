@@ -1,6 +1,9 @@
 const $textarea = $("#textarea")
 const $button = $("#button")
 
+/**
+ * Submit teams data
+ */
 async function submit() {
     // Local, so pressing Submit twice doesn't download every team twice
     const teams = []
@@ -40,6 +43,9 @@ async function submit() {
     $link[0].click()
 }
 
+/**
+ * Load event listener
+ */
 $(window).on("load", () => {
     $button.on("click", submit)
 })

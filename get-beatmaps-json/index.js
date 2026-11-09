@@ -4,6 +4,11 @@ import { initialiseOsuApi, getOsuApi } from "../_shared/core/apis.js"
 const $downloadingData = $("#downloading-data")
 const $button = $("#button")
 
+/**
+ * Load in beatmaps-base.json
+ * Get data for all maps from beatmaps-base.json
+ * Download the data
+ */
 async function getBeatmaps() {
     // Local, so pressing the button twice doesn't duplicate every beatmap
     const allBeatmapsJson = []
@@ -90,6 +95,9 @@ async function getBeatmaps() {
     $link[0].click()
 }
 
+/**
+ * Ran when button is clicked, disable the button, get the osu! api, and then get the beatmaps
+ */
 async function initialise() {
     $button.prop("disabled", true)
     await initialiseOsuApi()
@@ -97,6 +105,9 @@ async function initialise() {
     $button.prop("disabled", false)
 }
 
+/**
+ * Load event listener
+ */
 $(window).on("load", () => {
     $button.on("click", initialise)
 })

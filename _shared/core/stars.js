@@ -5,6 +5,14 @@ let blueStarCount = 0
 let totalBestOf = 0
 let firstTo = 0
 
+/**
+ * Toggles the stars on and off, and displays it in text / changes its classes
+ * After toggling, the stars get rendered
+ * @param {$element} buttonText Button text element
+ * @param {$element} button Button element
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ */
 export function toggleStars(buttonText, button, redTeamStarContainer, blueTeamStarContainer) {
     const $buttonText = $(buttonText)
     const $button = $(button)
@@ -21,6 +29,15 @@ export function toggleStars(buttonText, button, redTeamStarContainer, blueTeamSt
     renderStars(redTeamStarContainer, blueTeamStarContainer)
 }
 
+/**
+ * Update the star count
+ * @param {"red"|"blue"} side red / blue
+ * @param {"plus"|"minus"} action plus / minus
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ * @param {string} redTeamName red team anme
+ * @param {string} blueTeamName blue team name
+ */
 export function updateStarCount(side, action, redTeamStarContainer, blueTeamStarContainer, redTeamName, blueTeamName) {
     // Update star count
     if (side === "red" && action === "plus") redStarCount++
@@ -42,7 +59,9 @@ export function updateStarCount(side, action, redTeamStarContainer, blueTeamStar
     document.cookie = `currentWinner=${currentWinner}; path=/`
 }
 
-// Save Star Count
+/**
+ * Saves the star count
+ */
 function saveStarCount() {
     document.cookie = `redStarCount=${redStarCount}; path=/`
     document.cookie = `blueStarCount=${blueStarCount}; path=/`
@@ -50,12 +69,23 @@ function saveStarCount() {
     document.cookie = `firstTo=${firstTo}; path=/`
 }
 
-// Get Star Count
+/**
+ * Get the star count
+ * @returns {object} Gets the star count
+ */
 export function getStarCount() {
     return { "redStarCount": getCookie("redStarCount"), "blueStarCount": getCookie("blueStarCount") }
 }
 
-// Set default star count
+/**
+ * Sets the default star count
+ * Red and blue stars is 0
+ * Sets the best of based on parameter
+ * saves the first to based on the best of
+ * @param {*} bestOf Match Best Of
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ */
 export function setDefaultStarCount(bestOf, redTeamStarContainer, blueTeamStarContainer) {
     redStarCount = 0
     blueStarCount = 0
@@ -65,19 +95,30 @@ export function setDefaultStarCount(bestOf, redTeamStarContainer, blueTeamStarCo
     renderStars(redTeamStarContainer, blueTeamStarContainer)
 }
 
-// Display Stars
+/**
+ * Toggle the star containers on or off
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ */
 export function toggleStarContainers(redTeamStarContainer, blueTeamStarContainer) {
     const isOn = getCookie("toggleStarContainers") === "true"
     $(redTeamStarContainer).css("display", isOn ? "flex" : "none")
     $(blueTeamStarContainer).css("display", isOn ? "flex" : "none")
 }
 
-// Get isStarOn
+/**
+ * Checks for if the star is turned on
+ * @returns {"true"|"false"} returns whether the star is turned on
+ */
 export function isStarOn() {
     return getCookie("toggleStarContainers") === "true"
 }
 
-// Set Star Count Display
+/**
+ * Render the stars through iterating images
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ */
 export function renderStars(redTeamStarContainer, blueTeamStarContainer) {
     const renderStarCountRed = Number(getCookie("redStarCount"))
     const renderStarCountBlue = Number(getCookie("blueStarCount"))
@@ -89,12 +130,22 @@ export function renderStars(redTeamStarContainer, blueTeamStarContainer) {
     iterateStarImages(renderStarCountBlue, $blueContainer, renderFirstTo)
 }
 
+/**
+ * Inserts generated image into star container
+ * @param {number} starCount Star count - used to determine if the image should be the "fill" or "empty" image
+ * @param {$element} $starContainer Either the container for red or blue stars
+ * @param {number} firstTo Match First To 
+ */
 function iterateStarImages(starCount, $starContainer, firstTo) {
     for (let i = 0; i < firstTo; i++) {
         $starContainer.append(createStarImage(i < starCount ? "fill" : "empty"))
     }
 }
-
+/**
+ * Creates a div with the class of "star-wrapper", with an image in the middle based on the status
+ * @param {"fill"|"empty"} status Fill / Empty
+ * @returns 
+ */
 function createStarImage(status) {
     return $("<div>", { class: "star-wrapper" }).append(
         $("<img>", { src: `../_shared/assets/star/star-${status}.png` })
