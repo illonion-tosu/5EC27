@@ -29,7 +29,6 @@ export function updateChat(chatLen, chatData, $chatContainer) {
 
         $chatContainer.append($messages)
         chatLen = chatData.length
-        console.log($chatContainer[0])
         $chatContainer.scrollTop($chatContainer[0].scrollHeight)
     }
 

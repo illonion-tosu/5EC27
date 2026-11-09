@@ -424,7 +424,8 @@ body {
 }
 
 /* Sidebar Buttons */
-.sidebar-button-container {
+.sidebar-button-container,
+#sceneCollection {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -432,7 +433,7 @@ body {
     gap: 10px;
 }
 
-button {
+button, .scene-button {
     width: 105px;
     height: 30px;
     font-weight: 400;
@@ -491,11 +492,20 @@ button {
 }
 
 /* Active / Inactive */
-.toggle-active { background-color: rgb(32 121 44); }
+.toggle-active, .active-scene { background-color: rgb(32 121 44); }
 .toggle-inactive { background-color: rgb(121 32 32); }
 
-#scene-collection button {
-    height: 60px;
-    font-size: 0.8em;
-    line-height: 15px;
+.sceneCollection {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-button-container button:active, div.full-length-button:active {
+    color: #449071;
+    background-color: white;
+}
+
+.scene-button {
+    line-height: 34px;
+    font-size: 1rem;
 }

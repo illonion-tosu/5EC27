@@ -1,6 +1,6 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
-import { isStarOn, setDefaultStarCount, toggleStars, updateStarCount } from "../_shared/core/stars.js"
+import { getStarCount, isStarOn, setDefaultStarCount, toggleStars, updateStarCount } from "../_shared/core/stars.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
@@ -180,6 +180,10 @@ function mapClickEvent(event) {
         $mappoolSectionChild.children().eq(9).text(`${action === "ban" ? "Banned" : "picked"} by ${team === "left" ? currentTeamNameLeft : currentTeamNameRight}`)
         break
     }
+
+    if (action === "pick") {
+        scheduleSceneTransition(GAMEPLAY_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
+    }
 }
 
 /**
@@ -218,15 +222,12 @@ function updateNowPlaying(beatmapData) {
 
     // Check for mappool map
     currentMappoolBeatmap = findBeatmap(currentNowPlayingId)
-    console.log(currentMappoolBeatmap)
     if (currentMappoolBeatmap) {
         // Find element
         const $element = $(`#${currentNowPlayingId}`)
 
         // Click event
         const isAutopicked = $element.attr("data-is-autopicked") === "true"
-
-        console.log(isAutopickToggled, $element.length, !isAutopicked)
 
         if (isAutopickToggled && $element.length && !isAutopicked) {
             // Check if autopicked already
@@ -287,24 +288,32 @@ function setWinner(scores, currentIpcState) {
     ipcState = currentIpcState
 
     // Checked winner
-    if (ipcState !== 4) {
-        checkedWinner = false
-        return
-    }
-    if (checkedWinner) return
+    if (ipcState !== 4) checkedWinner = false
     
-    checkedWinner = true
-    if (!isStarOn()) return
-    if (!currentMappoolBeatmap) return
+    if (ipcState === 4 && !checkedWinner) {
+        checkedWinner = true
 
-    let winner = ""
-    if (scores.left > scores.right) {
-        winner = "red"
-    } else if (scores.left < scores.right) {
-        winner = "blue"
+        if (isStarOn() && currentMappoolBeatmap) {
+            let winner = ""
+            if (scores.left > scores.right) {
+                winner = "red"
+            } else if (scores.left < scores.right) {
+                winner = "blue"
+            }
+
+            updateStarCount(winner, "plus", $teamStarContainerLeft, $teamStarContainerRight)
+        }
     }
 
-    updateStarCount(winner, "plus", $teamStarContainerLeft, $teamStarContainerRight)
+    // Scene transition
+    const currentStarCount = getStarCount()
+    if (ipcState === 4 && isStarOn() && currentStarCount.redStarCount < totalPicks && currentStarCount.blueStarCount < totalPicks) {
+        scheduleSceneTransition(MAPPOOL_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
+    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (currentStarCount.redStarCount === firstTo || currentStarCount.blueStarCount == firstTo)) {
+        scheduleSceneTransition(WINNER_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
+    } else if ((ipcState === 2 || ipcState === 3) && enableAutoAdvance) {
+        scheduleSceneTransition(GAMEPLAY_SCENE_NAME, 0)
+    }
 }
 
 // Ban Map Containers
@@ -400,6 +409,7 @@ $(window).on("load", () => {
     $starSectionRightMinus.on("click", () => updateStarCount("blue", "minus", $teamStarContainerLeft, $teamStarContainerRight))
     $toggleStars.on("click", () => toggleStars($toggleStarsText, $toggleStars, $teamStarContainerLeft, $teamStarContainerRight))
     $mappoolOverrideActionSelect.on("click", () => mappoolOverrideChangeAction())
+    $autoAdvanceButton.on("click", () => switchAutoAdvance())
 })
 
 // Mappool override section
@@ -490,8 +500,6 @@ function mappoolOverrideSelectMap() {
 // Mappool Override Set Ban
 function mappoolOverrideSetBan() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber || !mappoolOverrideMap) return
-
-    console.log(mappoolOverrideTileNumber)
 
     // Get current map
     const currentMap = findBeatmap(mappoolOverrideMap)
@@ -610,4 +618,73 @@ function mappoolOverrideRemovePick() {
 // Create h2 title
 function createH2Title(text) {
     return $("<h2>", { text })
+}
+
+// OBS Information
+const $sceneCollection = $('#sceneCollection')
+const $autoAdvanceButton = $('#auto-advance-button')
+const $autoAdvanceTimerContainer = $('#autoAdvanceTimer')
+const $autoAdvanceTimerLabel = $('#autoAdvanceTimerLabel')
+
+const PICK_TO_TRANSITION_DELAY_MS = 10000
+const GAMEPLAY_SCENE_NAME = "Gameplay"
+const MAPPOOL_SCENE_NAME = "Mappool"
+const WINNER_SCENE_NAME = "Winner"
+let sceneTransitionTimeoutID
+
+$autoAdvanceTimerContainer.css('opacity', '0')
+
+let enableAutoAdvance = false
+function switchAutoAdvance() {
+    enableAutoAdvance = !enableAutoAdvance
+    $autoAdvanceButton.text(`AUTO ADVANCE: ${enableAutoAdvance ? "ON" : "OFF"}`)
+}
+
+const obsGetCurrentScene = window.obsstudio?.getCurrentScene ?? (() => {})
+const obsGetScenes = window.obsstudio?.getScenes ?? (() => {})
+const obsSetCurrentScene = window.obsstudio?.setCurrentScene ?? (() => {})
+
+obsGetScenes(scenes => {
+    for (const scene of scenes) {
+        const $clone = $($('#sceneButtonTemplate').prop('content')).clone()
+        $clone.find('div')
+            .first()
+            .attr('id', `scene__${scene}`)
+            .text(`GO TO: ${scene}`)
+            .on('click', () => obsSetCurrentScene(scene))
+        $sceneCollection.append($clone)
+    }
+
+    obsGetCurrentScene(scene => {
+        $(document.getElementById(`scene__${scene.name}`)).addClass('active-scene')
+    })
+})
+
+function scheduleSceneTransition(targetSceneName, delay) {
+    const createTransitionTask = (duration) => setTimeout(() => {
+        obsGetCurrentScene((currentScene) => {
+            if (currentScene.name === targetSceneName) {
+                $autoAdvanceTimerLabel.text(`Already on ${targetSceneName}\n`);
+                return
+            }
+            obsSetCurrentScene(targetSceneName)
+            $autoAdvanceTimerContainer.css('opacity', '0')
+        })
+    }, duration)
+
+    // use global timeout for this overlay, the pick/ban style doesn't lend to repeated pick events so
+    // no point in idempotence
+    clearTimeout(sceneTransitionTimeoutID)
+    sceneTransitionTimeoutID = createTransitionTask(delay)
+
+    const autoadvance_timer_time = new CountUp('autoAdvanceTimerTime',
+        delay / 1000,
+        0,
+        1,
+        delay / 1000,
+        {useEasing: false, suffix: 's'}
+    )
+    autoadvance_timer_time.start()
+    $autoAdvanceTimerContainer.css('opacity', '1')
+    $autoAdvanceTimerLabel.text(`Switching to ${targetSceneName} in`)
 }
