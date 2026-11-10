@@ -60,11 +60,22 @@ body {
     height: 63px;
 }
 
-/* Pick Ban Map Wrapper */
 .pick-ban-map-wrapper {
     position: relative;
     width: 101px;
     height: 63px;
+    display: none;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out, display 500ms allow-discrete;
+}
+
+.pick-ban-map-wrapper.shown {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
 }
 
 /* Pick Ban Image */

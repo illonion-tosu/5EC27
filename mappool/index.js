@@ -1,6 +1,7 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getStarCount, isStarOn, setDefaultStarCount, toggleStars, updateStarCount } from "../_shared/core/stars.js"
+import { delay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
@@ -12,7 +13,6 @@ const $teamStarContainerLeft = $("#team-star-container-left")
 const $teamStarContainerRight = $("#team-star-container-right")
 
 // Rounds and beatmaps
-const $mappoolManagementMaps = $("#mappool-management-maps")
 const $roundName = $("#round-name")
 let allBeatmaps
 let totalPicks
@@ -24,7 +24,6 @@ loadBeatmaps().then(beatmaps => {
     // Create map cards
     for (let i = 0; i < allBeatmaps.length; i++) {
         createMapCard(allBeatmaps[i])
-        $mappoolManagementMaps.append(createMappoolManagementButton(allBeatmaps[i]))
     }
 
     // Create picks and bans
@@ -47,19 +46,6 @@ loadBeatmaps().then(beatmaps => {
         $pickMapContainerRight.append(createPickBanMapWrapper())
     }
 })
-
-/**
- * Creates mappool management button
- * @param {object} currentMap - Current map parsed in by beatmaps.json
- * @returns {$element} - jquery button element 
- */
-function createMappoolManagementButton(currentMap) {
-    return $("<button>", { id: currentMap.beatmap_id })
-        .attr("data-id", currentMap.beatmap_id)
-        .text(`${currentMap.mod}${currentMap.order}`)
-        .on("mousedown", mapClickEvent)
-        .on("contextmenu", event => event.preventDefault())
-}
 
 /**
  * Creates map card
@@ -94,6 +80,8 @@ function createMapCard(currentMap) {
     )
     .css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
     .attr("data-id", currentMap.beatmap_id)
+    .on("mousedown", mapClickEvent)
+    .on("contextmenu", event => event.preventDefault())
 
     $(`#${currentMap.mod.toLowerCase()}-mod-section`).append($mapTile)
 }
@@ -178,6 +166,7 @@ function mapClickEvent(event) {
         // Set ban image and text
         if ($child.attr("data-id") !== undefined) continue
         $child.attr("data-id", currentMapId)
+        $child.addClass("shown")
         $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
         $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
@@ -537,6 +526,7 @@ function mappoolOverrideSetBan() {
 
     // Set information
     $child.attr("data-id", mappoolOverrideMap)
+    $child.addClass("shown")
     $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
     $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
@@ -550,7 +540,7 @@ function mappoolOverrideSetBan() {
 }
 
 // Mappool Override Remove Ban
-function mappoolOverrideRemoveBan() {
+async function mappoolOverrideRemoveBan() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
 
     // Get Containers
@@ -570,6 +560,8 @@ function mappoolOverrideRemoveBan() {
 
     // For the actual child
     $child.attr("data-id", "")
+    $child.removeClass("shown")
+    await delay(500)
     $child.children().eq(0).attr("src", "")
     $child.children().eq(1).text("")
 }
@@ -596,6 +588,7 @@ function mappoolOverrideSetPick() {
 
     // Set information
     $child.attr("data-id", mappoolOverrideMap)
+    $child.addClass("shown")
     $child.children().eq(0).attr("src", `static/bats/${currentMap.mod}-bat.png`)
     $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
@@ -609,7 +602,7 @@ function mappoolOverrideSetPick() {
 }
 
 // Mappool Override Remove Pick
-function mappoolOverrideRemovePick() {
+async function mappoolOverrideRemovePick() {
     if (!mappoolOverrideTeam || !mappoolOverrideTileNumber) return
 
     // Set map informationf
@@ -629,6 +622,8 @@ function mappoolOverrideRemovePick() {
 
     // For the actual child
     $child.attr("data-id", "")
+    $child.removeClass("shown")
+    await delay(500)
     $child.children().eq(0).attr("src", "")
     $child.children().eq(1).text("")
 }
