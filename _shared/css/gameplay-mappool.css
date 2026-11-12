@@ -1,0 +1,77 @@
+:root {
+    --team-section-x: 35px;
+    --team-section-top-height: 80px;
+}
+
+/* Team Section */
+.team-section {
+    position: absolute;
+    top: 12px;
+    display: flex;
+    gap: 27px;
+}
+
+.team-section-left {
+    left: var(--team-section-x);
+}
+
+.team-section-right {
+    right: var(--team-section-x);
+    flex-direction: row-reverse;
+}
+
+/* Team Seed */
+.team-seed {
+    font-size: 3rem;
+    color: var(--light-red);
+    line-height: var(--team-section-top-height);
+}
+
+/* Team Section Inner */
+.team-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Team Name Flag */
+.team-name-flag {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.team-name-flag-right {
+    flex-direction: row-reverse;
+}
+
+/* Flag */
+.team-flag {
+    height: var(--team-section-top-height);
+}
+
+/* Name */
+.team-name {
+    font-size: 4rem;
+    color: var(--delicate-gold);
+}
+
+/* Team Star Container */
+.team-star-container {
+    display: flex;
+    gap: 4px;
+}
+
+.team-star-container-right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+/* Round Name */
+.round-name {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4.125rem;
+    color: var(--delicate-gold);
+}

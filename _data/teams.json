@@ -1,0 +1,964 @@
+[
+    {
+        "teamName": "Australia",
+        "ISO3166Alpha2": "AU",
+        "seed": 2,
+        "player1": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player2": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player3": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player4": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player5": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player6": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player7": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player8": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        }
+    },
+    {
+        "teamName": "Belgium",
+        "ISO3166Alpha2": "BE",
+        "seed": 3,
+        "player1": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player2": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player3": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player4": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player5": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player6": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player7": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player8": {
+            "id": 3168085,
+            "name": "Fblade"
+        }
+    },
+    {
+        "teamName": "Brazil",
+        "ISO3166Alpha2": "BR",
+        "seed": 4,
+        "player1": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player2": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player3": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player4": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player5": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player6": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player7": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player8": {
+            "id": 4277702,
+            "name": "Mystia"
+        }
+    },
+    {
+        "teamName": "Canada",
+        "ISO3166Alpha2": "CA",
+        "seed": 5,
+        "player1": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player2": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player3": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player4": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player5": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player6": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player7": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player8": {
+            "id": 3737401,
+            "name": "neuro"
+        }
+    },
+    {
+        "teamName": "Chile",
+        "ISO3166Alpha2": "CL",
+        "seed": 6,
+        "player1": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player2": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player3": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player4": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player5": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player6": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player7": {
+            "id": 5386106,
+            "name": "Deruz"
+        },
+        "player8": {
+            "id": 5386106,
+            "name": "Deruz"
+        }
+    },
+    {
+        "teamName": "China",
+        "ISO3166Alpha2": "CN",
+        "seed": 7,
+        "player1": {
+            "id": 7025429,
+            "name": "MyAngelMiku"
+        },
+        "player2": {
+            "id": 1646397,
+            "name": "Crystal"
+        },
+        "player3": {
+            "id": 7025429,
+            "name": "MyAngelMiku"
+        },
+        "player4": {
+            "id": 1646397,
+            "name": "Crystal"
+        },
+        "player5": {
+            "id": 7025429,
+            "name": "MyAngelMiku"
+        },
+        "player6": {
+            "id": 1646397,
+            "name": "Crystal"
+        },
+        "player7": {
+            "id": 7025429,
+            "name": "MyAngelMiku"
+        },
+        "player8": {
+            "id": 1646397,
+            "name": "Crystal"
+        }
+    },
+    {
+        "teamName": "Finland",
+        "ISO3166Alpha2": "FI",
+        "seed": 8,
+        "player1": {
+            "id": 8952423,
+            "name": "kareh"
+        },
+        "player2": {
+            "id": 6796557,
+            "name": "Samoyed"
+        },
+        "player3": {
+            "id": 8952423,
+            "name": "kareh"
+        },
+        "player4": {
+            "id": 6796557,
+            "name": "Samoyed"
+        },
+        "player5": {
+            "id": 8952423,
+            "name": "kareh"
+        },
+        "player6": {
+            "id": 6796557,
+            "name": "Samoyed"
+        },
+        "player7": {
+            "id": 8952423,
+            "name": "kareh"
+        },
+        "player8": {
+            "id": 6796557,
+            "name": "Samoyed"
+        }
+    },
+    {
+        "teamName": "France",
+        "ISO3166Alpha2": "FR",
+        "seed": 9,
+        "player1": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player2": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player3": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player4": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player5": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player6": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player7": {
+            "id": 8596325,
+            "name": "Goraniix"
+        },
+        "player8": {
+            "id": 8596325,
+            "name": "Goraniix"
+        }
+    },
+    {
+        "teamName": "Germany",
+        "ISO3166Alpha2": "DE",
+        "seed": 10,
+        "player1": {
+            "id": 1874761,
+            "name": "hallowatcher"
+        },
+        "player2": {
+            "id": 8260206,
+            "name": "cocona"
+        },
+        "player3": {
+            "id": 1874761,
+            "name": "hallowatcher"
+        },
+        "player4": {
+            "id": 8260206,
+            "name": "cocona"
+        },
+        "player5": {
+            "id": 1874761,
+            "name": "hallowatcher"
+        },
+        "player6": {
+            "id": 8260206,
+            "name": "cocona"
+        },
+        "player7": {
+            "id": 1874761,
+            "name": "hallowatcher"
+        },
+        "player8": {
+            "id": 8260206,
+            "name": "cocona"
+        }
+    },
+    {
+        "teamName": "Hong Kong",
+        "ISO3166Alpha2": "HK",
+        "seed": 11,
+        "player1": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player2": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player3": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player4": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player5": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player6": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player7": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        },
+        "player8": {
+            "id": 126144,
+            "name": "DenierNezzar"
+        }
+    },
+    {
+        "teamName": "Indonesia",
+        "ISO3166Alpha2": "ID",
+        "seed": 12,
+        "player1": {
+            "id": 4750008,
+            "name": "Skydiver"
+        },
+        "player2": {
+            "id": 6437601,
+            "name": "LoidKun"
+        },
+        "player3": {
+            "id": 4750008,
+            "name": "Skydiver"
+        },
+        "player4": {
+            "id": 6437601,
+            "name": "LoidKun"
+        },
+        "player5": {
+            "id": 4750008,
+            "name": "Skydiver"
+        },
+        "player6": {
+            "id": 6437601,
+            "name": "LoidKun"
+        },
+        "player7": {
+            "id": 4750008,
+            "name": "Skydiver"
+        },
+        "player8": {
+            "id": 6437601,
+            "name": "LoidKun"
+        }
+    },
+    {
+        "teamName": "Italy",
+        "ISO3166Alpha2": "IT",
+        "seed": 13,
+        "player1": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player2": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player3": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player4": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player5": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player6": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player7": {
+            "id": 10554981,
+            "name": "Gigen"
+        },
+        "player8": {
+            "id": 10554981,
+            "name": "Gigen"
+        }
+    },
+    {
+        "teamName": "Netherlands",
+        "ISO3166Alpha2": "NL",
+        "seed": 14,
+        "player1": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player2": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player3": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player4": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player5": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player6": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player7": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        },
+        "player8": {
+            "id": 9930215,
+            "name": "Turbotondel"
+        }
+    },
+    {
+        "teamName": "New Zealand",
+        "ISO3166Alpha2": "NZ",
+        "seed": 15,
+        "player1": {
+            "id": 6600930,
+            "name": "Zoomer"
+        },
+        "player2": {
+            "id": 2523703,
+            "name": "Feyyy"
+        },
+        "player3": {
+            "id": 6600930,
+            "name": "Zoomer"
+        },
+        "player4": {
+            "id": 2523703,
+            "name": "Feyyy"
+        },
+        "player5": {
+            "id": 6600930,
+            "name": "Zoomer"
+        },
+        "player6": {
+            "id": 2523703,
+            "name": "Feyyy"
+        },
+        "player7": {
+            "id": 6600930,
+            "name": "Zoomer"
+        },
+        "player8": {
+            "id": 2523703,
+            "name": "Feyyy"
+        }
+    },
+    {
+        "teamName": "Norway",
+        "ISO3166Alpha2": "NO",
+        "seed": 16,
+        "player1": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player2": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player3": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player4": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player5": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player6": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player7": {
+            "id": 5779181,
+            "name": "gilmat"
+        },
+        "player8": {
+            "id": 5779181,
+            "name": "gilmat"
+        }
+    },
+    {
+        "teamName": "Poland",
+        "ISO3166Alpha2": "PL",
+        "seed": 17,
+        "player1": {
+            "id": 6404027,
+            "name": "Bartek22830"
+        },
+        "player2": {
+            "id": 3543130,
+            "name": "twoj stary"
+        },
+        "player3": {
+            "id": 6404027,
+            "name": "Bartek22830"
+        },
+        "player4": {
+            "id": 3543130,
+            "name": "twoj stary"
+        },
+        "player5": {
+            "id": 6404027,
+            "name": "Bartek22830"
+        },
+        "player6": {
+            "id": 3543130,
+            "name": "twoj stary"
+        },
+        "player7": {
+            "id": 6404027,
+            "name": "Bartek22830"
+        },
+        "player8": {
+            "id": 3543130,
+            "name": "twoj stary"
+        }
+    },
+    {
+        "teamName": "Russian Federation",
+        "ISO3166Alpha2": "RU",
+        "seed": 18,
+        "player1": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player2": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player3": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player4": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player5": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player6": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player7": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        },
+        "player8": {
+            "id": 8374130,
+            "name": "Sadotaku"
+        }
+    },
+    {
+        "teamName": "Singapore",
+        "ISO3166Alpha2": "SG",
+        "seed": 19,
+        "player1": {
+            "id": 2312106,
+            "name": "GSBlank"
+        },
+        "player2": {
+            "id": 7537133,
+            "name": "youi"
+        },
+        "player3": {
+            "id": 2312106,
+            "name": "GSBlank"
+        },
+        "player4": {
+            "id": 7537133,
+            "name": "youi"
+        },
+        "player5": {
+            "id": 2312106,
+            "name": "GSBlank"
+        },
+        "player6": {
+            "id": 7537133,
+            "name": "youi"
+        },
+        "player7": {
+            "id": 2312106,
+            "name": "GSBlank"
+        },
+        "player8": {
+            "id": 7537133,
+            "name": "youi"
+        }
+    },
+    {
+        "teamName": "Slovakia",
+        "ISO3166Alpha2": "SK",
+        "seed": 20,
+        "player1": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player2": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player3": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player4": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player5": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player6": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player7": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        },
+        "player8": {
+            "id": 8847379,
+            "name": "SneakY NickY"
+        }
+    },
+    {
+        "teamName": "South Korea",
+        "ISO3166Alpha2": "KR",
+        "seed": 21,
+        "player1": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player2": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player3": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player4": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player5": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player6": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player7": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        },
+        "player8": {
+            "id": 13211236,
+            "name": "VarvalianFanboy"
+        }
+    },
+    {
+        "teamName": "Spain",
+        "ISO3166Alpha2": "ES",
+        "seed": 22,
+        "player1": {
+            "id": 6462387,
+            "name": "Frosiito"
+        },
+        "player2": {
+            "id": 9582556,
+            "name": "RivenXLukario"
+        },
+        "player3": {
+            "id": 6462387,
+            "name": "Frosiito"
+        },
+        "player4": {
+            "id": 9582556,
+            "name": "RivenXLukario"
+        },
+        "player5": {
+            "id": 6462387,
+            "name": "Frosiito"
+        },
+        "player6": {
+            "id": 9582556,
+            "name": "RivenXLukario"
+        },
+        "player7": {
+            "id": 6462387,
+            "name": "Frosiito"
+        },
+        "player8": {
+            "id": 9582556,
+            "name": "RivenXLukario"
+        }
+    },
+    {
+        "teamName": "Sweden",
+        "ISO3166Alpha2": "SE",
+        "seed": 23,
+        "player1": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player2": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player3": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player4": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player5": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player6": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player7": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        },
+        "player8": {
+            "id": 8335950,
+            "name": "Reedkatt"
+        }
+    },
+    {
+        "teamName": "Taiwan",
+        "ISO3166Alpha2": "TW",
+        "seed": 24,
+        "player1": {
+            "id": 959763,
+            "name": "Flask"
+        },
+        "player2": {
+            "id": 5155973,
+            "name": "Rizer"
+        },
+        "player3": {
+            "id": 959763,
+            "name": "Flask"
+        },
+        "player4": {
+            "id": 5155973,
+            "name": "Rizer"
+        },
+        "player5": {
+            "id": 959763,
+            "name": "Flask"
+        },
+        "player6": {
+            "id": 5155973,
+            "name": "Rizer"
+        },
+        "player7": {
+            "id": 959763,
+            "name": "Flask"
+        },
+        "player8": {
+            "id": 5155973,
+            "name": "Rizer"
+        }
+    },
+    {
+        "teamName": "Turkey",
+        "ISO3166Alpha2": "TR",
+        "seed": 25,
+        "player1": {
+            "id": 8007528,
+            "name": "Raikouhou"
+        },
+        "player2": {
+            "id": 5642779,
+            "name": "heyronii"
+        },
+        "player3": {
+            "id": 8007528,
+            "name": "Raikouhou"
+        },
+        "player4": {
+            "id": 5642779,
+            "name": "heyronii"
+        },
+        "player5": {
+            "id": 8007528,
+            "name": "Raikouhou"
+        },
+        "player6": {
+            "id": 5642779,
+            "name": "heyronii"
+        },
+        "player7": {
+            "id": 8007528,
+            "name": "Raikouhou"
+        },
+        "player8": {
+            "id": 5642779,
+            "name": "heyronii"
+        }
+    },
+    {
+        "teamName": "Ukraine",
+        "ISO3166Alpha2": "UA",
+        "seed": 26,
+        "player1": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player2": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player3": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player4": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player5": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player6": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player7": {
+            "id": 10073635,
+            "name": "dench"
+        },
+        "player8": {
+            "id": 10073635,
+            "name": "dench"
+        }
+    },
+    {
+        "teamName": "United States",
+        "ISO3166Alpha2": "US",
+        "seed": 27,
+        "player1": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player2": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player3": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player4": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player5": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player6": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player7": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player8": {
+            "id": 3126596,
+            "name": "Mlaw"
+        }
+    }
+]

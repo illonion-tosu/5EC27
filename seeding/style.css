@@ -1,0 +1,256 @@
+:root {
+    --team-metadata-top: 157px;
+    --seed-left: 210px;
+}
+
+/* Overlay */
+.overlay {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+}
+
+/* Background Image */
+.background-image {
+    background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Flag */
+.team-flag {
+    --dimension: 83.05px;
+
+    position: absolute;
+    top: var(--team-metadata-top);
+    left: 214px;
+    width: var(--dimension);
+    height: var(--dimension);
+}
+
+/* Team Name */
+.team-name {
+    position: absolute;
+    top: var(--team-metadata-top);
+    left: 323.5px;
+    font-size: 4rem;
+    color: var(--delicate-gold);
+}
+
+/* Seed Text */
+.seed-text {
+    position: absolute;
+    top: 249px;
+    left: var(--seed-left);
+    font-size: 3rem;
+    color: var(--light-red);
+}
+
+.seed-number {
+    position: absolute;
+    top: 292px;
+    left: var(--seed-left);
+    font-size: 6rem;
+    color: var(--light-red);
+}
+
+/* Last Year Information */
+.last-year-information-container {
+    position: absolute;
+    top: 308px;
+    left: 684px;
+    text-align: right;
+    display: flex;
+    gap: 49px;
+}
+
+.last-year-information-text {
+    color: var(--light-red);
+    font-size: 2.25rem;
+}
+
+.last-year-information-number {
+    color: var(--delicate-gold);
+    font-size: 3rem;
+    margin-top: -15px;
+}
+
+/* Mods Container */
+.mods-container {
+    position: absolute;
+    left: 481px;
+    top: 435px;
+    display: flex;
+    gap: 68px;
+}
+
+.mod-container {
+    display: flex;
+    font-size: 1.7075rem;
+    gap: 66px;
+}
+
+.non-nm-mod-container { 
+    gap: 71px;
+}
+
+.dt-mod-container {
+    gap: 79px;
+}
+
+.nm-mod { color: var(--nm-colour); }
+.hd-mod { color: var(--hd-colour); }
+.hr-mod { color: var(--hr-colour); }
+.dt-mod { color: var(--dt-colour); }
+
+/* Player Rank Container */
+.player-rank-container {
+    position: absolute;
+    top: 493px;
+    left: 22px;
+    width: 402.29px;
+}
+
+.player-container {
+    color: var(--delicate-gold);
+    font-size: 1.7075rem;
+    display: flex;
+    gap: 1.3px;
+    flex-direction: column;
+}
+
+.rank-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    color: var(--delicate-gold);
+    font-size: 1.7075rem;
+    display: flex;
+    gap: 1.3px;
+    flex-direction: column;
+}
+
+.player-container > *,
+.rank-container > * {
+    height: 43px;
+    line-height: 43px;
+}
+
+.scores-container {
+    position: absolute;
+    top: 493px;
+    font-weight: 500;
+    font-size: 1.375rem;
+    width: 103.58px;
+    text-align: center;
+    color: var(--delicate-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 1.3px;
+}
+
+.nm1-scores-container { left: 453.61px; }
+.nm2-scores-container { left: 575.4px; }
+.nm3-scores-container { left: 697.19px; }
+.nm4-scores-container { left: 818.98px; }
+.nm5-scores-container { left: 940.76px; }
+.hd1-scores-container { left: 1062.55px; }
+.hd2-scores-container { left: 1184.34px; }
+.hr1-scores-container { left: 1306.13px; }
+.hr2-scores-container { left: 1427.92px; }
+.dt1-scores-container { left: 1549.71px; }
+.dt2-scores-container { left: 1671.5px; }
+.dt3-scores-container { left: 1793.28px; }
+
+.score {
+    height: 43px;
+    line-height: 43px;
+}
+
+/* Score Summary */
+.scores-summary {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.map-rank {
+    font-weight: 700;
+    font-size: 2.8456rem;
+}
+
+.total-score {
+    font-weight: 700;
+    font-size: 1.375rem;
+}
+
+/* Score Summary Podium */
+.scores-summary-third {
+    color: #D86751;
+}
+
+.scores-summary-second {
+    color: #A5A39F;
+}
+
+.scores-summary-first {
+    color: #F0AB2B;
+}
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    right: 77px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 145.6px;
+}
+
+.sponsors > * {
+    max-height: 56px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 1920px;
+    width: 250px;
+    height: 1080px;
+    background-color: var(--sidebar-background-colour);
+}
+
+.button-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+    color: var(--delicate-gold);
+    background: transparent;
+    font-size: 1.25rem;
+    border-radius: 15px;
+    border: 2px solid var(--delicate-gold);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7e1c37;
+}
+
+button:active {
+    background-color: var(--delicate-gold);
+    color: #3B0d1A;
+}
