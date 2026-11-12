@@ -41,7 +41,7 @@ loadBeatmaps().then(beatmaps => {
 
     setDefaultStarCount(totalPicks * 2 - 1, $teamStarContainerLeft, $teamStarContainerRight)
 
-    for (let i = 0; i < totalPicks; i++) {
+    for (let i = 0; i < totalPicks - 1; i++) {
         $pickMapContainerLeft.append(createPickBanMapWrapper())
         $pickMapContainerRight.append(createPickBanMapWrapper())
     }
