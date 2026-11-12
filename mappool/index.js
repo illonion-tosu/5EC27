@@ -155,6 +155,16 @@ function mapClickEvent(event) {
         return
     }
 
+    // For TB only
+    if (currentMap.mod = "TB") {
+        const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
+        $mappoolSectionChild.children().eq(8).css("opacity", "1")
+        $mappoolSectionChild.children().eq(9).css("opacity", "1")
+        scheduleSceneTransition(GAMEPLAY_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
+        $mappoolSectionChild.children().eq(9).text("Tiebreaker time!")
+        return
+    }
+
     const $currentContainer = (team === "left" && action === "ban") ? $banMapContainerLeft :
                               (team === "right" && action === "ban") ? $banMapContainerRight :
                               (team === "left" && action === "pick") ? $pickMapContainerLeft :
@@ -171,7 +181,7 @@ function mapClickEvent(event) {
         $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
         const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-        $mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+
         $mappoolSectionChild.addClass(action === "pick" ? "map-tile-picked" : "map-tile-banned")
         action === "ban" && $mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
         $mappoolSectionChild.children().eq(8).css("opacity", "1")
