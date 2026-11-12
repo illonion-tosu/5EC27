@@ -140,6 +140,12 @@ function mapClickEvent(event) {
     const currentMap = findBeatmap(currentMapId)
     if (!currentMap) return
 
+    // Shift click clears the map from the picks / bans
+    if (event.shiftKey) {
+        clearMap(currentMap)
+        return
+    }
+
     // Team
     let team
     if (event.button === 0) team = "left"
@@ -156,12 +162,8 @@ function mapClickEvent(event) {
     }
 
     // For TB only
-    if (currentMap.mod = "TB") {
-        const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-        $mappoolSectionChild.children().eq(8).css("opacity", "1")
-        $mappoolSectionChild.children().eq(9).css("opacity", "1")
-        scheduleSceneTransition(GAMEPLAY_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
-        $mappoolSectionChild.children().eq(9).text("Tiebreaker time!")
+    if (currentMap.mod === "TB") {
+        highlightTiebreaker(currentMap)
         return
     }
 
@@ -193,6 +195,41 @@ function mapClickEvent(event) {
     if (action === "pick") {
         scheduleSceneTransition(GAMEPLAY_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     }
+}
+
+/**
+ * Highlights the tiebreaker tile in the mappool, without assigning it to a side
+ * @param {object} tiebreaker - The TB beatmap
+ */
+function highlightTiebreaker(tiebreaker) {
+    const $tile = $(`.mod-section > [data-id="${tiebreaker.beatmap_id}"]`).first()
+    $tile.children().eq(8).css("opacity", "1")
+    $tile.children().eq(9).css("opacity", "1").text("Tiebreaker time!")
+}
+
+/**
+ * Clears a map from the picks / bans and resets its tile in the mappool.
+ * The pick / ban element is deleted and a fresh empty one is appended at the end,
+ * so the remaining picks / bans shift up.
+ * @param {object} map - The beatmap to clear
+ */
+function clearMap(map) {
+    $banMapContainerLeft.add($banMapContainerRight).add($pickMapContainerLeft).add($pickMapContainerRight)
+        .children(`[data-id="${map.beatmap_id}"]`)
+        .each(function () {
+            const $container = $(this).parent()
+            $(this).remove()
+            $container.append(createPickBanMapWrapper())
+        })
+
+    const $tile = $(`.mod-section > [data-id="${map.beatmap_id}"]`).first()
+    $tile.removeClass("map-tile-picked map-tile-banned")
+    $tile.children().eq(2).attr("src", `static/bats/${map.mod}-bat.png`)
+    $tile.children().eq(8).css("opacity", "0")
+    $tile.children().eq(9).css("opacity", "0")
+
+    // Allow autopick to pick it again
+    $(`#${map.beatmap_id}`).removeAttr("data-is-autopicked")
 }
 
 /**
@@ -307,6 +344,34 @@ function syncClientStars(tourney) {
     setStarCounts(points.left, points.right, tourney.bestOF, $teamStarContainerLeft, $teamStarContainerRight)
 }
 
+// Tiebreaker autopick
+let tiebreakerAutopicked = false
+
+/**
+ * Autopicks the tiebreaker (for neither side) once both teams are one point away from winning.
+ * Only triggers once per time the condition becomes true; it re-arms when the condition stops being true.
+ * No scene transition is scheduled here, so it doesn't override the transition set by the map ending.
+ */
+function checkTiebreaker() {
+    if (!allBeatmaps) return
+
+    const { redStarCount, blueStarCount, firstTo } = getStarCount()
+    const winningStars = Number(firstTo)
+    const bothOneAway = winningStars >= 2 && Number(redStarCount) === winningStars - 1 && Number(blueStarCount) === winningStars - 1
+
+    if (!bothOneAway) {
+        tiebreakerAutopicked = false
+        return
+    }
+    if (tiebreakerAutopicked) return
+
+    const tiebreaker = allBeatmaps.find(beatmap => beatmap.mod === "TB")
+    if (!tiebreaker) return
+
+    tiebreakerAutopicked = true
+    highlightTiebreaker(tiebreaker)
+}
+
 // IPC State
 let ipcState
 let checkedWinner
@@ -360,10 +425,10 @@ function setWinner(scores, currentIpcState) {
     }
 
     // Scene transition
-    const currentStarCount = getStarCount()
-    if (ipcState === 4 && isStarOn() && currentStarCount.redStarCount < totalPicks && currentStarCount.blueStarCount < totalPicks) {
+    const {redStarCount, blueStarCount} = getStarCount()
+    if (ipcState === 4 && isStarOn() && redStarCount < totalPicks && blueStarCount < totalPicks) {
         scheduleSceneTransition(MAPPOOL_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
-    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (currentStarCount.redStarCount === totalPicks || currentStarCount.blueStarCount === totalPicks)) {
+    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (redStarCount === totalPicks || blueStarCount === totalPicks)) {
         scheduleSceneTransition(WINNER_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     } else if ((ipcState === 2 || ipcState === 3) && enableAutoAdvance) {
         scheduleSceneTransition(GAMEPLAY_SCENE_NAME, 0)
@@ -399,6 +464,9 @@ $(socket).on("message", event => {
 
     // Set winner
     setWinner(scores, data.tourney.ipcState)
+
+    // Tiebreaker
+    checkTiebreaker()
 })
 
 /**
