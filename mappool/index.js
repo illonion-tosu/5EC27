@@ -1,6 +1,6 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getStarCount, isStarOn, setDefaultStarCount, toggleStars, updateStarCount } from "../_shared/core/stars.js"
+import { getStarCount, isStarOn, setDefaultStarCount, setStarCounts, toggleStars, updateStarCount } from "../_shared/core/stars.js"
 import { delay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
@@ -277,6 +277,26 @@ function calculateTeamScores(clients, mappoolBeatmap) {
     return scores
 }
 
+// Star control: "OVERLAY" (manual buttons / winner check) or "CLIENT" (tournament client points)
+let starControl = "OVERLAY"
+let lastClientStars = null
+
+/**
+ * Fully override the overlay stars with the tournament client's stars.
+ * Only re-renders when the client data actually changed (or was reset by switching to CLIENT).
+ * @param {object} tourney - data.tourney
+ */
+function syncClientStars(tourney) {
+    const points = tourney.points
+    if (!points || tourney.bestOF === undefined) return
+
+    const key = `${points.left}|${points.right}|${tourney.bestOF}`
+    if (key === lastClientStars) return
+    lastClientStars = key
+
+    setStarCounts(points.left, points.right, tourney.bestOF, $teamStarContainerLeft, $teamStarContainerRight)
+}
+
 // IPC State
 let ipcState
 let checkedWinner
@@ -316,7 +336,8 @@ function setWinner(scores, currentIpcState) {
     if (ipcState === 4 && !checkedWinner) {
         checkedWinner = true
 
-        if (isStarOn() && currentMappoolBeatmap) {
+        // In CLIENT mode the tournament client owns the stars, so don't add one ourselves
+        if (starControl === "OVERLAY" && isStarOn() && currentMappoolBeatmap) {
             let winner = ""
             if (scores.left > scores.right) {
                 winner = "red"
@@ -363,6 +384,9 @@ $(socket).on("message", event => {
     // Score
     const scores = calculateTeamScores(data.tourney.clients, currentMappoolBeatmap)
 
+    // Tournament client stars
+    if (starControl === "CLIENT") syncClientStars(data.tourney)
+
     // Set winner
     setWinner(scores, data.tourney.ipcState)
 })
@@ -405,6 +429,29 @@ const $starSectionRightMinus = $("#star-section-right-minus")
 const $toggleStars = $("#toggle-stars")
 const $toggleStarsText = $("#toggle-stars-text")
 
+// Star Control
+const $toggleTournamentStars = $("#toggle-tournament-stars")
+const $toggleTournamentStarsText = $("#toggle-tournament-stars-text")
+const $starControlledButtons = $([
+    $starSectionLeftPlus, $starSectionLeftMinus, $starSectionRightPlus, $starSectionRightMinus, $toggleStars
+].map($el => $el[0]))
+
+/**
+ * Switch star control between OVERLAY and CLIENT.
+ * OVERLAY -> CLIENT: stars are fully overridden by the client's data (applied on next/forced sync).
+ * CLIENT -> OVERLAY: stars stay as they are; the overlay buttons regain control.
+ */
+function toggleStarControl() {
+    starControl = starControl === "OVERLAY" ? "CLIENT" : "OVERLAY"
+    $toggleTournamentStarsText.text(starControl)
+
+    const isClient = starControl === "CLIENT"
+    $starControlledButtons.prop("disabled", isClient).toggleClass("disabled", isClient)
+
+    // Force a fresh override with the next client data
+    lastClientStars = null
+}
+
 // Mappool override section
 const $mappoolOverrideColumn = $("#mappool-override-column")
 const $mappoolOverrideActionSelect = $("#mappool-override-action-select")
@@ -419,6 +466,7 @@ $(window).on("load", () => {
     $starSectionRightPlus.on("click", () => updateStarCount("blue", "plus", $teamStarContainerLeft, $teamStarContainerRight))
     $starSectionRightMinus.on("click", () => updateStarCount("blue", "minus", $teamStarContainerLeft, $teamStarContainerRight))
     $toggleStars.on("click", () => toggleStars($toggleStarsText, $toggleStars, $teamStarContainerLeft, $teamStarContainerRight))
+    $toggleTournamentStars.on("click", toggleStarControl)
     $mappoolOverrideActionSelect.on("click", () => mappoolOverrideChangeAction())
     $autoAdvanceButton.on("click", () => switchAutoAdvance())
 })

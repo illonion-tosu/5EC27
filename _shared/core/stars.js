@@ -60,6 +60,30 @@ export function updateStarCount(side, action, redTeamStarContainer, blueTeamStar
 }
 
 /**
+ * Fully overrides the star count (and best of) with externally provided data, e.g. the tournament client.
+ * Counts are clamped to the new first-to, then saved and rendered.
+ * @param {number} red Red (left) star count
+ * @param {number} blue Blue (right) star count
+ * @param {number} bestOf Match Best Of
+ * @param {$element} redTeamStarContainer Container for red stars
+ * @param {$element} blueTeamStarContainer Container for blue stars
+ * @param {string} redTeamName red team name
+ * @param {string} blueTeamName blue team name
+ */
+export function setStarCounts(red, blue, bestOf, redTeamStarContainer, blueTeamStarContainer, redTeamName, blueTeamName) {
+    totalBestOf = bestOf
+    firstTo = Math.ceil(totalBestOf / 2)
+    redStarCount = Math.min(Math.max(Number(red) || 0, 0), firstTo)
+    blueStarCount = Math.min(Math.max(Number(blue) || 0, 0), firstTo)
+
+    saveStarCount()
+    renderStars(redTeamStarContainer, blueTeamStarContainer)
+
+    const currentWinner = redStarCount > blueStarCount ? redTeamName : blueStarCount > redStarCount ? blueTeamName : "none"
+    document.cookie = `currentWinner=${currentWinner}; path=/`
+}
+
+/**
  * Saves the star count
  */
 function saveStarCount() {

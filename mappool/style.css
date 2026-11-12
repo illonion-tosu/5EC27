@@ -463,6 +463,10 @@ button, .scene-button {
 #toggle-autopick, #toggle-stars, #next-picker-none, #apply-changes, .full-width-button { width: 220px; }
 #next-picker, #current-picker { color: white; }
 
+.double-height-button {
+    height: 60px;
+}
+
 #apply-changes {
     margin-top: 5px;
 }
@@ -520,3 +524,4 @@ button, .scene-button {
     line-height: 34px;
     font-size: 1rem;
 }
+button:disabled, button.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
