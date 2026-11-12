@@ -260,8 +260,8 @@ body {
     top: 33px;
     font-size: 1.25rem;
     padding: 4px;
-    transform: rotate(-6.32deg); 
-    opacity: 0;
+    transform: rotate(-6.32deg);
+    display: none;
     transition: 500ms ease-in-out;
 }
 

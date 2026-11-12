@@ -75,8 +75,8 @@ function createMapCard(currentMap) {
         }),
         $('<div>', { class: 'map-tile-overlay map-tile-stroke' }),
         $('<div>', { class: 'map-tile-text', text: 'Picked by Poland' }),
-        $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }),
-        $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' })
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }).css({ display: (currentMap.isCustom && !currentMap.isOriginal) ? "block" : "none"}),
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' }).css({ display: currentMap.isOriginal ? "block" : "none"})
     )
     .css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
     .attr("data-id", currentMap.beatmap_id)
