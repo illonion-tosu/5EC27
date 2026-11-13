@@ -1,3 +1,81 @@
+body {
+    font-family: "Cormorant Infant", sans-serif;
+    font-weight: 700;
+}
+
 .background-image{ background-image: url("static/background.png"); }
 
+/* Round of 16 */
+.round-of-16 {
+    position: absolute;
+    left: 197.31px;
+    top: 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 15.39px;
+}
+
+/* Match Container */
+.match-container {
+    position: relative;
+    height: 82.25px;
+}
+
 /* Team Container */
+.team-container {
+    --height: 39.17px;
+    
+    width: 230.1px;
+    height: var(--height);
+    background-color: var(--dark-claret);
+    color: var(--delicate-gold);
+    line-height: var(--height);
+}
+
+.team-1-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.team-2-container {
+    position: absolute;
+    top: 43.08px;
+    left: 0;
+}
+
+/* Team Name */
+.team-name {
+    margin-left: 42.26px;
+    font-size: 1.7656rem;
+    color: var(--delicate-gold);
+}
+
+/* Team Score */
+.team-score {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.7656rem;
+    color: var(--delicate-gold);
+    width: 46.44px;
+    text-align: center;
+    background-color: #A90D42;
+}
+
+/* Match Number */
+.match-number {
+    --dimension: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--dark-claret);
+    border-radius: 50%;
+    background-color: var(--delicate-gold);
+    width: var(--dimension);
+    height: var(--dimension);
+    text-align: center;
+    line-height: var(--dimension);
+}
