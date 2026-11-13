@@ -1,3 +1,7 @@
+:root {
+    --player-names-x: 44px;
+}
+
 body {
     font-family: "Cormorant Infant", serif;
     font-weight: 700;
@@ -14,4 +18,66 @@ body {
     font-size: 4.125rem;
     letter-spacing: -2px;
     color: var(--delicate-gold);
+}
+
+/* Team Data */
+.team-data {
+    position: absolute;
+    top: 389px;
+    left: 113px;
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Team Flag */
+.team-flag {
+    --dimension: 83.05px;
+
+    width: var(--dimension);
+    height: var(--dimension);
+    margin-bottom: 29px;
+}
+
+/* Team Name */
+.team-name {
+    font-size: 3.8125rem;
+    color: var(--delicate-gold);
+    text-align: center;
+}
+
+/* Player Names */
+.player-names {
+    position : relative;
+}
+
+/* Player Names Left and Right */
+.player-names-wrapper {
+    position: absolute;
+    top: 17px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+
+.player-names-left {
+    right: var(--player-names-x);
+     text-align: right;
+}
+
+.player-names-right {
+    left: var(--player-names-x);
+}
+
+/* Player Name */
+.player-name {
+    font-size: 1.91rem;
+    color: var(--light-red);
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
