@@ -221,7 +221,7 @@
     left: 1920px;
     width: 250px;
     height: 1080px;
-    background-color: #3B0d1A;
+    background-color: var(--sidebar-background-colour);
 }
 
 .button-container {

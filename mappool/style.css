@@ -1,0 +1,528 @@
+:root {
+    --picks-and-bans-x: 82px;
+    --ban-grey: #8E8E8E;
+}
+
+/* Overlay */
+body {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+}
+
+/* Background Image */
+.background-image {
+    background: url("static/background.png") center / cover no-repeat;
+}
+
+/* Team Section */
+.team-section {
+    top: 38px;
+}
+
+.round-name {
+    top: 43px;
+}
+
+/* Picks and Bans */
+.picks-and-bans {
+    position: absolute;
+    top: 203px;
+    width: 333px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    flex-direction: column;
+}
+
+.picks-and-bans-left { left: var(--picks-and-bans-x); }
+.picks-and-bans-right { right: var(--picks-and-bans-x); }
+
+/* Pick Ban Section */
+.pick-ban-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Pick Ban Text */
+.pick-ban-text {
+    color: var(--light-red);
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Pick Ban Map Container */
+.pick-ban-map-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    height: 63px;
+}
+
+.pick-ban-map-wrapper {
+    position: relative;
+    width: 101px;
+    height: 63px;
+    display: none;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out, display 500ms allow-discrete;
+}
+
+.pick-ban-map-wrapper.shown {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+/* Pick Ban Image */
+.pick-ban-map-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101px;
+    height: 63px;
+}
+
+.pick-ban-map-image:not([src]),
+.pick-ban-map-image[src=""] {
+    display: none;
+}
+
+/* Pick Ban Map Text */
+.pick-ban-map-text {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3913rem;
+    color: var(--extreme-maroon);
+}
+
+/* Mappool */
+.mappool-section {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 816px;
+    height: 786px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Mod Section */
+.mod-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Map Tile */
+.map-tile {
+    position: relative;
+    width: 400px;
+    height: 54px;
+    background: center / cover;
+    background-color: rgb(255 0 0 / 50%);
+    background-image: url("https://assets.ppy.sh/beatmaps/1002554/covers/cover.jpg");
+}
+
+/* Map Tile Overlay */
+.map-tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.map-tile-first-overlay {
+    background-image: linear-gradient(to right, rgb(0 0 0 / 66%) 0%, rgb(0 0 0 / 0%) 100%);
+}
+
+.map-tile-second-overlay {
+    background-color: rgb(0 0 0 / 60%);
+}
+
+/* Map Tile Bat */
+.map-tile-bat {
+    position: absolute;
+    top: 3px;
+    height: 50px;
+}
+
+/* Map Tile Mod ID */
+.map-tile-mod-id {
+    --height: 42.06px;
+
+    position: absolute;
+    top: 3.34px;
+    left: 15.58px;
+    height: var(--height);
+    line-height: var(--height);
+    font-size: 1.0868rem;
+    color: #0D0D0D;
+}
+
+/* Map Tile Helper Classes */
+.map-tile-text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.map-tile-metadata {
+    position: absolute;
+}
+
+.map-tile-metadata-top {
+    top: 7px;
+    color: var(--delicate-gold);
+}
+
+.map-tile-metadata-bottom {
+    top: 33px;
+}
+
+.nm-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--nm-colour);
+}
+
+.hd-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--hd-colour);
+}
+
+.hr-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--hr-colour);
+}
+
+.dt-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--dt-colour);
+}
+
+.fm-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--fm-colour);
+}
+
+.tb-mod-section .map-tile .map-tile-metadata-bottom  { 
+    color: var(--tb-colour);
+}
+
+.map-tile-metadata-left {
+    left: 91px;
+    width: 185px;
+}
+
+.map-tile-metadata-right {
+    right: 12px;
+}
+
+.map-tile-text-large {
+    font-size: 1.625rem;
+    line-height: 16px;
+}
+
+.map-tile-text-small {
+    font-size: 1.375rem;
+    line-height: 14px;
+}
+
+/* Banned Information */
+.map-tile-banned .map-tile-metadata-top {
+    color: white;
+}
+
+.nm-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.hd-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.hr-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.dt-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.fm-mod-section .map-tile-banned .map-tile-metadata-bottom,
+.tb-mod-section .map-tile-banned .map-tile-metadata-bottom {
+    color: #C3C3C3;
+}
+
+/* Map Tile Mapper */
+.map-tile-mapper {
+    width: 100px;
+    text-align: right;
+}
+
+/* Map Tile Custom / Original Text */
+.map-tile-custom-original-text {
+    position: absolute;
+    top: 33px;
+    font-size: 1.25rem;
+    padding: 4px;
+    transform: rotate(-6.32deg);
+    display: none;
+    transition: 500ms ease-in-out;
+}
+
+.map-tile-custom-text {
+    left: -10px;
+    color: var(--extreme-maroon);
+    background-color: #E99A93;
+}
+
+.map-tile-original-text {
+    left: -23px;
+    color: var(--extreme-maroon);
+    background-color: var(--nm-colour);
+}
+
+/* Banned Tile Custom / Original text */
+.map-tile-banned .map-tile-custom-original-text {
+    color: black;
+    background-color: var(--ban-grey);
+}
+
+/* Map Tile Stroke */
+.map-tile-stroke {
+    outline-offset: -1.5px;
+    opacity: 0;
+    transition: 500ms ease-in-out;
+}
+
+.map-tile-picked .map-tile-stroke {
+    outline: 3px solid var(--delicate-gold);
+}
+
+.map-tile-banned .map-tile-stroke {
+    background-color: rgb( 0 0 0 / 50% );
+    outline: 3px solid var(--ban-grey);
+}
+
+/* Map Tile Text */
+.map-tile-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.25rem;
+    padding: 4px 4px 0;
+    opacity: 0;
+    transition: 500ms ease-in-out;
+}
+
+.map-tile-picked .map-tile-text {
+    color: var(--extreme-maroon);
+    background-color: var(--delicate-gold); 
+}
+
+.map-tile-banned .map-tile-text {
+    color: black;
+    background-color: var(--ban-grey);
+}
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 182px;
+}
+
+.sponsors > * {
+    max-height: 70px;
+}
+
+/* Chat Display */
+.chat-display {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--delicate-gold);
+    font-size: 1.25rem;
+    overflow: hidden;
+}
+
+/* Chat Colours */
+.left {
+    color: var(--team-left-colour);
+}
+
+.right {
+    color: var(--team-right-colour);
+}
+
+.bot {
+    color: lightgreen;
+}
+
+.unknown {
+    color: lightpink;
+}
+
+/* Chat Name */
+.chat-name {
+    font-size: 1.25rem;
+    padding-right: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 1920px;
+    width: 750px;
+    height: 1080px;
+    background-color: var(--sidebar-background-colour);
+}
+
+/* Column */
+.column {
+    position: absolute;
+    width: 250px;
+}
+.column-2 { left: 250px; }
+.column-3 { left: 500px; }
+
+/* Divider */
+.divider {
+    position: absolute;
+    width: 2px;
+    height: 1080px;
+    background-color: white;
+}
+.divider-1 { left: 249px; }
+.divider-2 { left: 499px; }
+
+/* Sidebar Section */
+.sidebar-section {
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Sidebar Sedction Texts */
+.sidebar-section-text { width: 100%; }
+
+.sidebar-section h1 {
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 2em;
+}
+
+.sidebar-section h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.sidebar-section p {
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+    font-size: 1.25em;
+}
+
+/* Sidebar Buttons */
+.sidebar-button-container,
+#scene-collection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+button, .scene-button {
+    width: 105px;
+    height: 30px;
+    font-weight: 400;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+button:disabled, button.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+.sidebar-button-container button:active {
+    background-color: white;
+    color: var(--sidebar-background-colour);
+}
+
+#toggle-autopick, #toggle-stars, #next-picker-none, #apply-changes, .full-width-button { width: 220px; }
+#next-picker, #current-picker { color: white; }
+
+.double-height-button {
+    height: 60px;
+}
+
+#apply-changes {
+    margin-top: 5px;
+}
+
+/* Mappool Override Select */
+.mappool-override-select {
+    color: white;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    line-height: 25px;
+    font-size: 1.25rem;
+}
+
+.mappool-override-select > * {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mappool-override-select::-webkit-scrollbar { display: none; }
+
+.mappool-override-beatmaps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.mappool-override-beatmaps {
+    width: 80px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* Active / Inactive */
+.toggle-active, .active-scene { background-color: rgb(32 121 44); }
+.toggle-inactive { background-color: rgb(121 32 32); }
+
+.scene-collection {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-button-container button:active, div.full-length-button:active {
+    color: #449071;
+    background-color: white;
+}
+
+.scene-button {
+    line-height: 34px;
+    font-size: 1rem;
+}

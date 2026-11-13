@@ -1,11 +1,12 @@
-import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/datga.js"
+import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
+import { renderStars, toggleStarContainers } from "../_shared/core/stars.js"
 
 // Rounds and beatmaps
-const roundNameEl = $("#round-name")
+const $roundName = $("#round-name")
 loadBeatmaps().then(beatmaps => {
-    roundNameEl.text(beatmaps.roundName)
+    $roundName.text(beatmaps.roundName)
 })
 
 // Teams
@@ -47,21 +48,21 @@ function updateTeams(teamNames) {
     }
 }
 
-const nowPlayingBackgroundEl = $("#now-playing-background")
-const nowPlayingArtistEl = $("#now-playing-artist")
-const nowPlayingTitleEl = $("#now-playing-title")
-const nowPlayingDifficultyEl = $("#now-playing-difficulty")
-const nowPlayingMapperEl = $("#now-playing-mapper")
-const nowPlayingBottomLeftVectorEl = $("#now-playing-bottom-left-vector")
-const nowPlayingModEl = $("#now-playing-mod")
+const $nowPlayingBackground = $("#now-playing-background")
+const $nowPlayingArtist = $("#now-playing-artist")
+const $nowPlayingTitle = $("#now-playing-title")
+const $nowPlayingDifficulty = $("#now-playing-difficulty")
+const $nowPlayingMapper = $("#now-playing-mapper")
+const $nowPlayingBottomLeftVector = $("#now-playing-bottom-left-vector")
+const $nowPlayingMod = $("#now-playing-mod")
 
-const nowPlayingStatsTextCsEl = $("#now-playing-stats-text-cs")
-const nowPlayingStatsTextArEl = $("#now-playing-stats-text-ar")
-const nowPlayingStatsTextHpEl = $("#now-playing-stats-text-hp")
-const nowPlayingStatsTextOdEl = $("#now-playing-stats-text-od")
-const nowPlayingStatsLineSrEl = $("#now-playing-stats-line-sr")
-const nowPlayingStatsLineBpmEl = $("#now-playing-stats-line-bpm")
-const nowPlayingStatsLineLenEl = $("#now-playing-stats-line-len")
+const $nowPlayingStatsTextCs = $("#now-playing-stats-text-cs")
+const $nowPlayingStatsTextAr = $("#now-playing-stats-text-ar")
+const $nowPlayingStatsTextHp = $("#now-playing-stats-text-hp")
+const $nowPlayingStatsTextOd = $("#now-playing-stats-text-od")
+const $nowPlayingStatsLineSr = $("#now-playing-stats-line-sr")
+const $nowPlayingStatsLineBpm = $("#now-playing-stats-line-bpm")
+const $nowPlayingStatsLineLen = $("#now-playing-stats-line-len")
 
 const TOSU_STATS_DELAY = 250
 
@@ -77,13 +78,13 @@ let currentTime = 0
  * `len` is the map length in seconds
  */
 function renderStats(stats) {
-    nowPlayingStatsTextCsEl.text(stats.cs.toFixed(1))
-    nowPlayingStatsTextArEl.text(stats.ar.toFixed(1))
-    nowPlayingStatsTextHpEl.text(stats.hp.toFixed(1))
-    nowPlayingStatsTextOdEl.text(stats.od.toFixed(1))
-    nowPlayingStatsLineSrEl.text(stats.sr.toFixed(2))
-    nowPlayingStatsLineBpmEl.text(stats.bpm.toFixed(0))
-    nowPlayingStatsLineLenEl.text(setLengthDisplay(stats.len))
+    $nowPlayingStatsTextCs.text(stats.cs.toFixed(1))
+    $nowPlayingStatsTextAr.text(stats.ar.toFixed(1))
+    $nowPlayingStatsTextHp.text(stats.hp.toFixed(1))
+    $nowPlayingStatsTextOd.text(stats.od.toFixed(1))
+    $nowPlayingStatsLineSr.text(stats.sr.toFixed(2))
+    $nowPlayingStatsLineBpm.text(stats.bpm.toFixed(0))
+    $nowPlayingStatsLineLen.text(setLengthDisplay(stats.len))
 }
 
 /**
@@ -103,25 +104,25 @@ function updateNowPlaying(beatmapData, directPath) {
     // Metadata
     const background = directPath?.beatmapBackground
     const url = `${window.location.origin}/Songs/${background}`
-    nowPlayingBackgroundEl.css("background-image", `url("${encodeURI(url.replaceAll("\\", "/"))}")`)
-    nowPlayingArtistEl.text(beatmapData.artist)
-    nowPlayingTitleEl.text(beatmapData.title)
-    nowPlayingDifficultyEl.text(beatmapData.version)
-    nowPlayingMapperEl.text(beatmapData.mapper)
+    $nowPlayingBackground.css("background-image", `url("${encodeURI(url.replaceAll("\\", "/"))}")`)
+    $nowPlayingArtist.text(beatmapData.artist)
+    $nowPlayingTitle.text(beatmapData.title)
+    $nowPlayingDifficulty.text(beatmapData.version)
+    $nowPlayingMapper.text(beatmapData.mapper)
 
     // Check for mappool map
     currentMappoolBeatmap = findBeatmap(currentNowPlayingId)
     if (!currentMappoolBeatmap) {
-        nowPlayingBottomLeftVectorEl.attr("src", "static/vectors/NO-vector.png")
-        nowPlayingModEl.text("")
+        $nowPlayingBottomLeftVector.attr("src", "static/vectors/NO-vector.png")
+        $nowPlayingMod.text("")
 
         currentTime = Date.now()
         updateStats = true
         return
     }
 
-    nowPlayingBottomLeftVectorEl.attr("src", `static/vectors/${currentMappoolBeatmap.mod}-vector.png`)
-    nowPlayingModEl.text(`${currentMappoolBeatmap.mod}${currentMappoolBeatmap.order}`)
+    $nowPlayingBottomLeftVector.attr("src", `static/vectors/${currentMappoolBeatmap.mod}-vector.png`)
+    $nowPlayingMod.text(`${currentMappoolBeatmap.mod}${currentMappoolBeatmap.order}`)
 
     const stats = getModDetails(
         Number(currentMappoolBeatmap.diff_size),
@@ -166,10 +167,10 @@ function updateTosuStats(beatmapData) {
 }
 
 // Scores
-const scoreBarLeftEl = $("#score-bar-left")
-const scoreBarRightEl = $("#score-bar-right")
-const scoreLeftEl = $("#score-left")
-const scoreRightEl = $("#score-right")
+const $scoreBarLeft = $("#score-bar-left")
+const $scoreBarRight = $("#score-bar-right")
+const $scoreLeft = $("#score-left")
+const $scoreRight = $("#score-right")
 
 // Score Bar constants
 const SCORE_BAR_MAX_WIDTH = 960
@@ -179,8 +180,8 @@ const SCORE_BAR_EXPONENT = 1.4
 // CountUp
 const countUpOptions = { useEasing: true, useGrouping: true, separator: ",", decimal: ".", suffix: "" }
 const animations = {
-    scoreLeft: new CountUp(scoreLeftEl[0], 0, 0, 0, 0.2, countUpOptions),
-    scoreRight: new CountUp(scoreRightEl[0], 0, 0, 0, 0.2, countUpOptions),
+    scoreLeft: new CountUp($scoreLeft[0], 0, 0, 0, 0.2, countUpOptions),
+    scoreRight: new CountUp($scoreRight[0], 0, 0, 0, 0.2, countUpOptions),
 }
 
 /**
@@ -221,11 +222,11 @@ function updateScoreBar(left, right) {
     const leftLeads = left > right
     const rightLeads = right > left
 
-    scoreBarLeftEl.css("width", `${leftLeads ? barWidth : 0}px`)
-    scoreBarRightEl.css("width", `${rightLeads ? barWidth : 0}px`)
+    $scoreBarLeft.css("width", `${leftLeads ? barWidth : 0}px`)
+    $scoreBarRight.css("width", `${rightLeads ? barWidth : 0}px`)
 
-    scoreLeftEl.toggleClass("score-lead", leftLeads)
-    scoreRightEl.toggleClass("score-lead", rightLeads)
+    $scoreLeft.toggleClass("score-lead", leftLeads)
+    $scoreRight.toggleClass("score-lead", rightLeads)
 }
 
 
@@ -247,3 +248,10 @@ $(socket).on("message", event => {
     animations.scoreRight.update(scores.right)
     updateScoreBar(scores.left, scores.right)
 })
+
+const $teamStarContainerLeft = $("#team-star-container-left")
+const $teamStarContainerRight = $("#team-star-container-right")
+setInterval(() => {
+    renderStars($teamStarContainerLeft, $teamStarContainerRight)
+    toggleStarContainers($teamStarContainerLeft, $teamStarContainerRight)
+}, 200)

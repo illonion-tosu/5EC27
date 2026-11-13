@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappool</title>
+
+    <link rel="stylesheet" href="../_shared/css/common.css">
+    <link rel="stylesheet" href="../_shared/css/gameplay-mappool.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="../_shared/deps/countUp.js"></script>
+    <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
+    <script src="../_shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="https://unpkg.com/axios@1.21.0/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="background-image"></div>
+
+        <!-- Team Sections -->
+        <div class="team-section team-section-left">
+            <div class="team-seed" id="team-seed-left">#3</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag">
+                    <img class="team-flag" id="team-flag-left" src="https://osuflags.omkserver.nl/ES-1000.png">
+                    <div class="team-name" id="team-name-left">Spain</div>
+                </div>
+                <div class="team-star-container" id="team-star-container-left"></div>
+            </div>
+        </div>
+        <div class="team-section team-section-right">
+            <div class="team-seed" id="team-seed-right">#12</div>
+            <div class="team-section-inner">
+                <div class="team-name-flag team-name-flag-right">
+                    <img class="team-flag" id="team-flag-right" src="https://osuflags.omkserver.nl/PL-1000.png">
+                    <div class="team-name" id="team-name-right">Poland</div>
+                </div>
+                <div class="team-star-container team-star-container-right" id="team-star-container-right"></div>
+            </div>
+        </div>
+
+        <!-- Round Name -->
+        <div class="round-name" id="round-name">Round of 32</div>
+
+        <!-- Picks and Bans -->
+        <div class="picks-and-bans picks-and-bans-left">
+            <div class="pick-ban-section">
+                <div class="pick-ban-text">BANS</div>
+                <div class="pick-ban-map-container" id="ban-map-container-left">
+                    <div class="pick-ban-map-wrapper">
+                        <img class="pick-ban-map-image">
+                        <div class="pick-ban-map-text"></div>
+                    </div>
+                    <div class="pick-ban-map-wrapper">
+                        <img class="pick-ban-map-image">
+                        <div class="pick-ban-map-text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-ban-section">
+                <div class="pick-ban-text">PICKS</div>
+                <div class="pick-ban-map-container" id="pick-map-container-left"></div>
+            </div>
+        </div>
+
+        <!-- Picks and Bans -->
+        <div class="picks-and-bans picks-and-bans-right">
+            <div class="pick-ban-section">
+                <div class="pick-ban-text">BANS</div>
+                <div class="pick-ban-map-container" id="ban-map-container-right">
+                    <div class="pick-ban-map-wrapper">
+                        <img class="pick-ban-map-image">
+                        <div class="pick-ban-map-text"></div>
+                    </div>
+                    <div class="pick-ban-map-wrapper">
+                        <img class="pick-ban-map-image">
+                        <div class="pick-ban-map-text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-ban-section">
+                <div class="pick-ban-text">PICKS</div>
+                <div class="pick-ban-map-container" id="pick-map-container-right"></div>
+            </div>
+        </div>
+
+        <!-- Mappool Section -->
+        <div class="mappool-section">
+            <div class="mod-section nm-mod-section" id="nm-mod-section"></div>
+            <div class="mod-section hd-mod-section" id="hd-mod-section"></div>
+            <div class="mod-section hr-mod-section" id="hr-mod-section"></div>
+            <div class="mod-section dt-mod-section" id="dt-mod-section"></div>
+            <div class="mod-section fm-mod-section" id="fm-mod-section"></div>
+            <div class="mod-section tb-mod-section" id="tb-mod-section"></div>
+        </div>
+
+        <!-- Sponsors -->
+        <div class="sponsors">
+            <img class="acrid-sponsor" src="../_shared/assets/sponsors/Acrid Covers Logo Beige.png">
+            <img class="kagami-sponsor" src="../_shared/assets/sponsors/Kagami Studio Logo Beige.png">
+            <img class="sliderpals-sponsor" src="../_shared/assets/sponsors/SliderPals Logo Beige.png">
+        </div>
+
+        <!-- Chat Display -->
+        <div class="chat-display" id="chat-display">
+            <div class="chat-message-wrapper">
+                <span class="chat-name right">AAAAAAAAAAAAAAA:</span>
+                <span class="message-content">Hello World It's me my name is Fairy Bread</span>
+            </div>
+            <div class="chat-message-wrapper">
+                <span class="chat-name left">AAAAAAAAAAAAAAA:</span>
+                <span class="message-content">Hello World It's me my name is Fairy Bread</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="column">
+            <section class="sidebar-section">
+                <h1 class="sidebar-section-text">Star Section</h1>
+                <div class="sidebar-button-container">
+                    <button id="star-section-left-plus">LEFT ++</button>
+                    <button id="star-section-left-minus">LEFT --</button>
+                    <button id="star-section-right-plus">RIGHT ++</button>
+                    <button id="star-section-right-minus">RIGHT --</button>
+                    <button class="full-width-button toggle-active" id="toggle-stars">TOGGLE STARS: <span id="toggle-stars-text">ON</span></button>
+                    <button class="full-width-button double-height-button" id="toggle-tournament-stars">STAR CONTROL: <span id="toggle-tournament-stars-text">OVERLAY</span></button>
+                </div> 
+            </section>
+            <section class="sidebar-section">
+                <h1 class="sidebar-section-text">Next Picker</h1>
+                <p id="next-picker" style="font-size: 1.2em;"></p>
+                <div class="sidebar-button-container">
+                    <button id="set-next-picker-left">LEFT</button>
+                    <button id="set-next-picker-right">RIGHT</button>
+                    <button class="full-width-button" id="next-picker-none">NO ONE</button>
+                    <button class="full-width-button toggle-inactive" id="toggle-autopick">TOGGLE AUTOPICK: OFF</button>
+                </div>
+            </section>
+            <section class="sidebar-section">
+                <h1 class="sidebar-section-text">Mappool Management</h1>
+                <p class="sidebar-section-text">
+                    Left Click (LC) = Red Pick<br>
+                    Right Click (RC) = Blue Pick<br>
+                    Ctrl + LC = Red Ban<br>
+                    Ctrl + RC = Blue Ban<br>
+                    Shft + Click = Clear 
+                </p>
+                <div class="sidebar-button-container" id="mappool-management-maps" style="margin-bottom: 10px;"></div>
+            </section>
+        </div>
+        <div class="divider divider-1"></div>
+        <div class="column column-2">
+            <section class="sidebar-section" id="mappool-override-column">
+                <h1 class="sidebar-section-text">Mappool Override Management</h1>
+                <h2 class="sidebar-section-text">Which Action?</h2>
+                <select class="mappool-override-select" id="mappool-override-action-select" size="4">
+                    <option value="setBan">Set Ban</option>
+                    <option value="removeBan">Remove Ban</option>
+                    <option value="setPick">Set Pick</option>
+                    <option value="removePick">Remove Pick</option>
+                </select>
+            </section>
+        </div>
+        <div class="divider divider-2"></div>
+        <div class="column column-3">
+            <div class="sidebar-section">
+                <h1>Scene Management</h1>
+                <div class="sidebar-button-container">
+                    <button id="auto-advance-button" class="full-width-button" style="height: 34px;">AUTO ADVANCE: OFF</button>
+                </div>
+                <div id="autoAdvanceTimer" class="controlLabel">
+                    <span id="autoAdvanceTimerLabel"></span> <span id="autoAdvanceTimerTime"></span>
+                </div><br>
+                <h1>Scenes (click to override)</h1>
+                <div id="scene-collection">
+                    <template id="sceneButtonTemplate">
+                        <div class="full-width-button scene-button">SWITCH TO __SCENE_NAME__</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../_shared/core/sponsors.js"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

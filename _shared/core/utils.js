@@ -1,4 +1,8 @@
-// Get Cookie
+/**
+ * Get Cookie
+ * @param {string} cname Cookie Name
+ * @returns 
+ */
 export function getCookie(cname) {
     const name = cname + "="
     const ca = document.cookie.split(';')
@@ -10,7 +14,11 @@ export function getCookie(cname) {
     return "";
 }
 
-// Set Length Display
+/**
+ * Generate length display based on the number of total seconds
+ * @param {number} seconds 
+ * @returns 
+ */
 export function setLengthDisplay(seconds) {
     const minuteCount = Math.floor(seconds / 60)
     const secondCount = seconds % 60
@@ -18,13 +26,31 @@ export function setLengthDisplay(seconds) {
     return `${minuteCount.toString().padStart(2, "0")}:${secondCount.toString().padStart(2, "0")}`
 }
 
-// Capitalise the first letter, lowercase the rest
+/**
+ * Capitalise the first letter
+ * @param {string} text 
+ * @returns 
+ */
 export const capitalise = text => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
 
-// Sleep
+/**
+ * Delay the rest of the function by a certain amount of time
+ * @param {number} time 
+ * @returns 
+ */
 export const delay = async time => new Promise(resolve => setTimeout(resolve, time))
 
-// Apply HR / DT to a map's stats (the AR / OD formulas below are osu!'s own)
+/**
+ * Generate mod details
+ * @param {number} cs 
+ * @param {number} ar 
+ * @param {number} od 
+ * @param {number} hp 
+ * @param {number} bpm 
+ * @param {number} len 
+ * @param {string} mod 
+ * @returns 
+ */
 export function getModDetails(cs, ar, od, hp, bpm, len, mod) {
     const cap = value => Math.min(Math.round(value * 10) / 10, 10)
 
