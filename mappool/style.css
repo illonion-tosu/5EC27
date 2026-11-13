@@ -455,6 +455,8 @@ button, .scene-button {
     font-size: 1rem;
 }
 
+button:disabled, button.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
 .sidebar-button-container button:active {
     background-color: white;
     color: var(--sidebar-background-colour);
@@ -524,4 +526,3 @@ button, .scene-button {
     line-height: 34px;
     font-size: 1rem;
 }
-button:disabled, button.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
