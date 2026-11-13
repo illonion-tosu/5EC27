@@ -350,10 +350,14 @@ function setWinner(scores, currentIpcState) {
     }
 
     // Scene transition
-    const currentStarCount = getStarCount()
-    if (ipcState === 4 && isStarOn() && currentStarCount.redStarCount < totalPicks && currentStarCount.blueStarCount < totalPicks) {
+    const { redStarCount, blueStarCount } = getStarCount()
+
+    // Set winner information
+    document.cookie = `winnerTeam=${redStarCount > blueStarCount ? currentTeamNameLeft : currentTeamNameRight}; path=/`
+
+    if (ipcState === 4 && isStarOn() && redStarCount < totalPicks && blueStarCount < totalPicks) {
         scheduleSceneTransition(MAPPOOL_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
-    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (currentStarCount.redStarCount === totalPicks || currentStarCount.blueStarCount === totalPicks)) {
+    } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (redStarCount === totalPicks || blueStarCount === totalPicks)) {
         scheduleSceneTransition(WINNER_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     } else if ((ipcState === 2 || ipcState === 3) && enableAutoAdvance) {
         scheduleSceneTransition(GAMEPLAY_SCENE_NAME, 0)
