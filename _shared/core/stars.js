@@ -98,7 +98,7 @@ function saveStarCount() {
  * @returns {object} Gets the star count
  */
 export function getStarCount() {
-    return { "redStarCount": getCookie("redStarCount"), "blueStarCount": getCookie("blueStarCount") }
+    return { "redStarCount": getCookie("redStarCount"), "blueStarCount": getCookie("blueStarCount"), "firstTo": getCookie("firstTo") }
 }
 
 /**
