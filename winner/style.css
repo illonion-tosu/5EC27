@@ -56,7 +56,6 @@ body {
 .player-names-wrapper {
     position: absolute;
     top: 17px;
-    width: max-content;
     display: flex;
     flex-direction: column;
     gap: 10px;
