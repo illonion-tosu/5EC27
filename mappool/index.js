@@ -425,7 +425,11 @@ function setWinner(scores, currentIpcState) {
     }
 
     // Scene transition
-    const {redStarCount, blueStarCount} = getStarCount()
+    const { redStarCount, blueStarCount } = getStarCount()
+
+    // Set winner information
+    document.cookie = `winnerTeam=${redStarCount > blueStarCount ? currentTeamNameLeft : currentTeamNameRight}; path=/`
+
     if (ipcState === 4 && isStarOn() && redStarCount < totalPicks && blueStarCount < totalPicks) {
         scheduleSceneTransition(MAPPOOL_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     } else if (ipcState === 4 && isStarOn() && enableAutoAdvance && (redStarCount === totalPicks || blueStarCount === totalPicks)) {
