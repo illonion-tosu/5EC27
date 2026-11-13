@@ -81,3 +81,23 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+    width: 273px;
+    height: 113px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 273px;
+}
+
+.sponsors > * {
+    max-height: 105px;
+}
