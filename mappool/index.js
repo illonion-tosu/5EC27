@@ -788,7 +788,7 @@ obsGetScenes(scenes => {
     })
 })
 
-function scheduleSceneTransition(targetSceneName, delay) {
+function scheduleSceneTransition(targetSceneName, delayMs) {
     const createTransitionTask = (duration) => setTimeout(() => {
         obsGetCurrentScene((currentScene) => {
             if (currentScene.name === targetSceneName) {
@@ -803,13 +803,13 @@ function scheduleSceneTransition(targetSceneName, delay) {
     // use global timeout for this overlay, the pick/ban style doesn't lend to repeated pick events so
     // no point in idempotence
     clearTimeout(sceneTransitionTimeoutID)
-    sceneTransitionTimeoutID = createTransitionTask(delay)
+    sceneTransitionTimeoutID = createTransitionTask(delayMs)
 
     const autoadvance_timer_time = new CountUp('autoAdvanceTimerTime',
-        delay / 1000,
+        delayMs / 1000,
         0,
         1,
-        delay / 1000,
+        delayMs / 1000,
         {useEasing: false, suffix: 's'}
     )
     autoadvance_timer_time.start()
