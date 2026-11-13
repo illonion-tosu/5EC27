@@ -1,1 +1,17 @@
+body {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 700;
+}
+
 .background-image { background-image: url("static/background.png"); }
+
+/* Round Name */
+.round-name {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4.125rem;
+    letter-spacing: -2px;
+    color: var(--delicate-gold);
+}
