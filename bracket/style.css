@@ -3,15 +3,28 @@ body {
     font-weight: 700;
 }
 
-.background-image{ background-image: url("static/background.png"); }
+.background-image { background-image: url("static/background.png"); }
 
-/* Temporary */
-.upper-bracket-container {
+/* Bracket View */
+.bracket-view {
+    position: absolute;
+    inset: 0;
     opacity: 0;
+    transition: opacity var(--fade-out-ms) ease-in-out;
 }
 
-/* Upper Bracket Rounds */
-.upper-bracket {
+.bracket-view.active {
+    opacity: 1;
+    transition: opacity var(--fade-in-ms) ease-in-out var(--fade-out-ms);
+}
+
+.no-fade .bracket-view { transition: none; }
+
+/* League swap: matches fade out, data changes, matches fade back in */
+.bracket-round { transition: opacity var(--fade-out-ms) ease-in-out; }
+.swapping-league .bracket-round { opacity: 0; }
+
+.bracket-round {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -98,7 +111,7 @@ body {
 /* Team Container */
 .team-container {
     --height: 39.17px;
-    
+
     width: 230.1px;
     height: var(--height);
     background-color: var(--dark-claret);
@@ -133,6 +146,7 @@ body {
     font-size: 1.7656rem;
     color: var(--delicate-gold);
     width: 46.44px;
+    height: 100%;
     text-align: center;
     background-color: #A90D42;
 }
@@ -152,4 +166,84 @@ body {
     height: var(--dimension);
     text-align: center;
     line-height: var(--dimension);
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 1920px;
+    width: 250px;
+    height: 1080px;
+    background-color: var(--sidebar-background-colour);
+}
+
+.sidebar-section {
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.sidebar-section h1 {
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 2em;
+}
+
+.sidebar-section p {
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 1.25em;
+}
+
+.sidebar-button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebar button {
+    width: 105px;
+    height: 30px;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar button:active {
+    background-color: white;
+    color: var(--sidebar-background-colour);
+}
+
+.sidebar .full-width-button { width: 220px; }
+
+.toggle-active { background-color: rgb(32 121 44) !important; }
+.toggle-inactive { background-color: rgb(121 32 32) !important; }
+
+.hold-label {
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.hold-label input {
+    width: 70px;
+    height: 26px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
 }
