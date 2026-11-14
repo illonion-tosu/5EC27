@@ -1,0 +1,330 @@
+body {
+    font-family: "Cormorant Infant", sans-serif;
+    font-weight: 700;
+}
+
+.background-image { background-image: url("static/background.png"); }
+
+/* Bracket View */
+.bracket-view {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--fade-out-ms) ease-in-out;
+}
+
+.bracket-view.active {
+    opacity: 1;
+    transition: opacity var(--fade-in-ms) ease-in-out var(--fade-out-ms);
+}
+
+.no-fade .bracket-view { transition: none; }
+
+/* Bracket Round */
+.bracket-round {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opacity var(--fade-out-ms) ease-in-out;
+}
+
+/* League swap: matches fade out, data changes, matches fade back in */
+.swapping-league .bracket-round { opacity: 0; }
+
+/* Round of 16 */
+.round-of-16-upper-bracket {
+    left: 197.31px;
+    top: 145px;
+    height: 766.23px;
+}
+
+/* Quarterfinals */
+.quarterfinals-upper-bracket {
+    left: 537px;
+    top: 198px;
+    height: 665.25px;
+}
+
+.quarterfinals-lower-bracket {
+    left: 141.31px;
+    top: 292px;
+    height: 516.25px;
+}
+
+/* Semifinals */
+.semifinals-upper-bracket {
+    left: 847.6px;
+    top: 298px;
+    height: 469.23px;
+}
+
+.semifinals-round-1-lower-bracket {
+    left: 438.31px;
+    top: 292px;
+    height: 516.25px;
+}
+
+.semifinals-round-2-lower-bracket {
+    left: 733.58px;
+    top: 365px;
+    height: 372.23px;
+}
+
+/* Final */
+.finals-upper-bracket {
+    left: 1158.58px;
+    top: 484.87px;
+}
+
+.finals-round-1-lower-bracket {
+    left: 1012.58px;
+    top: 365px;
+    height: 372.23px;
+}
+
+.finals-round-2-lower-bracket {
+    left: 1317.68px;
+    top: 510.34px;
+    height: 83.66px;
+}
+
+/* Grand Finals */
+.lower-bracket-finals {
+    left: 1603.58px;
+    top: 510.34px;
+    height: 83.66px;
+}
+
+.grandfinals-upper-bracket {
+    left: 1469.95px;
+    top: 484.87px;
+}
+
+/* Match Container */
+.match-container {
+    position: relative;
+    width: 230.1px;
+    height: 82.25px;
+    background-color: #29010A;
+}
+
+/* Team Container */
+.team-container {
+    --height: 39.17px;
+
+    width: 230.1px;
+    height: var(--height);
+    background-color: var(--dark-claret);
+    color: var(--delicate-gold);
+    line-height: var(--height);
+}
+
+.team-1-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.team-2-container {
+    position: absolute;
+    top: 43.08px;
+    left: 0;
+}
+
+/* Team Left Information */
+.team-left-information {
+    margin-left: 42.26px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Team Flag */
+.team-flag {
+    height: 39px;
+}
+
+/* Team Name */
+.team-name {
+    font-size: 1.7656rem;
+    color: var(--delicate-gold);
+}
+
+/* Team Score */
+.team-score {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.7656rem;
+    color: var(--delicate-gold);
+    width: 46.44px;
+    height: 100%;
+    text-align: center;
+    background-color: #A90D42;
+}
+
+/* Match Number */
+.match-number {
+    --dimension: 50px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: var(--dark-claret);
+    border-radius: 50%;
+    background-color: var(--delicate-gold);
+    width: var(--dimension);
+    height: var(--dimension);
+    text-align: center;
+    line-height: var(--dimension);
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 1920px;
+    width: 250px;
+    height: 1080px;
+    background-color: var(--sidebar-background-colour);
+}
+
+.sidebar-section {
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.sidebar-section h1 {
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 2em;
+}
+
+.sidebar-section p {
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 1.25em;
+}
+
+.sidebar-button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebar button {
+    width: 105px;
+    height: 30px;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar button:active {
+    background-color: white;
+    color: var(--sidebar-background-colour);
+}
+
+.sidebar .full-width-button { width: 220px; }
+
+.toggle-active { background-color: rgb(32 121 44) !important; }
+.toggle-inactive { background-color: rgb(121 32 32) !important; }
+
+.hold-label {
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.hold-label input {
+    width: 70px;
+    height: 26px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+/* Lines */
+.wb-lines {
+    position: absolute;
+    left: 427px;
+    top: 186.5px;
+    transition: opacity var(--fade-in-ms) ease;
+}
+
+.lb-lines {
+    position: absolute;
+    left: 371.5px;
+    top: 333px;
+    transition: opacity var(--fade-in-ms) ease;
+}
+
+/* Lines fade out with the matches during a league swap */
+.overlay.swapping-league .wb-lines,
+.overlay.swapping-league .lb-lines {
+    opacity: 0;
+    transition: opacity var(--fade-out-ms) ease;
+}
+
+/* Bracket Text */
+.top-right-text {
+    position: absolute;
+    left: 1496px;
+    color: var(--delicate-gold);
+    width: 380px;
+    text-align: center;
+    transition: opacity var(--fade-in-ms) ease;
+}
+
+.bracket-text {
+    top: 43px;
+    font-size: 4rem;
+}
+
+.league-text {
+    top: 125px;
+    font-size: 2rem;
+}
+
+/* Lines fade out with the matches during a league swap */
+.overlay.swapping-league .top-right-text {
+    opacity: 0;
+    transition: opacity var(--fade-out-ms) ease;
+}
+
+/* Sponsors */
+.sponsors {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 273px;
+    height: 113px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderpals-sponsor {
+    max-width: 273px;
+}
+
+.sponsors > * {
+    max-height: 105px;
+}

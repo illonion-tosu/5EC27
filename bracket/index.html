@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket</title>
+
+    <link rel="stylesheet" href="../_shared/css/common.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <script src="../_shared/deps/jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="background-image"></div>
+        <div class="bracket-view" data-bracket="upper">
+            <img class="wb-lines" src="static/lines/wb-lines.png">
+            <div class="top-right-text bracket-text">Upper Bracket</div>
+            <div class="top-right-text league-text">Major League</div>
+        </div>
+        <div class="bracket-view" data-bracket="lower">
+            <img class="lb-lines" src="static/lines/lb-lines.png">
+            <div class="top-right-text bracket-text">Lower Bracket</div>
+            <div class="top-right-text league-text">Minor League</div>
+        </div>
+        <div class="sponsors">
+            <img class="acrid-sponsor" src="../_shared/assets/sponsors/Acrid Covers Logo Beige.png">
+            <img class="kagami-sponsor" src="../_shared/assets/sponsors/Kagami Studio Logo Beige.png">
+            <img class="sliderpals-sponsor" src="../_shared/assets/sponsors/SliderPals Logo Beige.png">
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <section class="sidebar-section">
+            <h1>League</h1>
+            <div class="sidebar-button-container">
+                <button class="league-button" data-league="major">MAJOR</button>
+                <button class="league-button" data-league="minor">MINOR</button>
+                <button class="full-width-button" id="refresh-button">REFRESH</button>
+            </div>
+        </section>
+        <section class="sidebar-section">
+            <h1>Bracket</h1>
+            <p>Click to show now</p>
+            <div class="sidebar-button-container">
+                <button class="view-button" data-view="upper">UPPER</button>
+                <button class="view-button" data-view="lower">LOWER</button>
+            </div>
+        </section>
+        <section class="sidebar-section">
+            <h1>Transitions</h1>
+            <div class="sidebar-button-container">
+                <button class="full-width-button" id="toggle-auto-cycle">AUTO CYCLE: <span id="toggle-auto-cycle-text"></span></button>
+                <button class="full-width-button" id="toggle-fade">FADE: <span id="toggle-fade-text"></span></button>
+                <label class="hold-label" for="hold-seconds-input">
+                    HOLD (SECONDS)
+                    <input type="number" id="hold-seconds-input" min="1" step="1">
+                </label>
+            </div>
+            <p id="cycle-countdown"></p>
+        </section>
+    </div>
+
+    <script src="index.js" type="module"></script>
+    <script src="../_shared/core/sponsors.js"></script>
+</body>
+</html>
