@@ -5,6 +5,11 @@ body {
 
 .background-image{ background-image: url("static/background.png"); }
 
+/* Temporary */
+.upper-bracket-container {
+    opacity: 0;
+}
+
 /* Upper Bracket Rounds */
 .upper-bracket {
     position: absolute;
@@ -27,11 +32,29 @@ body {
     height: 665.25px;
 }
 
+.quarterfinals-lower-bracket {
+    left: 141.31px;
+    top: 292px;
+    height: 516.25px;
+}
+
 /* Semifinals */
 .semifinals-upper-bracket {
     left: 847.6px;
     top: 298px;
     height: 469.23px;
+}
+
+.semifinals-round-1-lower-bracket {
+    left: 438.31px;
+    top: 292px;
+    height: 516.25px;
+}
+
+.semifinals-round-2-lower-bracket {
+    left: 733.58px;
+    top: 365px;
+    height: 372.23px;
 }
 
 /* Final */
@@ -40,7 +63,25 @@ body {
     top: 484.87px;
 }
 
+.finals-round-1-lower-bracket {
+    left: 1012.58px;
+    top: 365px;
+    height: 372.23px;
+}
+
+.finals-round-2-lower-bracket {
+    left: 1317.68px;
+    top: 510.34px;
+    height: 83.66px;
+}
+
 /* Grand Finals */
+.lower-bracket-finals {
+    left: 1603.58px;
+    top: 510.34px;
+    height: 83.66px;
+}
+
 .grandfinals-upper-bracket {
     left: 1469.95px;
     top: 484.87px;
