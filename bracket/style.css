@@ -253,10 +253,19 @@ body {
     position: absolute;
     left: 427px;
     top: 186.5px;
+    transition: opacity var(--fade-in-ms) ease;
 }
 
 .lb-lines {
     position: absolute;
     left: 371.5px;
     top: 333px;
+    transition: opacity var(--fade-in-ms) ease;
+}
+
+/* Lines fade out with the matches during a league swap */
+.overlay.swapping-league .wb-lines,
+.overlay.swapping-league .lb-lines {
+    opacity: 0;
+    transition: opacity var(--fade-out-ms) ease;
 }
