@@ -131,9 +131,20 @@ body {
     left: 0;
 }
 
+/* Team Left Information */
+.team-left-information {
+    margin-left: 42.26px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Team Flag */
+.team-flag {
+    height: 39px;
+}
+
 /* Team Name */
 .team-name {
-    margin-left: 42.26px;
     font-size: 1.7656rem;
     color: var(--delicate-gold);
 }

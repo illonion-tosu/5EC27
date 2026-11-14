@@ -1,4 +1,7 @@
+import { loadTeams, findTeam } from "../_shared/core/data.js"
 import { getCookie } from "../_shared/core/utils.js"
+
+await loadTeams()
 
 // The outgoing bracket fades out, then the incoming one fades in. Total transition = FADE_OUT_MS + FADE_IN_MS
 const FADE_OUT_MS = 500
@@ -55,7 +58,10 @@ const matchElements = new Map()
  */
 function createMatch(matchId) {
     const createTeam = teamNumber => $("<div>", { class: `team-container team-${teamNumber}-container` }).append(
-        $("<div>", { class: "team-name" }),
+        $("<div>", { class: "team-left-information"}).append(
+            $("<img>", { class: "team-flag", src: "" }),
+            $("<div>", { class: "team-name" }),
+        ),
         $("<div>", { class: "team-score" })
     )
 
@@ -67,7 +73,8 @@ function createMatch(matchId) {
 
     matchElements.set(matchId, {
         $names: $match.find(".team-name"),
-        $scores: $match.find(".team-score")
+        $scores: $match.find(".team-score"),
+        $flags: $match.find(".team-flag")
     })
 
     return $match
@@ -91,8 +98,13 @@ function setMatch(matchId, { team1 = "", team2 = "", score1 = "", score2 = "" } 
     const match = matchElements.get(Number(matchId))
     if (!match) return
 
-    match.$names.eq(0).text(team1)
-    match.$names.eq(1).text(team2)
+    const team1Data = findTeam(team1)
+    const team2Data = findTeam(team2)
+
+    match.$flags.eq(0).attr("src", team1 ? `https://osuflags.omkserver.nl/${team1Data?.ISO3166Alpha2}-1000.png` : "")
+    match.$flags.eq(1).attr("src", team2 ? `https://osuflags.omkserver.nl/${team2Data?.ISO3166Alpha2}-1000.png` : "")
+    match.$names.eq(0).text(team1Data?.ISO3166Alpha2 ?? "")
+    match.$names.eq(1).text(team2Data?.ISO3166Alpha2 ?? "")
     match.$scores.eq(0).text(score1)
     match.$scores.eq(1).text(score2)
 }
