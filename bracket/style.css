@@ -20,16 +20,17 @@ body {
 
 .no-fade .bracket-view { transition: none; }
 
-/* League swap: matches fade out, data changes, matches fade back in */
-.bracket-round { transition: opacity var(--fade-out-ms) ease-in-out; }
-.swapping-league .bracket-round { opacity: 0; }
-
+/* Bracket Round */
 .bracket-round {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: opacity var(--fade-out-ms) ease-in-out;
 }
+
+/* League swap: matches fade out, data changes, matches fade back in */
+.swapping-league .bracket-round { opacity: 0; }
 
 /* Round of 16 */
 .round-of-16-upper-bracket {
