@@ -41,7 +41,7 @@ loadBeatmaps().then(beatmaps => {
 
     setDefaultStarCount(totalPicks * 2 - 1, $teamStarContainerLeft, $teamStarContainerRight)
 
-    for (let i = 0; i < totalPicks; i++) {
+    for (let i = 0; i < totalPicks - 1; i++) {
         $pickMapContainerLeft.append(createPickBanMapWrapper())
         $pickMapContainerRight.append(createPickBanMapWrapper())
     }
@@ -75,8 +75,8 @@ function createMapCard(currentMap) {
         }),
         $('<div>', { class: 'map-tile-overlay map-tile-stroke' }),
         $('<div>', { class: 'map-tile-text', text: 'Picked by Poland' }),
-        $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }),
-        $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' })
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-custom-text', text: 'CUSTOM!' }).css({ display: (currentMap.isCustom && !currentMap.isOriginal) ? "block" : "none"}),
+        $('<div>', { class: 'map-tile-custom-original-text map-tile-original-text', text: 'ORIGINAL!' }).css({ display: currentMap.isOriginal ? "block" : "none"})
     )
     .css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
     .attr("data-id", currentMap.beatmap_id)
@@ -140,6 +140,12 @@ function mapClickEvent(event) {
     const currentMap = findBeatmap(currentMapId)
     if (!currentMap) return
 
+    // Shift click clears the map from the picks / bans
+    if (event.shiftKey) {
+        clearMap(currentMap)
+        return
+    }
+
     // Team
     let team
     if (event.button === 0) team = "left"
@@ -152,6 +158,12 @@ function mapClickEvent(event) {
 
     // Check for if a map has been picked or banned already
     if ($banMapContainerLeft.add($banMapContainerRight).add($pickMapContainerLeft).add($pickMapContainerRight).children(`[data-id="${currentMapId}"]`).length > 0) {
+        return
+    }
+
+    // For TB only
+    if (currentMap.mod === "TB") {
+        highlightTiebreaker(currentMap)
         return
     }
 
@@ -171,7 +183,7 @@ function mapClickEvent(event) {
         $child.children().eq(1).text(`${currentMap.mod}${currentMap.order}`)
 
         const $mappoolSectionChild = $(`.mod-section > [data-id="${currentMapId}"]`).first()
-        $mappoolSectionChild.css("background-image", `url("https://assets.ppy.sh/beatmaps/${currentMap.beatmapset_id}/covers/cover.jpg")`)
+
         $mappoolSectionChild.addClass(action === "pick" ? "map-tile-picked" : "map-tile-banned")
         action === "ban" && $mappoolSectionChild.children().eq(2).attr("src", `static/bats/BANNED-bat.png`)
         $mappoolSectionChild.children().eq(8).css("opacity", "1")
@@ -183,6 +195,41 @@ function mapClickEvent(event) {
     if (action === "pick") {
         scheduleSceneTransition(GAMEPLAY_SCENE_NAME, PICK_TO_TRANSITION_DELAY_MS)
     }
+}
+
+/**
+ * Highlights the tiebreaker tile in the mappool, without assigning it to a side
+ * @param {object} tiebreaker - The TB beatmap
+ */
+function highlightTiebreaker(tiebreaker) {
+    const $tile = $(`.mod-section > [data-id="${tiebreaker.beatmap_id}"]`).first()
+    $tile.children().eq(8).css("opacity", "1")
+    $tile.children().eq(9).css("opacity", "1").text("Tiebreaker time!")
+}
+
+/**
+ * Clears a map from the picks / bans and resets its tile in the mappool.
+ * The pick / ban element is deleted and a fresh empty one is appended at the end,
+ * so the remaining picks / bans shift up.
+ * @param {object} map - The beatmap to clear
+ */
+function clearMap(map) {
+    $banMapContainerLeft.add($banMapContainerRight).add($pickMapContainerLeft).add($pickMapContainerRight)
+        .children(`[data-id="${map.beatmap_id}"]`)
+        .each(function () {
+            const $container = $(this).parent()
+            $(this).remove()
+            $container.append(createPickBanMapWrapper())
+        })
+
+    const $tile = $(`.mod-section > [data-id="${map.beatmap_id}"]`).first()
+    $tile.removeClass("map-tile-picked map-tile-banned")
+    $tile.children().eq(2).attr("src", `static/bats/${map.mod}-bat.png`)
+    $tile.children().eq(8).css("opacity", "0")
+    $tile.children().eq(9).css("opacity", "0")
+
+    // Allow autopick to pick it again
+    $(`#${map.beatmap_id}`).removeAttr("data-is-autopicked")
 }
 
 /**
@@ -297,6 +344,34 @@ function syncClientStars(tourney) {
     setStarCounts(points.left, points.right, tourney.bestOF, $teamStarContainerLeft, $teamStarContainerRight)
 }
 
+// Tiebreaker autopick
+let tiebreakerAutopicked = false
+
+/**
+ * Autopicks the tiebreaker (for neither side) once both teams are one point away from winning.
+ * Only triggers once per time the condition becomes true; it re-arms when the condition stops being true.
+ * No scene transition is scheduled here, so it doesn't override the transition set by the map ending.
+ */
+function checkTiebreaker() {
+    if (!allBeatmaps) return
+
+    const { redStarCount, blueStarCount, firstTo } = getStarCount()
+    const winningStars = Number(firstTo)
+    const bothOneAway = winningStars >= 2 && Number(redStarCount) === winningStars - 1 && Number(blueStarCount) === winningStars - 1
+
+    if (!bothOneAway) {
+        tiebreakerAutopicked = false
+        return
+    }
+    if (tiebreakerAutopicked) return
+
+    const tiebreaker = allBeatmaps.find(beatmap => beatmap.mod === "TB")
+    if (!tiebreaker) return
+
+    tiebreakerAutopicked = true
+    highlightTiebreaker(tiebreaker)
+}
+
 // IPC State
 let ipcState
 let checkedWinner
@@ -393,6 +468,9 @@ $(socket).on("message", event => {
 
     // Set winner
     setWinner(scores, data.tourney.ipcState)
+
+    // Tiebreaker
+    checkTiebreaker()
 })
 
 /**
@@ -714,7 +792,7 @@ obsGetScenes(scenes => {
     })
 })
 
-function scheduleSceneTransition(targetSceneName, delay) {
+function scheduleSceneTransition(targetSceneName, delayMs) {
     const createTransitionTask = (duration) => setTimeout(() => {
         obsGetCurrentScene((currentScene) => {
             if (currentScene.name === targetSceneName) {
@@ -729,13 +807,13 @@ function scheduleSceneTransition(targetSceneName, delay) {
     // use global timeout for this overlay, the pick/ban style doesn't lend to repeated pick events so
     // no point in idempotence
     clearTimeout(sceneTransitionTimeoutID)
-    sceneTransitionTimeoutID = createTransitionTask(delay)
+    sceneTransitionTimeoutID = createTransitionTask(delayMs)
 
     const autoadvance_timer_time = new CountUp('autoAdvanceTimerTime',
-        delay / 1000,
+        delayMs / 1000,
         0,
         1,
-        delay / 1000,
+        delayMs / 1000,
         {useEasing: false, suffix: 's'}
     )
     autoadvance_timer_time.start()
