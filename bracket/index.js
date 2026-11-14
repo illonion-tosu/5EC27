@@ -169,6 +169,10 @@ function showView(view) {
     scheduleNextCycle()
 }
 
+// Switching View
+const getNextView = () => VIEWS[(VIEWS.indexOf(currentView) + 1) % VIEWS.length]
+let leagueSwapToken = 0
+
 /**
  * Restarts the hold timer. The hold counts from when the view is fully visible.
  */
@@ -184,10 +188,6 @@ function scheduleNextCycle() {
 
     renderCountdown()
 }
-
-// Switching View
-const getNextView = () => VIEWS[(VIEWS.indexOf(currentView) + 1) % VIEWS.length]
-let leagueSwapToken = 0
 
 /**
  * Switches league: fades the matches out, swaps in the new league's data, and fades them back in.
@@ -240,6 +240,17 @@ function renderMatches(matches) {
     }
 }
 
+// Sidebar buttons
+const $leagueButtons = $(".league-button")
+const $viewButtons = $(".view-button")
+const $toggleAutoCycle = $("#toggle-auto-cycle")
+const $toggleAutoCycleText = $("#toggle-auto-cycle-text")
+const $toggleFade = $("#toggle-fade")
+const $toggleFadeText = $("#toggle-fade-text")
+const $holdSecondsInput = $("#hold-seconds-input")
+const $cycleCountdown = $("#cycle-countdown")
+const $refreshButton = $("#refresh-button")
+
 /**
  * Re-fetches the current league and updates the matches in place, with no fade.
  * The old data stays on screen until the new data arrives.
@@ -261,20 +272,6 @@ async function refreshData() {
 
     $refreshButton.prop("disabled", false)
 }
-
-/* ---------------------------------------------------------------------------
- * Sidebar
- * ------------------------------------------------------------------------- */
-
-const $leagueButtons = $(".league-button")
-const $viewButtons = $(".view-button")
-const $toggleAutoCycle = $("#toggle-auto-cycle")
-const $toggleAutoCycleText = $("#toggle-auto-cycle-text")
-const $toggleFade = $("#toggle-fade")
-const $toggleFadeText = $("#toggle-fade-text")
-const $holdSecondsInput = $("#hold-seconds-input")
-const $cycleCountdown = $("#cycle-countdown")
-const $refreshButton = $("#refresh-button")
 
 /**
  * Sets a toggle button's text and colour
