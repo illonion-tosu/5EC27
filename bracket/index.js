@@ -36,7 +36,13 @@ const BRACKET_LAYOUT = {
  * @param {"major"|"minor"} league
  */
 async function loadLeagueData(league) {
-
+    const res = await fetch(league === "major" ?
+        "https://script.google.com/macros/s/AKfycbyyHaGAWbMahKLJTsM2kRTL2iXBw2fl37H5iPc4mGYY9XKdKef00UAc4rt9oXWWsUS5/exec" :
+        "https://script.google.com/macros/s/AKfycbymvHNpWW5lPuUffQCi022g-DX9K9JtRVulP7zF1DTzHQDcROVZpQdSPJ5dBGrRKjgn/exec"
+    )
+    if (!res.ok) throw new Error(`Request failed: ${res.status}`)
+    const data = await res.json()
+    return data.filter(row => typeof row.round === "number")
 }
 
 const matchElements = new Map()
@@ -188,7 +194,15 @@ async function setLeague(league) {
 
     clearAllMatches()
     try {
-        await loadLeagueData(league)
+        const matches = await loadLeagueData(league)
+        for (const row of matches) {
+            setMatch(row.round, {
+                team1: row.team_a,
+                team2: row.team_b,
+                score1: row.score_a,
+                score2: row.score_b,
+            })
+        }
     } catch (error) {
         console.error(`Failed to load ${league} league data`, error)
     }
@@ -269,4 +283,4 @@ $holdSecondsInput.on("change", () => {
 
 // Start
 showView(VIEWS[0])
-loadLeagueData(settings.league).catch(error => console.error(`Failed to load ${settings.league} league data`, error))
+setLeague(settings.league)

@@ -1,6 +1,6 @@
 [
     {
-        "teamName": "Australia",
+        "teamName": "MaA",
         "ISO3166Alpha2": "AU",
         "seed": 2,
         "player1": {
@@ -37,7 +37,7 @@
         }
     },
     {
-        "teamName": "Belgium",
+        "teamName": "MaB",
         "ISO3166Alpha2": "BE",
         "seed": 3,
         "player1": {
@@ -74,7 +74,7 @@
         }
     },
     {
-        "teamName": "Brazil",
+        "teamName": "MaC",
         "ISO3166Alpha2": "BR",
         "seed": 4,
         "player1": {
@@ -111,7 +111,7 @@
         }
     },
     {
-        "teamName": "Canada",
+        "teamName": "MaD",
         "ISO3166Alpha2": "CA",
         "seed": 5,
         "player1": {
@@ -148,7 +148,7 @@
         }
     },
     {
-        "teamName": "Chile",
+        "teamName": "MaE",
         "ISO3166Alpha2": "CL",
         "seed": 6,
         "player1": {
@@ -185,7 +185,7 @@
         }
     },
     {
-        "teamName": "China",
+        "teamName": "MaF",
         "ISO3166Alpha2": "CN",
         "seed": 7,
         "player1": {
@@ -222,7 +222,7 @@
         }
     },
     {
-        "teamName": "Finland",
+        "teamName": "MaG",
         "ISO3166Alpha2": "FI",
         "seed": 8,
         "player1": {
@@ -259,7 +259,7 @@
         }
     },
     {
-        "teamName": "France",
+        "teamName": "MaH",
         "ISO3166Alpha2": "FR",
         "seed": 9,
         "player1": {
@@ -296,7 +296,7 @@
         }
     },
     {
-        "teamName": "Germany",
+        "teamName": "MaI",
         "ISO3166Alpha2": "DE",
         "seed": 10,
         "player1": {
@@ -333,7 +333,7 @@
         }
     },
     {
-        "teamName": "Hong Kong",
+        "teamName": "MaJ",
         "ISO3166Alpha2": "HK",
         "seed": 11,
         "player1": {
@@ -370,7 +370,7 @@
         }
     },
     {
-        "teamName": "Indonesia",
+        "teamName": "MaK",
         "ISO3166Alpha2": "ID",
         "seed": 12,
         "player1": {
@@ -407,7 +407,7 @@
         }
     },
     {
-        "teamName": "Italy",
+        "teamName": "MaL",
         "ISO3166Alpha2": "IT",
         "seed": 13,
         "player1": {
@@ -444,7 +444,7 @@
         }
     },
     {
-        "teamName": "Netherlands",
+        "teamName": "MaM",
         "ISO3166Alpha2": "NL",
         "seed": 14,
         "player1": {
@@ -481,7 +481,7 @@
         }
     },
     {
-        "teamName": "New Zealand",
+        "teamName": "MaN",
         "ISO3166Alpha2": "NZ",
         "seed": 15,
         "player1": {
@@ -518,7 +518,7 @@
         }
     },
     {
-        "teamName": "Norway",
+        "teamName": "MaO",
         "ISO3166Alpha2": "NO",
         "seed": 16,
         "player1": {
@@ -555,7 +555,7 @@
         }
     },
     {
-        "teamName": "Poland",
+        "teamName": "MaP",
         "ISO3166Alpha2": "PL",
         "seed": 17,
         "player1": {
@@ -592,7 +592,7 @@
         }
     },
     {
-        "teamName": "Russian Federation",
+        "teamName": "MiA",
         "ISO3166Alpha2": "RU",
         "seed": 18,
         "player1": {
@@ -629,7 +629,7 @@
         }
     },
     {
-        "teamName": "Singapore",
+        "teamName": "MiB",
         "ISO3166Alpha2": "SG",
         "seed": 19,
         "player1": {
@@ -666,7 +666,7 @@
         }
     },
     {
-        "teamName": "Slovakia",
+        "teamName": "MiC",
         "ISO3166Alpha2": "SK",
         "seed": 20,
         "player1": {
@@ -703,7 +703,7 @@
         }
     },
     {
-        "teamName": "South Korea",
+        "teamName": "MiD",
         "ISO3166Alpha2": "KR",
         "seed": 21,
         "player1": {
@@ -740,7 +740,7 @@
         }
     },
     {
-        "teamName": "Spain",
+        "teamName": "MiE",
         "ISO3166Alpha2": "ES",
         "seed": 22,
         "player1": {
@@ -777,7 +777,7 @@
         }
     },
     {
-        "teamName": "Sweden",
+        "teamName": "MiF",
         "ISO3166Alpha2": "SE",
         "seed": 23,
         "player1": {
@@ -814,7 +814,7 @@
         }
     },
     {
-        "teamName": "Taiwan",
+        "teamName": "MiG",
         "ISO3166Alpha2": "TW",
         "seed": 24,
         "player1": {
@@ -851,7 +851,7 @@
         }
     },
     {
-        "teamName": "Turkey",
+        "teamName": "MiH",
         "ISO3166Alpha2": "TR",
         "seed": 25,
         "player1": {
@@ -888,7 +888,7 @@
         }
     },
     {
-        "teamName": "Ukraine",
+        "teamName": "MiI",
         "ISO3166Alpha2": "UA",
         "seed": 26,
         "player1": {
@@ -925,7 +925,7 @@
         }
     },
     {
-        "teamName": "United States",
+        "teamName": "MiK",
         "ISO3166Alpha2": "US",
         "seed": 27,
         "player1": {
@@ -959,6 +959,191 @@
         "player8": {
             "id": 3126596,
             "name": "Mlaw"
+        }
+    },
+    {
+        "teamName": "MiL",
+        "ISO3166Alpha2": "US",
+        "seed": 27,
+        "player1": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player2": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player3": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player4": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player5": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player6": {
+            "id": 3126596,
+            "name": "Mlaw"
+        },
+        "player7": {
+            "id": 4384207,
+            "name": "DigitalHypno"
+        },
+        "player8": {
+            "id": 3126596,
+            "name": "Mlaw"
+        }
+    },
+    {
+        "teamName": "MiM",
+        "ISO3166Alpha2": "AU",
+        "seed": 2,
+        "player1": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player2": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player3": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player4": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player5": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player6": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player7": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        },
+        "player8": {
+            "id": 7477458,
+            "name": "Jordan The Bear"
+        }
+    },
+    {
+        "teamName": "MiN",
+        "ISO3166Alpha2": "BE",
+        "seed": 3,
+        "player1": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player2": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player3": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player4": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player5": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player6": {
+            "id": 3168085,
+            "name": "Fblade"
+        },
+        "player7": {
+            "id": 7078544,
+            "name": "Hanori"
+        },
+        "player8": {
+            "id": 3168085,
+            "name": "Fblade"
+        }
+    },
+    {
+        "teamName": "MiO",
+        "ISO3166Alpha2": "BR",
+        "seed": 4,
+        "player1": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player2": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player3": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player4": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player5": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player6": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player7": {
+            "id": 4277702,
+            "name": "Mystia"
+        },
+        "player8": {
+            "id": 4277702,
+            "name": "Mystia"
+        }
+    },
+    {
+        "teamName": "MiP",
+        "ISO3166Alpha2": "CA",
+        "seed": 5,
+        "player1": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player2": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player3": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player4": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player5": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player6": {
+            "id": 3737401,
+            "name": "neuro"
+        },
+        "player7": {
+            "id": 5425046,
+            "name": "Vespirit"
+        },
+        "player8": {
+            "id": 3737401,
+            "name": "neuro"
         }
     }
 ]
