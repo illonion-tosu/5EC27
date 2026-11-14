@@ -247,3 +247,16 @@ body {
     border: 2px solid white;
     border-radius: 10px;
 }
+
+/* Lines */
+.wb-lines {
+    position: absolute;
+    left: 427px;
+    top: 186.5px;
+}
+
+.lb-lines {
+    position: absolute;
+    left: 371.5px;
+    top: 333px;
+}

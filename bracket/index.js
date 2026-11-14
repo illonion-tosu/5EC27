@@ -38,7 +38,8 @@ const BRACKET_LAYOUT = {
 async function loadLeagueData(league) {
     const res = await fetch(league === "major" ?
         "https://script.google.com/macros/s/AKfycbyyHaGAWbMahKLJTsM2kRTL2iXBw2fl37H5iPc4mGYY9XKdKef00UAc4rt9oXWWsUS5/exec" :
-        "https://script.google.com/macros/s/AKfycbymvHNpWW5lPuUffQCi022g-DX9K9JtRVulP7zF1DTzHQDcROVZpQdSPJ5dBGrRKjgn/exec"
+        "https://script.google.com/macros/s/AKfycbymvHNpWW5lPuUffQCi022g-DX9K9JtRVulP7zF1DTzHQDcROVZpQdSPJ5dBGrRKjgn/exec",
+        { cache: "no-store" }
     )
     if (!res.ok) throw new Error(`Request failed: ${res.status}`)
     const data = await res.json()
@@ -195,19 +196,50 @@ async function setLeague(league) {
     clearAllMatches()
     try {
         const matches = await loadLeagueData(league)
-        for (const row of matches) {
-            setMatch(row.round, {
-                team1: row.team_a,
-                team2: row.team_b,
-                score1: row.score_a,
-                score2: row.score_b,
-            })
-        }
+        if (token === leagueSwapToken) renderMatches(matches)
     } catch (error) {
         console.error(`Failed to load ${league} league data`, error)
     }
 
     if (token === leagueSwapToken) $overlay.removeClass("swapping-league")
+}
+
+/**
+ * Fills in every match from the rows returned by loadLeagueData
+ * @param {Array<{round: number, team_a: string, team_b: string, score_a: string|number, score_b: string|number}>} matches
+ */
+function renderMatches(matches) {
+    clearAllMatches()
+    for (const row of matches) {
+        setMatch(row.round, {
+            team1: row.team_a,
+            team2: row.team_b,
+            score1: row.score_a,
+            score2: row.score_b,
+        })
+    }
+}
+
+/**
+ * Re-fetches the current league and updates the matches in place, with no fade.
+ * The old data stays on screen until the new data arrives.
+ */
+async function refreshData() {
+    const token = leagueSwapToken
+    const league = settings.league
+    $refreshButton.prop("disabled", true).text("REFRESHING...")
+
+    try {
+        const matches = await loadLeagueData(league)
+        // Skip if the league was switched while this was loading
+        if (token === leagueSwapToken) renderMatches(matches)
+        $refreshButton.text("REFRESH")
+    } catch (error) {
+        console.error(`Failed to refresh ${league} league data`, error)
+        $refreshButton.text("REFRESH FAILED - RETRY")
+    }
+
+    $refreshButton.prop("disabled", false)
 }
 
 /* ---------------------------------------------------------------------------
@@ -222,6 +254,7 @@ const $toggleFade = $("#toggle-fade")
 const $toggleFadeText = $("#toggle-fade-text")
 const $holdSecondsInput = $("#hold-seconds-input")
 const $cycleCountdown = $("#cycle-countdown")
+const $refreshButton = $("#refresh-button")
 
 /**
  * Sets a toggle button's text and colour
@@ -260,6 +293,7 @@ setInterval(renderCountdown, 250)
 
 $leagueButtons.on("click", event => setLeague(event.currentTarget.dataset.league))
 $viewButtons.on("click", event => showView(event.currentTarget.dataset.view))
+$refreshButton.on("click", refreshData)
 
 $toggleAutoCycle.on("click", () => {
     saveSetting("autoCycle", !settings.autoCycle)

@@ -18,8 +18,12 @@
 <body>
     <div class="overlay" id="overlay">
         <div class="background-image"></div>
-        <div class="bracket-view" data-bracket="upper"></div>
-        <div class="bracket-view" data-bracket="lower"></div>
+        <div class="bracket-view" data-bracket="upper">
+            <img class="wb-lines" src="static/lines/wb-lines.png">
+        </div>
+        <div class="bracket-view" data-bracket="lower">
+            <img class="lb-lines" src="static/lines/lb-lines.png">
+        </div>
     </div>
 
     <!-- Sidebar -->
@@ -29,6 +33,7 @@
             <div class="sidebar-button-container">
                 <button class="league-button" data-league="major">MAJOR</button>
                 <button class="league-button" data-league="minor">MINOR</button>
+                <button class="full-width-button" id="refresh-button">REFRESH</button>
             </div>
         </section>
         <section class="sidebar-section">
