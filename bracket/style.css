@@ -5,20 +5,53 @@ body {
 
 .background-image{ background-image: url("static/background.png"); }
 
-/* Round of 16 */
-.round-of-16 {
+/* Upper Bracket Rounds */
+.upper-bracket {
     position: absolute;
-    left: 197.31px;
-    top: 145px;
     display: flex;
     flex-direction: column;
-    gap: 15.39px;
+    justify-content: space-between;
+}
+
+/* Round of 16 */
+.round-of-16-upper-bracket {
+    left: 197.31px;
+    top: 145px;
+    height: 766.23px;
+}
+
+/* Quarterfinals */
+.quarterfinals-upper-bracket {
+    left: 537px;
+    top: 198px;
+    height: 665.25px;
+}
+
+/* Semifinals */
+.semifinals-upper-bracket {
+    left: 847.6px;
+    top: 298px;
+    height: 469.23px;
+}
+
+/* Final */
+.finals-upper-bracket {
+    left: 1158.58px;
+    top: 484.87px;
+}
+
+/* Grand Finals */
+.grandfinals-upper-bracket {
+    left: 1469.95px;
+    top: 484.87px;
 }
 
 /* Match Container */
 .match-container {
     position: relative;
+    width: 230.1px;
     height: 82.25px;
+    background-color: #29010A;
 }
 
 /* Team Container */
