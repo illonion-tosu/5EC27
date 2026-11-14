@@ -187,12 +187,14 @@ async function setLeague(league) {
     saveSetting("league", league)
     renderSidebar()
 
+    // Fade
     if (settings.fade) {
         $overlay.addClass("swapping-league")
         await new Promise(resolve => setTimeout(resolve, FADE_OUT_MS))
         if (token !== leagueSwapToken) return
     }
 
+    // Get new matches
     clearAllMatches()
     try {
         const matches = await loadLeagueData(league)
@@ -201,7 +203,13 @@ async function setLeague(league) {
         console.error(`Failed to load ${league} league data`, error)
     }
 
+    // Remove swapping class after fade-in
     if (token === leagueSwapToken) $overlay.removeClass("swapping-league")
+
+    // Set league text information
+    const leagueText = league === "major" ? "Major League" : "Minor League"
+    $(`.bracket-view[data-bracket="upper"] .league-text`).text(leagueText)
+    $(`.bracket-view[data-bracket="lower"] .league-text`).text(leagueText)
 }
 
 /**

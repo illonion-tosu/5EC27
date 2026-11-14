@@ -269,3 +269,29 @@ body {
     opacity: 0;
     transition: opacity var(--fade-out-ms) ease;
 }
+
+/* Bracket Text */
+.top-right-text {
+    position: absolute;
+    left: 1496px;
+    color: var(--delicate-gold);
+    width: 380px;
+    text-align: center;
+    transition: opacity var(--fade-in-ms) ease;
+}
+
+.bracket-text {
+    top: 43px;
+    font-size: 4rem;
+}
+
+.league-text {
+    top: 125px;
+    font-size: 2rem;
+}
+
+/* Lines fade out with the matches during a league swap */
+.overlay.swapping-league .top-right-text {
+    opacity: 0;
+    transition: opacity var(--fade-out-ms) ease;
+}
