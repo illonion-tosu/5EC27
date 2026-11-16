@@ -1,0 +1,50 @@
+[
+  {
+    "time": 1795179600000,
+    "red_team": "Austria",
+    "red_seed": 32,
+    "red_flag": "AT",
+    "blue_team": "Finland B",
+    "blue_seed": 46,
+    "blue_flag": "FI",
+    "streamer": "Skvidos",
+    "stream": "",
+    "type": ""
+  },
+  {
+    "time": 1795278600000,
+    "red_team": "Germany B",
+    "red_seed": 4,
+    "red_flag": "DE",
+    "blue_team": "Ukraine B",
+    "blue_seed": 20,
+    "blue_flag": "UA",
+    "streamer": "Skvidos",
+    "stream": "",
+    "type": ""
+  },
+  {
+    "time": 1795368600000,
+    "red_team": "Russian Federation B",
+    "red_seed": 2,
+    "red_flag": "RU",
+    "blue_team": "Turkey",
+    "blue_seed": 25,
+    "blue_flag": "TR",
+    "streamer": "Skvidos",
+    "stream": "",
+    "type": ""
+  },
+  {
+    "time": 1795438800000,
+    "red_team": "Poland B",
+    "red_seed": 7,
+    "red_flag": "PL",
+    "blue_team": "Poland C",
+    "blue_seed": 30,
+    "blue_flag": "PL",
+    "streamer": "Skvidos",
+    "stream": "",
+    "type": ""
+  }
+]
