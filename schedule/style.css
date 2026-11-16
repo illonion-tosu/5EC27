@@ -73,11 +73,12 @@ body {
 
 .match-box {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 25px;
   width: 240px;
   height: 65px;
+  box-sizing: border-box;
+  gap: 10px;
+  padding-left: 10px;
   background-color: #a90d42;
 }
 
@@ -85,13 +86,24 @@ body {
   background-color: #e0b68c;
 }
 
+.match-flag {
+  background-image: url(https://osuflags.omkserver.nl/RU-1000.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
 .match-team {
   font-weight: 700;
   font-size: 36px;
   color: #e0b68c;
 
-  width: auto;
-  text-align: right;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .match-team.win {
@@ -102,6 +114,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 65px;
   width: 65px;
   height: 65px;
   background-color: #610826;
