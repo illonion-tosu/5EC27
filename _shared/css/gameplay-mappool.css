@@ -3,6 +3,14 @@
     --team-section-top-height: 80px;
 }
 
+/* Logo */
+.logo {
+    position: absolute;
+    top: 103px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* Team Section */
 .team-section {
     position: absolute;

@@ -22,18 +22,6 @@
     left: 1175px;
 }
 
-.logo {
-    position: absolute;
-    top: 103px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.pattern {
-    position: absolute;
-    top: 247px;
-}
-
 /* Score Bar */
 .score-bar {
     position: absolute;

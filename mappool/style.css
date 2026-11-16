@@ -9,9 +9,15 @@ body {
     font-weight: 700;
 }
 
-/* Background Image */
-.background-image {
-    background: url("static/background.png") center / cover no-repeat;
+/* Images */
+.eclipse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    top: 133px;
 }
 
 /* Team Section */
