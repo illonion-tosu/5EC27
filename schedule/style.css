@@ -9,6 +9,120 @@ body {
   background: url("static/background.png");
 }
 
+.schedule-view {
+  position: absolute;
+  inset: 0;
+  /* opacity: 0; */
+  transition: opacity var(--fade-out-ms) ease-in-out;
+}
+
+.schedule-text {
+  font-size: 6.65rem;
+  font-weight: 500;
+  color: var(--delicate-gold);
+}
+
+.schedule-matches-text {
+  font-size: 3.075rem;
+  font-weight: 500;
+  color: var(--light-red);
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  padding: 210px 0px 0px 185px;
+}
+
+.schedule-matches-box {
+  display: flex;
+  gap: 205px;
+  height: 400px;
+
+  margin-bottom: 60px;
+}
+
+.schedule-recent-match-container,
+.schedule-upcoming-match-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.schedule-comingUp-box {
+  display: flex;
+  gap: 80px;
+
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.schedule-comingUp-teamsVs {
+  font-weight: 500;
+  font-size: 50px;
+  color: #e99a94;
+}
+
+.match {
+  display: flex;
+  gap: 15px;
+}
+
+.match-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  width: 240px;
+  height: 65px;
+  background-color: #a90d42;
+}
+
+.match-box.win {
+  background-color: #e0b68c;
+}
+
+.match-team {
+  font-weight: 700;
+  font-size: 36px;
+  color: #e0b68c;
+
+  width: auto;
+  text-align: right;
+}
+
+.match-team.win {
+  color: #2c010c;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background-color: #610826;
+
+  font-weight: 700;
+  font-size: 36px;
+  color: #e0b68c;
+}
+
+.match-score.win {
+  background-color: #f9e4b0;
+  color: #2c010c;
+}
+
+.round-name {
+  font-weight: 500;
+  font-size: 50px;
+  color: #f9e4b0;
+}
+
+/* Sidebar */
 .sidebar {
   position: absolute;
   top: 0;
