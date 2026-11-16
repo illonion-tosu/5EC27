@@ -5,14 +5,33 @@
 
 /* Overlay */
 .overlay {
-    background: linear-gradient(180deg, #240008 83.72%, #4B091C 107.64%);
     font-family: "Cormorant Infant", serif;
     font-weight: 700;
 }
 
-/* Background Image */
-.background-image {
-    background: url("static/background.png") center / cover no-repeat;
+/* Images */
+.bats-1 {
+    position: absolute;
+    top: 0;
+    left: 630px;
+}
+
+.bats-2 {
+    position: absolute;
+    top: 86px;
+    left: 1175px;
+}
+
+.logo {
+    position: absolute;
+    top: 103px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pattern {
+    position: absolute;
+    top: 247px;
 }
 
 /* Score Bar */
