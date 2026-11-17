@@ -14,6 +14,47 @@
     background: url("static/background.png") center / cover no-repeat;
 }
 
+/* Images */
+.top-rectangle {
+    position: absolute;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 57px;
+    transform: translateX(-50%);
+}
+
+.circle-background,
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stats-background {
+    position: absolute;
+    left: 22px;
+    top: 474.53px;
+}
+
+.qualifier-results {
+    position: absolute;
+    left: 1235px;
+}
+
+.left-wing {
+    position: absolute;
+    top: 90px;
+}
+
+.bats {
+    position: absolute;
+    left: 611px;
+    top: 6px;
+}
+
 /* Team Flag */
 .team-flag {
     --dimension: 83.05px;
