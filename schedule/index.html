@@ -37,57 +37,7 @@
             <div class="schedule-recent-matches">
               <div class="schedule-matches-text">Recent Matches</div>
               <div class="schedule-recent-match-container" id="recent-matches">
-                <div class="match">
-                  <div class="match-box red win">
-                    <div class="match-flag"></div>
-                    <div class="match-team win">AUT</div>
-                    <div class="match-score win">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">FIN</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
-
-                <div class="match">
-                  <div class="match-box red lower">
-                    <div class="match-flag"></div>
-                    <div class="match-team">DEU</div>
-                    <div class="match-score">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">UKR</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
-
-                <div class="match">
-                  <div class="match-box red">
-                    <div class="match-flag"></div>
-                    <div class="match-team">RUS</div>
-                    <div class="match-score">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">TUR</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
-
-                <div class="match">
-                  <div class="match-box red">
-                    <div class="match-flag"></div>
-                    <div class="match-team">POL</div>
-                    <div class="match-score">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">POLB</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
+                Loading matches...
               </div>
             </div>
 
@@ -97,31 +47,7 @@
                 class="schedule-upcoming-match-container"
                 id="upcoming-matches"
               >
-                <div class="match">
-                  <div class="match-box red lower">
-                    <div class="match-flag"></div>
-                    <div class="match-team">DEU</div>
-                    <div class="match-score">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">UKR</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
-
-                <div class="match">
-                  <div class="match-box red">
-                    <div class="match-flag"></div>
-                    <div class="match-team">RUS</div>
-                    <div class="match-score">5</div>
-                  </div>
-                  <div class="match-box blue">
-                    <div class="match-flag"></div>
-                    <div class="match-team">TUR</div>
-                    <div class="match-score">3</div>
-                  </div>
-                </div>
+                Loading matches...
               </div>
             </div>
           </div>
@@ -134,12 +60,12 @@
                   <div class="match-box red">
                     <div class="match-flag"></div>
                     <div class="match-team">RUS</div>
-                    <div class="match-score">5</div>
+                    <div class="match-score"></div>
                   </div>
                   <div class="match-box blue">
                     <div class="match-flag"></div>
                     <div class="match-team">TUR</div>
-                    <div class="match-score">3</div>
+                    <div class="match-score"></div>
                   </div>
                 </div>
               </div>
@@ -171,36 +97,21 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <section class="sidebar-section">
-        <h1>League</h1>
+        <h1>Schedule</h1>
         <div class="sidebar-button-container">
-          <button class="league-button" data-league="major">MAJOR</button>
-          <button class="league-button" data-league="minor">MINOR</button>
-          <button class="full-width-button" id="refresh-button">REFRESH</button>
+          <button class="update-button" id="refresh-schedule">UPDATE</button>
         </div>
-      </section>
-      <section class="sidebar-section">
-        <h1>Bracket</h1>
-        <p>Click to show now</p>
-        <div class="sidebar-button-container">
-          <button class="view-button" data-view="upper">UPPER</button>
-          <button class="view-button" data-view="lower">LOWER</button>
+        <div class="schedule-selector-label" id="match-selector-label">
+          Select match to in coming up
         </div>
-      </section>
-      <section class="sidebar-section">
-        <h1>Transitions</h1>
-        <div class="sidebar-button-container">
-          <button class="full-width-button" id="toggle-auto-cycle">
-            AUTO CYCLE: <span id="toggle-auto-cycle-text"></span>
-          </button>
-          <button class="full-width-button" id="toggle-fade">
-            FADE: <span id="toggle-fade-text"></span>
-          </button>
-          <label class="hold-label" for="hold-seconds-input">
-            HOLD (SECONDS)
-            <input type="number" id="hold-seconds-input" min="1" step="1" />
-          </label>
+        <div
+          class="schedule-match-selector"
+          id="match-selector"
+          role="group"
+          aria-labelledby="match-selector-label"
+        >
+          Loading schedule...
         </div>
-        <p id="cycle-countdown"></p>
       </section>
     </div>
 

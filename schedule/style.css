@@ -62,9 +62,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-height: 350px;
+  overflow-y: auto;
 
   margin-top: 25px;
   margin-left: 40px;
+}
+
+.schedule-match-empty {
+  color: #e0b68c;
+  font-size: 1.5rem;
 }
 
 .schedule-comingUp-box {
@@ -95,6 +102,7 @@ body {
   gap: 10px;
   padding-left: 10px;
   background-color: #a90d42;
+  user-select: none;
 }
 
 .match-box.win {
@@ -102,7 +110,7 @@ body {
 }
 
 .match-flag {
-  background-image: url(https://osuflags.omkserver.nl/RU-1000.png);
+  background-image: url(https://osuflags.omkserver.nl/DE-1000.png);
   background-repeat: no-repeat;
   background-size: contain;
   flex: 0 0 44px;
@@ -177,6 +185,65 @@ body {
   font-weight: 700;
   line-height: 20px;
   font-size: 1.25em;
+}
+
+.schedule-selector-label {
+  display: block;
+  margin: 15px 10px 5px;
+  font-size: 1rem;
+  text-align: left;
+  text-align: center;
+}
+
+.schedule-match-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: calc(100% - 20px);
+  max-height: 350px;
+  margin: 0 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background-color: #2c010c;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  overflow-y: auto;
+}
+
+.schedule-match-option {
+  padding: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.schedule-match-option-time {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.schedule-match-option-teams {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.schedule-match-option-round {
+  margin-top: 2px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.schedule-selector-empty {
+  color: #fff;
+  text-align: left;
+}
+
+.match-score[hidden] {
+  display: none;
 }
 
 .sidebar-button-container {
