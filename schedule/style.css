@@ -4,9 +4,24 @@ body {
   font-weight: 700;
 }
 
-/* Background Image */
-.background-image {
-  background: url("static/background.png");
+/* Images */
+.bats-1 {
+  position: absolute;
+  top: 172px;
+  left: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vampire {
+  position: absolute;
+  left: 600px;
+  top: 161px;
 }
 
 .schedule-view {
