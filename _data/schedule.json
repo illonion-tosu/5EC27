@@ -4,11 +4,14 @@
     "red_team": "Austria",
     "red_seed": 32,
     "red_flag": "AT",
+    "red_point": 0,
     "blue_team": "Finland B",
     "blue_seed": 46,
     "blue_flag": "FI",
+    "blue_point": 0,
     "streamer": "Skvidos",
     "stream": "",
+    "round": "Grand Finals",
     "type": ""
   },
   {
@@ -16,11 +19,14 @@
     "red_team": "Germany B",
     "red_seed": 4,
     "red_flag": "DE",
+    "red_point": 0,
     "blue_team": "Ukraine B",
     "blue_seed": 20,
     "blue_flag": "UA",
+    "blue_point": 0,
     "streamer": "Skvidos",
     "stream": "",
+    "round": "Grand Finals",
     "type": ""
   },
   {
@@ -28,11 +34,14 @@
     "red_team": "Russian Federation B",
     "red_seed": 2,
     "red_flag": "RU",
+    "red_point": 0,
     "blue_team": "Turkey",
     "blue_seed": 25,
     "blue_flag": "TR",
+    "blue_point": 0,
     "streamer": "Skvidos",
     "stream": "",
+    "round": "Grand Finals",
     "type": ""
   },
   {
@@ -40,11 +49,14 @@
     "red_team": "Poland B",
     "red_seed": 7,
     "red_flag": "PL",
+    "red_point": 0,
     "blue_team": "Poland C",
     "blue_seed": 30,
     "blue_flag": "PL",
+    "blue_point": 0,
     "streamer": "Skvidos",
     "stream": "",
+    "round": "Grand Finals",
     "type": ""
   }
 ]
