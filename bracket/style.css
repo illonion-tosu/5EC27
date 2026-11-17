@@ -3,7 +3,18 @@ body {
     font-weight: 700;
 }
 
-.background-image { background-image: url("static/background.png"); }
+/* Images */
+.logo {
+    position: absolute;
+    top: 43px;
+    left: 743px;
+}
+
+.vampire {
+    position: absolute;
+    left: 600px;
+    top: 161px;
+}
 
 /* Bracket View */
 .bracket-view {
