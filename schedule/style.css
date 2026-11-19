@@ -78,7 +78,7 @@ body {
   font-size: 1.5rem;
 }
 
-.schedule-comingUp-box {
+.schedule-coming-up-box {
   display: flex;
   gap: 80px;
 
@@ -86,7 +86,7 @@ body {
   margin-left: 40px;
 }
 
-.schedule-comingUp-teamsVs {
+.schedule-coming-up-teams-vs {
   font-weight: 500;
   font-size: 3.125rem;
   color: #e99a94;
