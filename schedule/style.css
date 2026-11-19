@@ -27,6 +27,7 @@ body {
 .schedule-view {
   position: absolute;
   inset: 0;
+
   /* opacity: 0; */
   transition: opacity var(--fade-out-ms) ease-in-out;
 }
@@ -46,13 +47,12 @@ body {
 .schedule-container {
   display: flex;
   flex-direction: column;
-  padding: 220px 0px 0px 185px;
+  padding: 220px 0 0 185px;
 }
 
 .schedule-matches-box {
   display: flex;
   height: 400px;
-
   margin-bottom: 45px;
 }
 
@@ -68,7 +68,6 @@ body {
   gap: 15px;
   max-height: 350px;
   overflow-y: auto;
-
   margin-top: 25px;
   margin-left: 40px;
 }
@@ -81,7 +80,6 @@ body {
 .schedule-comingUp-box {
   display: flex;
   gap: 80px;
-
   margin-top: 25px;
   margin-left: 40px;
 }
@@ -135,7 +133,6 @@ body {
   font-weight: 700;
   font-size: 2.25rem;
   color: #e0b68c;
-
   flex: 1;
   min-width: 0;
   text-align: left;
@@ -154,7 +151,6 @@ body {
   width: 65px;
   height: 65px;
   background-color: #610826;
-
   font-weight: 700;
   font-size: 2.25rem;
   color: #e0b68c;
@@ -237,6 +233,7 @@ body {
 .toggle-active {
   background-color: rgb(32 121 44) !important;
 }
+
 .toggle-inactive {
   background-color: rgb(121 32 32) !important;
 }
