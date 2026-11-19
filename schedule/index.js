@@ -179,9 +179,9 @@ function createMatchRow(match) {
       .data("matchKey", match.key)
       .attr({ role: "button", tabindex: 0, title: "Left-click to add a point; right-click to subtract" })
       .attr(
-      "aria-label",
-      `${getTeamLabel(team.name, team.flag)} score: ${scores[team.side]}${winningScore ? ` of ${winningScore} to win` : ""}. Left-click to add a point; right-click to subtract.`,
-    )
+        "aria-label",
+        `${getTeamLabel(team.name, team.flag)} score: ${scores[team.side]}${winningScore ? ` of ${winningScore} to win` : ""}. Left-click to add a point; right-click to subtract.`,
+      )
 
     $box.append($flag, $name, $score)
     $row.append($box)
@@ -350,7 +350,7 @@ function changeScore(matchKey, side, amount) {
  * @returns {jQuery} Score control, or an empty collection
  */
 function getScoreControl(target) {
-  return target instanceof Element ? $(target).closest(".match-score") : $()
+  return target && target.nodeType === 1 ? $(target).closest(".match-score") : $()
 }
 
 // Change Score From Event
