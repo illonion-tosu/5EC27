@@ -10,12 +10,6 @@ body {
     left: 743px;
 }
 
-.vampire {
-    position: absolute;
-    left: 600px;
-    top: 161px;
-}
-
 /* Bracket View */
 .bracket-view {
     position: absolute;
