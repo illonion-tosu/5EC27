@@ -1,0 +1,275 @@
+/* Overlay */
+body {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 700;
+}
+
+/* Images */
+.bats-1 {
+  position: absolute;
+  top: 172px;
+  left: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.schedule-view {
+  position: absolute;
+  inset: 0;
+
+  /* opacity: 0; */
+  transition: opacity var(--fade-out-ms) ease-in-out;
+}
+
+.schedule-text {
+  font-size: 6.65rem;
+  font-weight: 500;
+  color: var(--delicate-gold);
+}
+
+.schedule-matches-text {
+  font-size: 3.075rem;
+  font-weight: 500;
+  color: var(--light-red);
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  padding: 220px 0 0 185px;
+}
+
+.schedule-matches-box {
+  display: flex;
+  height: 400px;
+  margin-bottom: 45px;
+}
+
+.schedule-recent-matches,
+.schedule-upcoming-matches {
+  width: 770px;
+}
+
+.schedule-recent-match-container,
+.schedule-upcoming-match-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.schedule-match-empty {
+  color: #e0b68c;
+  font-size: 1.5rem;
+}
+
+.schedule-coming-up-box {
+  display: flex;
+  gap: 80px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.schedule-coming-up-teams-vs {
+  font-weight: 500;
+  font-size: 3.125rem;
+  color: #e99a94;
+}
+
+.match {
+  display: flex;
+  gap: 15px;
+}
+
+.match-time {
+  display: flex;
+  align-items: center;
+  flex: 0 0 220px;
+  color: #f9e4b0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.match-box {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  height: 65px;
+  box-sizing: border-box;
+  gap: 10px;
+  padding-left: 10px;
+  background-color: #a90d42;
+  user-select: none;
+}
+
+.match-box.win {
+  background-color: #e0b68c;
+}
+
+.match-flag {
+  /* background-image: url(https://osuflags.omkserver.nl/DE-1000.png); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+.match-team {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #e0b68c;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.match-team.win {
+  color: #2c010c;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 65px;
+  width: 65px;
+  height: 65px;
+  background-color: #610826;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #e0b68c;
+}
+
+.match-score.win {
+  background-color: #f9e4b0;
+  color: #2c010c;
+}
+
+.round-name {
+  font-weight: 500;
+  font-size: 3.125rem;
+  color: #f9e4b0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 1920px;
+  width: 250px;
+  height: 1080px;
+  background-color: var(--sidebar-background-colour);
+}
+
+.sidebar-section {
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.sidebar-section h1 {
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 2em;
+}
+
+.sidebar-section p {
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 1.25em;
+}
+
+.match-score[hidden] {
+  display: none;
+}
+
+.sidebar-button-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebar button {
+  width: 105px;
+  height: 30px;
+  font-family: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sidebar button:active {
+  background-color: white;
+  color: var(--sidebar-background-colour);
+}
+
+.sidebar .full-width-button {
+  width: 220px;
+}
+
+.toggle-active {
+  background-color: rgb(32 121 44) !important;
+}
+
+.toggle-inactive {
+  background-color: rgb(121 32 32) !important;
+}
+
+.hold-label {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.hold-label input {
+  width: 70px;
+  height: 26px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* Sponsors */
+.sponsors {
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 273px;
+  height: 113px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderpals-sponsor {
+  max-width: 273px;
+}
+
+.sponsors > * {
+  max-height: 105px;
+}
