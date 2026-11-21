@@ -46,7 +46,7 @@ function displayData() {
     const currentTeam = allTeamStats[currentIndex]
 
     // Team information
-    teamFlagEl.attr("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
+    teamFlagEl.attr("src", `../_shared/assets/flags/${currentTeam.ISO3166Alpha2}.png`)
     teamNameEl.text(currentTeam.teamName)
     seedNumberEl.text(`#${currentTeam.seed}`)
 

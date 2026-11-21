@@ -23,7 +23,7 @@ setInterval(() => {
     if (team && team !== previousTeam) {
         // Set team name and flag
         $teamName.text(team.teamName)
-        $teamFlag.attr("src", `https://osuflags.omkserver.nl/${team.ISO3166Alpha2}-1000.png`)
+        $teamFlag.attr("src", `../_shared/assets/flags/${team.ISO3166Alpha2}.png`)
 
         // Set player names
         for (let i = 0; i < 8; i++) {
