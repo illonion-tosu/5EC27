@@ -262,7 +262,6 @@ let currentNextPicker = "none"
 
 // Current Picker
 const $currentPicker = $("#current-picker")
-let currentPicker = "none"
 
 /**
  * Updates the now-playing panel when the beatmap ID or checksum changes
@@ -482,7 +481,6 @@ $(socket).on("message", event => {
  * Set current picker
  */
 function setCurrentPicker(pickerTeam) {
-    currentPicker = pickerTeam
     $currentPicker.text(pickerTeam.toUpperCase())
     document.cookie = `currentNowPlayingTeam=${pickerTeam}; path=/`
 }
