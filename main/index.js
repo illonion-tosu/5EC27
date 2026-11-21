@@ -25,7 +25,7 @@ function setTeamDetails(teamName, side) {
     if (!currentTeam) return null
 
     $(`#team-seed-${side}`).text(`#${currentTeam.seed}`)
-    $(`#team-flag-${side}`).attr("src", `../_shared/assets/flags/${currentTeam.ISO3166Alpha2}.png`)
+    $(`#team-flag-${side}`).attr("src", getFlagPath(currentTeam.ISO3166Alpha2))
     $(`#team-name-${side}`).text(teamName)
     return teamName
 }

@@ -1,7 +1,7 @@
 /**
  * Get Cookie
  * @param {string} cname Cookie Name
- * @returns 
+ * @returns {string} cookie value
  */
 export function getCookie(cname) {
     const name = cname + "="
@@ -17,7 +17,7 @@ export function getCookie(cname) {
 /**
  * Generate length display based on the number of total seconds
  * @param {number} seconds 
- * @returns 
+ * @returns {string} `HH:MM format`
  */
 export function setLengthDisplay(seconds) {
     const minuteCount = Math.floor(seconds / 60)
@@ -29,7 +29,7 @@ export function setLengthDisplay(seconds) {
 /**
  * Capitalise the first letter
  * @param {string} text 
- * @returns 
+ * @returns {string} string
  */
 export const capitalise = text => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
 
@@ -49,7 +49,7 @@ export const delay = async time => new Promise(resolve => setTimeout(resolve, ti
  * @param {number} bpm 
  * @param {number} len 
  * @param {string} mod 
- * @returns 
+ * @returns {{cs, ar, opd, hp, bpm, len, mod}}
  */
 export function getModDetails(cs, ar, od, hp, bpm, len, mod) {
     const cap = value => Math.min(Math.round(value * 10) / 10, 10)
@@ -69,4 +69,13 @@ export function getModDetails(cs, ar, od, hp, bpm, len, mod) {
     }
 
     return { cs, ar, od, hp, bpm, len, mod }
+}
+
+/**
+ * Get flag path
+ * @param {string} countryCode - ISO3166Alpha2
+ * @returns {string} - Flag path
+ */
+export function getFlagPath(countryCode) {
+    return `../_shared/assets/flags/${countryCode}.png`
 }

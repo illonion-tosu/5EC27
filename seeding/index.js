@@ -46,7 +46,7 @@ function displayData() {
     const currentTeam = allTeamStats[currentIndex]
 
     // Team information
-    teamFlagEl.attr("src", `../_shared/assets/flags/${currentTeam.ISO3166Alpha2}.png`)
+    teamFlagEl.attr("src", getFlagPath(currentTeam.ISO3166Alpha2))
     teamNameEl.text(currentTeam.teamName)
     seedNumberEl.text(`#${currentTeam.seed}`)
 
