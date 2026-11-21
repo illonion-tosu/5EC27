@@ -1,5 +1,5 @@
 import { loadTeams, findTeam } from "../_shared/core/data.js"
-import { getCookie } from "../_shared/core/utils.js"
+import { getCookie, getFlagPath } from "../_shared/core/utils.js"
 
 await loadTeams()
 
@@ -101,8 +101,8 @@ function setMatch(matchId, { team1 = "", team2 = "", score1 = "", score2 = "" } 
     const team1Data = findTeam(team1)
     const team2Data = findTeam(team2)
 
-    match.$flags.eq(0).attr("src", team1 ? `../_shared/assets/flags/${team1Data?.ISO3166Alpha2}.png` : "")
-    match.$flags.eq(1).attr("src", team2 ? `../_shared/assets/flags/${team2Data?.ISO3166Alpha2}.png` : "")
+    match.$flags.eq(0).attr("src", team1 ? getFlagPath(team1Data?.ISO3166Alpha2) : "")
+    match.$flags.eq(1).attr("src", team2 ? getFlagPath(team2Data?.ISO3166Alpha2) : "")
     match.$names.eq(0).text(team1Data?.ISO3166Alpha2 ?? "")
     match.$names.eq(1).text(team2Data?.ISO3166Alpha2 ?? "")
     match.$scores.eq(0).text(score1)

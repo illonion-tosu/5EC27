@@ -1,7 +1,7 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getStarCount, isStarOn, setDefaultStarCount, setStarCounts, toggleStars, updateStarCount } from "../_shared/core/stars.js"
-import { delay } from "../_shared/core/utils.js"
+import { delay, getFlagPath } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers

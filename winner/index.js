@@ -1,5 +1,5 @@
 import { loadBeatmaps, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getCookie } from "../_shared/core/utils.js"
+import { getCookie, getFlagPath } from "../_shared/core/utils.js"
 
 loadTeams()
 

@@ -1,5 +1,5 @@
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
+import { getModDetails, setLengthDisplay, getFlagPath } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 import { renderStars, toggleStarContainers } from "../_shared/core/stars.js"
 

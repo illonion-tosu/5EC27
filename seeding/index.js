@@ -1,4 +1,5 @@
-import { loadTeamStats } from "../_shared/core/data.js";
+import { loadTeamStats } from "../_shared/core/data.js"
+import { getFlagPath } from "../_shared/core/utils.js"
 
 // Load team stats
 let allTeamStats
