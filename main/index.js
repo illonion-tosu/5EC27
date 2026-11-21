@@ -1,5 +1,5 @@
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
+import { getCookie, getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 import { renderStars, toggleStarContainers } from "../_shared/core/stars.js"
 
@@ -249,9 +249,25 @@ $(socket).on("message", event => {
     updateScoreBar(scores.left, scores.right)
 })
 
+// Now playing team
+const $nowPlayingTopRightVectorEl = $("#now-playing-top-right-vector")
+let currentNowPlayingTeam
+
+// Star container
 const $teamStarContainerLeft = $("#team-star-container-left")
 const $teamStarContainerRight = $("#team-star-container-right")
 setInterval(() => {
     renderStars($teamStarContainerLeft, $teamStarContainerRight)
     toggleStarContainers($teamStarContainerLeft, $teamStarContainerRight)
+
+    // Setting now playing team
+    if (currentNowPlayingTeam !== getCookie("currentNowPlayingTeam") || !currentNowPlayingTeam) {
+        currentNowPlayingTeam = getCookie("currentNowPlayingTeam")
+        const vector = currentNowPlayingTeam && currentNowPlayingTeam !== "none"
+            ? `${currentNowPlayingTeam}-top-right-vector.png`
+            : "top-right-vector.png"
+
+        $nowPlayingTopRightVectorEl.attr("src", `static/vectors/${vector}`)
+        console.log($nowPlayingTopRightVectorEl);
+    }
 }, 200)

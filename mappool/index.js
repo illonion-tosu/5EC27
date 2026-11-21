@@ -260,6 +260,9 @@ let isAutopickToggled = false
 const $nextPicker = $("#next-picker")
 let currentNextPicker = "none"
 
+// Current Picker
+const $currentPicker = $("#current-picker")
+
 /**
  * Updates the now-playing panel when the beatmap ID or checksum changes
  * Mappool maps use stats from the mappool (with mods applied)
@@ -294,6 +297,7 @@ function updateNowPlaying(beatmapData) {
             $element[0].dispatchEvent(event)
             $element.attr("data-is-autopicked", "true")
 
+            setCurrentPicker(currentNextPicker)
             if (currentNextPicker === "left") setNextPicker("right")
             else if (currentNextPicker === "right") setNextPicker("left")
         }
@@ -474,6 +478,14 @@ $(socket).on("message", event => {
 })
 
 /**
+ * Set current picker
+ */
+function setCurrentPicker(pickerTeam) {
+    $currentPicker.text(pickerTeam.toUpperCase())
+    document.cookie = `currentNowPlayingTeam=${pickerTeam}; path=/`
+}
+
+/**
  * Set the next picker
  */
 function setNextPicker(pickerTeam) {
@@ -500,6 +512,11 @@ function toggleAutopick() {
 const $setNextPickerLeft = $("#set-next-picker-left")
 const $setNextPickerRight = $("#set-next-picker-right")
 const $nextPickerNone = $("#next-picker-none")
+
+// Set Next Picker Elements
+const $setCurrentPickerLeft = $("#set-current-picker-left")
+const $setCurrentPickerRight = $("#set-current-picker-right")
+const $currentPickerNone = $("#current-picker-none")
 
 // Star Section Elements
 const $starSectionLeftPlus = $("#star-section-left-plus")
@@ -542,6 +559,9 @@ $(window).on("load", () => {
     $setNextPickerLeft.on("click", () => setNextPicker("left"))
     $setNextPickerRight.on("click", () => setNextPicker("right"))
     $nextPickerNone.on("click", () => setNextPicker("none"))
+    $setCurrentPickerLeft.on("click", () => setCurrentPicker("left"))
+    $setCurrentPickerRight.on("click", () => setCurrentPicker("right"))
+    $currentPickerNone.on("click", () => setCurrentPicker("none"))
     $toggleAutopick.on("click", toggleAutopick)
     $starSectionLeftPlus.on("click", () => updateStarCount("red", "plus", $teamStarContainerLeft, $teamStarContainerRight))
     $starSectionLeftMinus.on("click", () => updateStarCount("red", "minus", $teamStarContainerLeft, $teamStarContainerRight))
