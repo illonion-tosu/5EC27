@@ -261,13 +261,13 @@ setInterval(() => {
     toggleStarContainers($teamStarContainerLeft, $teamStarContainerRight)
 
     // Setting now playing team
-    if (currentNowPlayingTeam !== getCookie("currentNowPlayingTeam")) {
-        if (currentNowPlayingTeam === "none") {
-            $nowPlayingTopRightVectorEl.attr("src", "static/vectors/top-right-vector.png")
-        } else {
-            $nowPlayingTopRightVectorEl.attr("src", `static/vectors/${currentNowPlayingTeam}-top-right-vector.png`)
-        }
-    } else if (!currentNowPlayingTeam) {
-        $nowPlayingTopRightVectorEl.attr("src", "static/vectors/top-right-vector.png")
+    if (currentNowPlayingTeam !== getCookie("currentNowPlayingTeam") || !currentNowPlayingTeam) {
+        currentNowPlayingTeam = getCookie("currentNowPlayingTeam")
+        const vector = currentNowPlayingTeam && currentNowPlayingTeam !== "none"
+            ? `${currentNowPlayingTeam}-top-right-vector.png`
+            : "top-right-vector.png"
+
+        $nowPlayingTopRightVectorEl.attr("src", `static/vectors/${vector}`)
+        console.log($nowPlayingTopRightVectorEl);
     }
 }, 200)
