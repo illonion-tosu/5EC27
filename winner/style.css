@@ -20,6 +20,14 @@ body {
     color: var(--delicate-gold);
 }
 
+/* Logo */
+.logo {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* Team Data */
 .team-data {
     position: absolute;
