@@ -1,5 +1,5 @@
 import { loadBeatmaps, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getCookie } from "../_shared/core/utils.js"
+import { getCookie, getFlagPath } from "../_shared/core/utils.js"
 
 loadTeams()
 
@@ -23,7 +23,7 @@ setInterval(() => {
     if (team && team !== previousTeam) {
         // Set team name and flag
         $teamName.text(team.teamName)
-        $teamFlag.attr("src", `https://osuflags.omkserver.nl/${team.ISO3166Alpha2}-1000.png`)
+        $teamFlag.attr("src", getFlagPath(team.ISO3166Alpha2))
 
         // Set player names
         for (let i = 0; i < 8; i++) {

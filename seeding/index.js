@@ -1,4 +1,5 @@
-import { loadTeamStats } from "../_shared/core/data.js";
+import { loadTeamStats } from "../_shared/core/data.js"
+import { getFlagPath } from "../_shared/core/utils.js"
 
 // Load team stats
 let allTeamStats
@@ -46,7 +47,7 @@ function displayData() {
     const currentTeam = allTeamStats[currentIndex]
 
     // Team information
-    teamFlagEl.attr("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
+    teamFlagEl.attr("src", getFlagPath(currentTeam.ISO3166Alpha2))
     teamNameEl.text(currentTeam.teamName)
     seedNumberEl.text(`#${currentTeam.seed}`)
 

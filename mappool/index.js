@@ -1,7 +1,7 @@
 import { updateChat } from "../_shared/core/chat.js"
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
 import { getStarCount, isStarOn, setDefaultStarCount, setStarCounts, toggleStars, updateStarCount } from "../_shared/core/stars.js"
-import { delay } from "../_shared/core/utils.js"
+import { delay, getFlagPath } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 
 // Pick Map Containers
@@ -116,7 +116,7 @@ function setTeamDetails(teamName, side) {
     if (!currentTeam) return null
 
     $(`#team-seed-${side}`).text(`#${currentTeam.seed}`)
-    $(`#team-flag-${side}`).attr("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
+    $(`#team-flag-${side}`).attr("src", getFlagPath(currentTeam.ISO3166Alpha2))
     $(`#team-name-${side}`).text(teamName)
     return teamName
 }

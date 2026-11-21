@@ -1,5 +1,5 @@
 import { loadBeatmaps, findBeatmap, loadTeams, findTeam } from "../_shared/core/data.js"
-import { getModDetails, setLengthDisplay } from "../_shared/core/utils.js"
+import { getModDetails, setLengthDisplay, getFlagPath } from "../_shared/core/utils.js"
 import { createTosuWsSocket } from "../_shared/core/websocket.js"
 import { renderStars, toggleStarContainers } from "../_shared/core/stars.js"
 
@@ -25,7 +25,7 @@ function setTeamDetails(teamName, side) {
     if (!currentTeam) return null
 
     $(`#team-seed-${side}`).text(`#${currentTeam.seed}`)
-    $(`#team-flag-${side}`).attr("src", `https://osuflags.omkserver.nl/${currentTeam.ISO3166Alpha2}-1000.png`)
+    $(`#team-flag-${side}`).attr("src", getFlagPath(currentTeam.ISO3166Alpha2))
     $(`#team-name-${side}`).text(teamName)
     return teamName
 }
